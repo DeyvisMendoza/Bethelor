@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'swiper/swiper-bundle.css';
 
 header {
     background-color: #000; /* Fondo negro */

@@ -11,6 +11,8 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.5",
     "astro": "^5.7.9",
+    "module-name": "^0.0.1-security",
+    "swiper": "^11.2.6",
     "tailwindcss": "^4.1.5"
   }
 }

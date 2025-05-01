@@ -1,3 +1,56 @@
 ---
-
+/* Astro Component Script */
 ---
+<section class="projects py-16 px-6 bg-white text-black">
+    <!-- Title and Introduction -->
+    <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-4">Our Projects</h2>
+        <p class="text-lg">
+            Explore some of our featured remodeling projects across Maryland. From kitchens and bathrooms to full home makeovers, we bring quality and creativity into every space.
+        </p>
+    </div>
+
+    <!-- Project Categories -->
+    <div class="mt-12 max-w-6xl mx-auto flex flex-col lg:flex-row lg:items-start">
+        <!-- Categories List -->
+        <div class="lg:w-1/4 mb-8 lg:mb-0">
+            <ul class="space-y-4 font-medium">
+                <li class="cursor-pointer hover:text-gray-700">All Projects <span class="text-sm text-gray-500">(12)</span></li>
+                <li class="cursor-pointer hover:text-gray-700">Kitchen Remodeling <span class="text-sm text-gray-500">(3)</span></li>
+                <li class="cursor-pointer hover:text-gray-700">Bathroom Remodeling <span class="text-sm text-gray-500">(3)</span></li>
+                <li class="cursor-pointer hover:text-gray-700">Basement Remodeling <span class="text-sm text-gray-500">(1)</span></li>
+                <li class="cursor-pointer hover:text-gray-700">Window & Door Replacement <span class="text-sm text-gray-500">(5)</span></li>
+            </ul>
+        </div>
+
+        <!-- Featured Projects Gallery -->
+        <div class="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Project 1 -->
+            <div class="relative group">
+                <img
+                        src="/images/kitchen-project.jpg"
+                        alt="Kitchen Remodeling Project"
+                        class="w-full h-auto rounded-lg shadow-md"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-center items-center">
+                    <a href="#kitchen-remodeling" class="text-white text-lg font-semibold hover:underline">
+                        View Project
+                    </a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="relative group">
+                <img
+                        src="/images/bathroom-project.jpg"
+                        alt="Bathroom Remodeling Project"
+                        class="w-full h-auto rounded-lg shadow-md"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-center items-center">
+                    <a href="#bathroom-remodeling" class="text-white text-lg font-semibold hover:underline">
+                        View Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

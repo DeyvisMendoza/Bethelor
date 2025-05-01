@@ -1,3 +1,74 @@
 ---
-
+const tips = [
+    {
+        id: 1,
+        date: 'Mar 12',
+        title: 'A Budget-Friendly Bathroom Makeover with Big Results',
+        description: `When our client in Glen Burnie, Maryland called us, their bathroom was outdated and in need of a refresh. They didn’t want a full renovation, just a clean, modern look that felt fresh without spending a fortune.`,
+        category: 'Bathroom Remodel, Maryland Projects',
+        image: '/images/tips-bathroom-makeover.jpg',
+    },
+    {
+        id: 2,
+        date: 'Mar 30',
+        title: 'A Fresh Look with Interior & Exterior Paint in Dundalk, MD',
+        description: `This Dundalk home got a major refresh with new interior and exterior paint, plus careful repairs to window and door frames. The result? A clean, modern finish that looks brand-new—without breaking the budget.`,
+        category: 'Painting, Maryland Projects',
+        image: '/images/tips-interior-paint.jpg',
+    },
+    {
+        id: 3,
+        date: 'Apr 08',
+        title: 'A Clean Modern Bathroom Update in Rosedale, MD',
+        description: `This small bathroom in Rosedale got a fresh update without a full renovation. We replaced the vanity and toilet, added a fresh coat of paint, and modernized the space with simple yet impactful touches.`,
+        category: 'Bathroom Remodel, Maryland Projects',
+        image: '/images/tips-modern-bathroom.jpg',
+    },
+];
 ---
+
+<section class="tips py-16 px-6 bg-white text-black">
+    <!-- Title -->
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold">Home Remodeling Tips & Trends in Maryland</h2>
+        <p class="text-lg mt-4">
+            Discover expert advice, remodeling inspiration, and real-life project stories from homes across Maryland. Whether you're updating a bathroom in Towson or renovating your kitchen in Dundalk, our team shares tips, trends, and local insights to help you create a space you love.
+        </p>
+    </div>
+
+    <!-- Tips Grid -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {tips.map((tip) => (
+                <article key={tip.id} class="border rounded-lg overflow-hidden shadow-md">
+                    <!-- Image -->
+                    <div class="relative">
+                        <img
+                                src={tip.image}
+                                alt={tip.title}
+                                class="w-full h-48 object-cover"
+                        />
+                        <div class="absolute top-2 left-2 bg-black text-white text-sm px-3 py-1 rounded-lg">
+                            {tip.date}
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-4">
+                        <p class="text-sm text-gray-600 mb-2">{tip.category}</p>
+                        <h3 class="text-lg font-semibold mb-2">{tip.title}</h3>
+                        <p class="text-sm text-gray-700 line-clamp-3">{tip.description}</p>
+                    </div>
+                </article>
+        ))}
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-12">
+        <a
+                href="/blogs"
+                class="inline-block bg-black text-white px-6 py-3 rounded-lg text-sm hover:bg-gray-800"
+        >
+            See Full Blogs →
+        </a>
+    </div>
+</section>
