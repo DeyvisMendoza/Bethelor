@@ -1,14 +1,15 @@
 ---
-import './src/styles/global.css' 
+import "../styles/global.css";
+import Header from '../components/Header.astro';
+import Home from '../pages/Home.astro'
 ---
-
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mi sitio con Astro + Tailwind</title>
-  </head>
-  <body class="bg-blue-100 text-center p-8">
-    <h1 class="text-4xl font-bold text-red-600">¡Hola mundo!</h1>
-    <p class="text-lg mt-4">Este es un sitio Astro con Tailwind.</p>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Prueba Tailwind</title>
+</head>
+<body >
+<Home />
+
+</body>
 </html>
