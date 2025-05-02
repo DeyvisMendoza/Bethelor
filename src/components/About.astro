@@ -1,18 +1,29 @@
----
-/* Astro Component Script */
----
 <section class="about py-16 px-6 bg-white text-black">
     <!-- Title and Introduction -->
-    <div class="max-w-5xl mx-auto text-center mb-12">
-        <h2 class="text-4xl font-bold mb-4">About Bethelor.</h2>
+    <div class="max-w-7xl mx-auto text-left mb-12">
+        <h2 class="text-5xl font-bold mb-4">About Bethelor.</h2>
         <p class="text-lg font-medium">
             Home Remodeling with Integrity, Craftsmanship, and Vision.
         </p>
     </div>
 
     <!-- Content Section -->
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        <!-- Left Column: Text -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <!-- Left Column: Overlapping Circles -->
+        <div class="relative">
+            <!-- Circle 1 (Gray) -->
+            <div class="bg-gray-100 rounded-full w-32 h-32 flex flex-col items-center justify-center text-center text-xl font-bold absolute z-10">
+                +12
+                <p class="text-sm font-medium text-gray-600 mt-1">Done Projects</p>
+            </div>
+            <!-- Circle 2 (Black) -->
+            <div class="bg-black text-white rounded-full w-32 h-32 flex flex-col items-center justify-center text-center text-xl font-bold absolute top-12 left-12 z-0">
+                +23
+                <p class="text-sm font-medium mt-1">Years of Experience</p>
+            </div>
+        </div>
+
+        <!-- Right Column: Text -->
         <div>
             <p class="text-lg mb-6">
                 At Bethelor, we specialize in home remodeling and improvement services across Maryland. From kitchens and bathrooms to complete home renovations, we bring precision, passion, and personalized attention to every project—big or small.
@@ -24,45 +35,33 @@
                 Our team takes pride not only in what we build—but in how we make our clients feel throughout the process.
             </p>
         </div>
-
-        <!-- Right Column: Statistics -->
-        <div class="flex space-x-6 justify-center">
-            <!-- Completed Projects -->
-            <div class="text-center">
-                <div class="bg-gray-100 rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold">
-                    +12
-                </div>
-                <p class="mt-2 text-sm font-medium">Done Projects</p>
-            </div>
-            <!-- Years of Experience -->
-            <div class="text-center">
-                <div class="bg-black text-white rounded-full w-24 h-24 flex items-center justify-center text-2xl font-bold">
-                    +23
-                </div>
-                <p class="mt-2 text-sm font-medium">Years of Experience</p>
-            </div>
-        </div>
     </div>
 
     <!-- Image Gallery -->
-    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-6xl mx-auto">
+    <div class="mt-12 max-w-7xl mx-auto grid grid-cols-3 gap-4 items-start">
         <!-- Image 1 -->
-        <img
-                src="/images/cabinetry.jpg"
-                alt="Professional installing cabinetry"
-                class="w-full h-auto rounded-lg shadow-md"
-        />
+        <div>
+            <img
+                    src="public/about1.png"
+                    alt="Professional installing cabinetry"
+                    class="w-full h-auto rounded-lg shadow-md"
+            />
+        </div>
         <!-- Image 2 -->
-        <img
-                src="/images/planning.jpg"
-                alt="Team member working on a project"
-                class="w-full h-auto rounded-lg shadow-md"
-        />
+        <div>
+            <img
+                    src="public/about2.png"
+                    alt="Team member working on a project"
+                    class="w-full h-auto rounded-lg shadow-md"
+            />
+        </div>
         <!-- Image 3 -->
-        <img
-                src="/images/construction.jpg"
-                alt="Worker during construction"
-                class="w-full h-auto rounded-lg shadow-md"
-        />
+        <div>
+            <img
+                    src="public/about3.png"
+                    alt="Worker during construction"
+                    class="w-full h-auto rounded-lg shadow-md"
+            />
+        </div>
     </div>
 </section>
