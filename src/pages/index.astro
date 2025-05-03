@@ -1,15 +1,10 @@
 ---
-import './src/styles/global.css' 
+import BaseLayout from '../layouts/Layout.astro';
+import "../styles/global.css";
+import Welcome from './home/Welcome.astro';
+
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mi sitio con Astro + Tailwind</title>
-  </head>
-  <body class="bg-blue-100 text-center p-8">
-    <h1 class="text-4xl font-bold text-red-600">¡Hola mundo!</h1>
-    <p class="text-lg mt-4">Este es un sitio Astro con Tailwind.</p>
-    <p class="text-lg mt-4">Mi primer cambio</p>
-  </body>
-</html>
+<BaseLayout title="Acerca de Nosotros">
+  <Welcome/>
+</BaseLayout>

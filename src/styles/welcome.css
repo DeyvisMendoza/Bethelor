@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* Section Styles */
+.welcome {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Section Layout */
+.main-section {
+  display: flex;
+  width: 1450px;
+  /* max-width: 1450px; */
+  /* padding: 2rem 1rem; */
+  gap: 5px;
+}
+
+/* Left Section: Welcome1 (50%) */
+.image-text-container {
+  flex: 1;
+  position: relative;
+  height: 700px;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  /* opacity: 1.5; */
+  /* filter: brightness(1.2); */
+}
+
+.text-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 3rem;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+.text-container h1 {
+  font-family: "Host Grotesk", sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.text-container p {
+  font-size: 1.25rem;
+}
+
+/* Right Section: Welcome2 and Welcome3 (50%) */
+.right-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-images {
+  flex: 2;
+  display: flex;
+  gap: 5px;
+  height: 100%;
+}
+
+.image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.description {
+  flex: 1;
+  color: #fff; /* Texto blanco directamente sobre el fondo negro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  p{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+}
+
+/* Buttons Section */
+.button-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  /* margin: 2rem auto 0; */
+  }
+
+.button-section a {
+  display: block;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  padding: 25px;
+  text-decoration: none;
+  border: 1px solid #383838;
+  transition: background-color 0.3s;
+}
+
+.button-section a:hover {
+  background-color: #333;
+}

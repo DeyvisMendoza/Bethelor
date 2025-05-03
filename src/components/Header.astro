@@ -1,0 +1,131 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cal+Sans&family=Days+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira+Stencil+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+  header {
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content :center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+
+  }
+  .boton-menu {
+    background-color: #000;
+    color: #fff;
+    border: rgb(62, 62, 62) 0.5px solid;
+    cursor: pointer;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .boton-menu:hover {
+    background-color: #333;
+  }
+
+  .containerLogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin: auto;
+  }
+
+  .name-logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+  }
+
+  .texto-alternativo {
+    display: block;
+    font-size: 10px;
+    margin-top: -15px;
+  }
+
+  .contact-info {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    p {
+      font-size: 0.8rem;
+      font-family: "DM Sans", sans-serif;
+    }
+  }
+
+  .container-request {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 243px;
+    height: 50px;
+
+    a {
+      color: #000;
+      font-size: 16px;
+      font-family: "DM Sans", sans-serif;
+    }
+  }
+</style>
+
+<header class="bg-black text-white">
+  <div class="container mx-auto flex items-center py-4 px-6">
+    <!-- Logo Section -->
+    <div class="flex items-center gap-10">
+      <button class="boton-menu">MENU</button>
+      <div class="containerLogo">
+        <h1 class="name-logo">BETHELOR</h1>
+        <p class="texto-alternativo">Home Contruction & Remodeling</p>
+      </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-info flex space-x-8 gap-6">
+      <!-- Address -->
+      <div class="flex items-center space-x-2 gap-2">
+        <img src="/public/icons/location.png" alt="" />
+        <p>59 Serpent Cir, Roadside, MO 21337</p>
+      </div>
+      <!-- Phone -->
+      <div class="flex items-center space-x-2 gap-2">
+        <img src="/public/icons/phone.png" alt="" />
+        <p>+1 240 618 7916</p>
+      </div>
+      <!-- Email -->
+      <div class="flex items-center space-x-2 gap-2">
+        <img src="/public/icons/send.png" alt="" />
+        <p>Contact@bethelor.com</p>
+      </div>
+      <!-- Call to Action -->
+      <div class="container-request">
+        <!-- <a href="#" class=""> Request your free quote → </a> -->
+        <img
+          src="/public/icons/boton.png"
+          alt=""
+          style={
+            {
+              width: "80%",
+              height: "100%",
+              cursor: "pointer",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</header>
