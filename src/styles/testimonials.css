@@ -1,0 +1,103 @@
+.testimonials-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+  h2 {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+}
+
+.testimonials-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  overflow: hidden;
+}
+
+.testimonials-slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 10px;
+  width: 100%; /*no olvidar de siempre poner el 100%*/
+}
+
+.testimonials-slider-img {
+  width: 100%;
+  height: 500px;
+  flex-shrink: 0;
+  object-fit: cover;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}
+
+.testimonial-image {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+
+  img {
+    filter: grayscale(100%);
+    width: 80px;
+    height: 80px;
+  }
+
+  h4 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: #383838;
+  }
+
+  p {
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #383838;
+  }
+}
+
+.testimonial-text {
+  p {
+    display: block;
+    width: 500px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+.testimonial-pagination {
+  margin-top: 18px;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+}
+
+.testimonials-slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+.testimonials-slider-btn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}

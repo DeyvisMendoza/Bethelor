@@ -1,0 +1,191 @@
+---
+import "../styles/testimonials.css";
+import "../styles/global.css";
+---
+
+<section class="testimonials-section">
+  <h2>Testimonials</h2>
+  <!-- Featured Projects Slider -->
+  <div class="testimonials-slider-container">
+    <!-- Imágenes -->
+    <div class="testimonials-slider-track">
+      <div class="testimonials-slider-img">
+        <div class="testimonial-image">
+          <img src="public/icons/testimonial1.png" alt="" />
+          <h4 class="testimonial-name">Lisa Thompson</h4>
+          <p class="testimonial-location">Bathroom Remodel - Essex, MD</p>
+        </div>
+        <div class="testimonial-text">
+          <p>
+            “I only needed a small bathroom repair, but Anthony and Valerie made
+            it feel like a full renovation. They fixed the plumbing, replaced
+            the vanity and toilet, and gave everything a clean, fresh look. I
+            never expected such care for a small job. Affordable, on time, and
+            truly professional—I absolutely recommend Bethelor for anyone in
+            Maryland looking for bathroom remodeling.”
+          </p>
+        </div>
+        <div class="testimonial-pagination">
+          <span>1/6</span>
+        </div>
+      </div>
+      <div class="testimonials-slider-img">
+        <div class="testimonial-image">
+          <img src="public/icons/testimonial2.png" alt="" />
+          <h4 class="testimonial-name">Michael Rivera</h4>
+          <p class="testimonial-location">
+            Interior & Exterior Painting - Dundalk, MD
+          </p>
+        </div>
+        <div class="testimonial-text">
+          <p>
+            “Bethelor painted my entire home inside and out, and the difference
+            is unbelievable. Anthony and Valerie were so respectful and
+            detail-focused. They repaired the window and door frames before
+            painting, and it shows—they didn’t cut corners. The results feel
+            like a new house. If you’re looking for quality house painting in
+            Maryland that’s on time and affordable, this is the team to call.”
+          </p>
+        </div>
+        <div class="testimonial-pagination">
+          <span>2/6</span>
+        </div>
+      </div>
+      <div class="testimonials-slider-img">
+        <div class="testimonial-image">
+          <img src="public/icons/testimonial3.png" alt="" />
+          <h4 class="testimonial-name">Jasmine Brooks</h4>
+          <p class="testimonial-location">Kitchen Remodeling - Towson, MD</p>
+        </div>
+        <div class="testimonial-text">
+          <p>
+            “I couldn’t believe how beautiful my kitchen turned out.From the 3D
+            render to the blue cabinets, everything matched perfectly. Valerie
+            kept me updated and finished the project on time. If you’re planning
+            a kitchen remodel in Maryland, trust Bethelor. Great results, fair
+            price, and a team that truly cares.”
+          </p>
+        </div>
+        <div class="testimonial-pagination">
+          <span>3/6</span>
+        </div>
+      </div>
+      <div class="testimonials-slider-img">
+        <div class="testimonial-image">
+          <img src="public/icons/testimonial4.png" alt="" />
+          <h4 class="testimonial-name">Daniel Morgan</h4>
+          <p class="testimonial-location">Small Bathroom Refresh - Glen Burnie, MD</p>
+        </div>
+        <div class="testimonial-text">
+          <p>
+            “My bathroom had water damage and looked outdated. Anthony and Valerie stepped in and made it feel brand new. They fixed the plumbing, painted, and installed a new toilet—fast and clean. Even though it was a small bathroom remodel, they treated it like a big project. Honest, affordable, and truly professional.”
+          </p>
+        </div>
+        <div class="testimonial-pagination">
+          <span>4/6</span>
+        </div>
+      </div>
+      <div class="testimonials-slider-img">
+        <div class="testimonial-image">
+          <img src="public/icons/testimonial5.png" alt="" />
+          <h4 class="testimonial-name">Karen White</h4>
+          <p class="testimonial-location">Full Exterior Paint & Repairs - Bethesda, MD</p>
+        </div>
+        <div class="testimonial-text">
+          <p>
+            “My home looked tired, but Bethelor brought it back to life. They painted the exterior and interior, and repaired the window and door trim. Anthony and Valerie were kind, punctual, and detailed. If you need exterior house painting in Bethesda at a fair price, this is your team.”
+          </p>
+        </div>
+        <div class="testimonial-pagination">
+          <span>5/6</span>
+        </div>
+      </div>
+      <div class="testimonials-slider-img">
+        <div class="testimonial-image">
+          <img src="public/icons/testimonial6.png" alt="" />
+          <h4 class="testimonial-name">Brian Carter</h4>
+          <p class="testimonial-location">Kitchen Remodel - Gaithersburg, MD</p>
+        </div>
+        <div class="testimonial-text">
+          <p>
+            “I dreamed of a modern kitchen, and Bethelor made it real. Anthony’s 3D design gave me confidence, and the blue cabinets look stunning. They handled everything—from permits to the final touch—on time and stress-free. If you’re remodeling a kitchen in Maryland, call them.”
+          </p>
+        </div>
+        <div class="testimonial-pagination">
+          <span>6/6</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flechas -->
+    <div class="testimonials-slider-controls">
+      <img
+        src="public/icons/boton-left.png"
+        class="testimonials-slider-btn testimonials-left"
+      />
+      <img
+        src="public/icons/boton-rigth-white.png"
+        class="testimonials-slider-btn testimonials-right"
+      />
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".testimonials-slider-track");
+    const images = document.querySelectorAll(".testimonials-slider-img");
+    const btnLeft = document.querySelector(
+      ".testimonials-slider-btn.testimonials-left"
+    );
+    const btnRight = document.querySelector(
+      ".testimonials-slider-btn.testimonials-right"
+    );
+
+    const imageWidth = images[0].clientWidth + 10;
+    let current = 1;
+
+    // Clonar primera y última imagen
+    const firstClone = images[0].cloneNode(true);
+    const lastClone = images[images.length - 1].cloneNode(true);
+
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, images[0]);
+
+    const allImages = document.querySelectorAll(".testimonials-slider-img");
+
+    function updateSlider(animate = true) {
+      if (!animate) {
+        track.style.transition = "none";
+      } else {
+        track.style.transition = "transform 0.5s ease-in-out";
+      }
+      track.style.transform = `translateX(-${current * imageWidth}px)`;
+    }
+
+    btnRight.addEventListener("click", () => {
+      if (current >= allImages.length - 1) return;
+      current++;
+      updateSlider();
+    });
+
+    btnLeft.addEventListener("click", () => {
+      if (current <= 0) return;
+      current--;
+      updateSlider();
+    });
+
+    // Rebote al principio o final
+    track.addEventListener("transitionend", () => {
+      if (allImages[current].isSameNode(firstClone)) {
+        current = 1;
+        updateSlider(false);
+      } else if (allImages[current].isSameNode(lastClone)) {
+        current = allImages.length - 2;
+        updateSlider(false);
+      }
+    });
+
+    updateSlider(false); // Posiciona en la 1ra real
+  });
+</script>
