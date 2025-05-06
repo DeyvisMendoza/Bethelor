@@ -1,0 +1,181 @@
+.about-section {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    gap: 10px;
+  }
+  
+  .about-header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 60px;
+    padding-right: 100px;
+    width: 1150px;
+    gap: 130px;
+  }
+  
+  .about-header img {
+    width: 120px;
+  }
+  
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    gap: 15px;
+  }
+  
+  .about-intro h2 {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  .about-intro p {
+    width: 90%;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #838383;
+  }
+  
+  .about-cicle-text {
+    display: flex;
+    flex-direction: row;
+    width: 1100px;
+    padding: 50px;
+    z-index: 5;
+  }
+  
+  .container-cicles {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+  
+  .cicle-white,
+  .cicle-black {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 35px;
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: transform 0.5s ease, margin 0.1s ease, z-index 0.1s ease;
+  }
+  
+  /* Estilos base */
+  .container-cicles:not(.swap) .cicle-white {
+    background-color: rgb(227, 227, 227);
+    color: rgb(121, 121, 121);
+    z-index: 2;
+    transform: translateX(0);
+  }
+  
+  .container-cicles:not(.swap) .cicle-black {
+    background-color: black;
+    color: white;
+    z-index: 1;
+    margin-left: -70px;
+    transform: translateX(0px);
+  }
+  
+  /* Estilos al intercambiar */
+  .container-cicles.swap .cicle-white {
+    background-color: rgb(227, 227, 227);
+    color: rgb(121, 121, 121);
+    transform: translateX(70px);
+    margin-left: 0;
+    margin-right: -70px;
+    z-index: 1;
+  }
+  
+  .container-cicles.swap .cicle-black {
+    background-color: black;
+    color: white;
+    transform: translateX(-70px);
+    margin-left: 0;
+    z-index: 2;
+  }
+  
+  /* Tipografía dentro de los círculos */
+  .cicle-white p,
+  .cicle-black p {
+    font-size: 12px;
+  }
+  
+  .cicle-white span,
+  .cicle-black span {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .container-text {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .container-text h3 {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    user-select: none;
+  }
+  
+  .container-text p {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: #838383;
+    user-select: none;
+
+  }
+  
+  .about-images {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: row;
+    gap: 15px;
+    width: 1100px;
+    position: relative;
+    margin-top: -70px;
+    z-index: 100;
+  }
+  
+  .about-image1 {
+    width: 400px;
+    height: 600px;
+  }
+  
+  .about-image2 {
+    width: 315px;
+    height: 400px;
+  }
+  
+  .about-image3 {
+    width: 315px;
+    height: 350px;
+  }
+  

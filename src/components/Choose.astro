@@ -1,0 +1,79 @@
+---
+import "../styles/choose.css";
+import "../styles/global.css";
+---
+
+
+<section class="choose-section">
+  <div class="choose-image-text-container">
+    <div
+      class="choose-image-overlay"
+      style="background-image: url('/public/icons/choose1.png');"
+    >
+    </div>
+    <div class="choose-text-container">
+      <h1>Why Choose Bethelor?</h1>
+    </div>
+  </div>
+
+  <div class="choose-content">
+    <div class="choose-content-wrapper">
+      <div class="choose-description">
+      <p>At Bethelor, we may be a small local team—but we go above and beyond to deliver big results.
+        <br>
+        <br>
+        Our commitment goes beyond construction. We build trust, create beautiful and functional spaces, and treat every project like it’s our own home.</p>
+      <img src="public/icons/boton-choose1.png" alt="">
+      </div>
+      <div class="choose-details">
+      <div class="choose-list">
+        <ul>
+        <li>Locally owned and operated in Maryland</li>
+        <li>Friendly, skilled, and detail-oriented crew</li>
+        <li>Transparent pricing and clear communication</li>
+        <li>Clean job sites, respectful of your home</li>
+        <li>Flexible scheduling and fast project turnaround</li>
+        </ul>
+      </div>
+      <div class="choose-stats">
+        <div class="choose-stat">
+          <!-- <span id="count1" class="count" data-target="12">0</span> -->
+           <span>+12</span>
+          <p>COMPLETED PROJECTS SINCE 2023</p>
+        </div>
+        <div class="choose-stat">
+          <!-- <span id="count2" class="count" data-target="100">0</span><span>%</span> -->
+          <span>100%</span>
+          <p>CLIENT SATISFACTION GOAL</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="f-box">
+    <h3>Thinking About Remodeling Your Home?</h3>
+    <img src="public/icons/boton.png" alt="">
+  </div>
+</section>
+
+<!-- Script para animación del contador -->
+<!-- <script is:inline>
+  const counters = document.querySelectorAll('.count[data-target]');
+
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / 100;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 50);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCount();
+  });
+</script> -->
