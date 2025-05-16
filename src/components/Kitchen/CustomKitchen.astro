@@ -1,42 +1,40 @@
 ---
-
+import "./Approach.css";
 ---
-<section class="bg-white">
-    <!-- Top Image Section -->
-    <div class="grid grid-cols-3 gap-4">
-        <img src="public/KitchenPage/kitchen1.png" alt="Modern Kitchen 1" class="w-full h-auto object-cover">
-        <img src="public/KitchenPage/kitchen2.png" alt="Modern Kitchen 2" class="w-full h-auto object-cover">
+<section class="kitchen-hero">
+    <!-- Top Images Row -->
+    <div class="kitchen-hero__top-images">
+        <img src="/KitchenPage/kitchen1.png" alt="Modern Kitchen 1" />
+        <img src="/KitchenPage/kitchen2.png" alt="Modern Kitchen 2" />
     </div>
-
-    <!-- Content Section -->
-    <div class="container mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- Text Content -->
-        <div>
-            <h1 class="text-4xl font-bold leading-tight mb-6">
-                Custom Kitchen <br> Remodeling in Maryland
+    <!-- Content Row (Text + Side Image, aligned as in the reference) -->
+    <div class="kitchen-hero__content-row">
+        <div class="kitchen-hero__text">
+            <h1>
+                Custom Kitchen <br />
+                Remodeling in <br />
+                Maryland
             </h1>
-            <p class="text-lg text-gray-700 mb-4">
-                Upgrade the heart of your home with a kitchen that blends style, function, and lasting value.
+            <p>
+                Upgrade the heart of your home with a kitchen that blends style, function, and lasting value.<br />
                 We specialize in custom kitchen remodeling across Maryland, transforming outdated kitchens into modern, functional, and beautiful spaces.
             </p>
-            <p class="text-lg text-gray-700 mb-4">
+            <p>
                 Whether you're dreaming of new cabinets, quartz countertops, smart lighting, or a full layout transformation — we bring craftsmanship and care to every detail.
             </p>
-            <ul class="list-disc list-inside text-lg text-gray-700 mb-4">
+            <ul>
                 <li>Proudly serving Rosedale, Towson, Glen Burnie, Baltimore, Bethesda, Gaithersburg, Germantown, and all of Montgomery County.</li>
                 <li>Request your free quote today and let’s bring your kitchen vision to life.</li>
             </ul>
-            <p class="text-lg text-gray-700 mb-6">
+            <p>
                 Serving Montgomery County with trusted kitchen remodeling solutions — contact Bethelor today to get started.
             </p>
-            <a href="#" class="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800">
+            <a href="#" class="kitchen-hero__cta">
                 Request your free quote →
             </a>
         </div>
-
-        <!-- Right Image -->
-        <div>
-            <img src="public/KitchenPage/kitchen3.png" alt="Custom Kitchen Design" class="w-full h-auto object-cover rounded-lg shadow-lg">
+        <div class="kitchen-hero__side-image">
+            <img src="/KitchenPage/kitchen3.png" alt="Custom Kitchen Design" />
         </div>
     </div>
 </section>
