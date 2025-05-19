@@ -1,0 +1,85 @@
+.btn-header {
+    position: relative;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    width: auto;
+    height: 45px;
+    font-size: 12px;
+    padding-left: 15px;
+    padding-right: 5px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    overflow: visible;
+    transition: all 0.3s ease;
+}
+
+.btn-header-arrow {
+    display: inline-block;
+    font-size: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-header-corner {
+    position: absolute;
+    background-color: #fff;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+
+.btn-header-top {
+    width: 210px;
+    height: 0.5px;
+    left: -5px;
+    top: 0;
+    transition: all 0.5s ease;
+}
+
+.btn-header-bottom {
+    width: 210px;
+    height: 1px;
+    left: -5px;
+    bottom: 0;
+    transition: all 0.4s ease;
+}
+
+.btn-header-left {
+    width: 1px;
+    height: 55px;
+    left: 0px;
+    bottom: -5px;
+    transition: all 0.5s ease;
+}
+
+.btn-header-right {
+    width: 0.5px;
+    height: 55px;
+    right: 1px;
+    bottom: -5px;
+    transition: all 0.4s ease;
+}
+
+.btn-header:hover .btn-header-top {
+    width: 10px;
+    left: 0px;
+}
+
+.btn-header:hover .btn-header-bottom {
+    width: 10px;
+    left: 0px;
+}
+
+.btn-header:hover .btn-header-left {
+    height: 10px;
+    bottom: 0px;
+}
+
+.btn-header:hover .btn-header-right {
+    height: 10px;
+    bottom: 0px;
+}

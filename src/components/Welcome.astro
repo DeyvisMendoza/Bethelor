@@ -36,7 +36,7 @@ import "../styles/welcome.css";
         </div>
       </div>
       <div class="description">
-        <p>
+        <p class="fade-in"  data-scroll>
           At Bethelor, we bring your vision to life with expert remodeling of
           kitchens, bathrooms, and interiors. Proudly serving Maryland with
           reliable craftsmanship, personalized designs, and results that feel
@@ -48,9 +48,34 @@ import "../styles/welcome.css";
 
   <!-- Buttons Section -->
   <div class="button-section">
-    <a href="/services">View All Services</a>
-    <a href="/projects">View All Projects</a>
-    <a href="/about">About Us</a>
-    <a href="/contact">Contact Us</a>
-  </div>
+  <div class="button-item"><a href="/services">View All Services</a></div>
+  <div class="button-item"><a href="/projects">View All Projects</a></div>
+  <div class="button-item"><a href="/about">About Us</a></div>
+  <div class="button-item"><a href="/contact">Contact Us</a></div>
+</div>
+
 </section>
+
+<!-- en caso se quiera un efecto, quitar el comentario -->
+
+<!-- <script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const section = document.querySelector(".button-section");
+    const links = section.querySelectorAll(".button-item a");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach((link, index) => {
+            setTimeout(() => {
+              link.classList.add("animate");
+            }, index * 300);
+          });
+          observer.unobserve(section); // solo una vez
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(section);
+  });
+</script> -->

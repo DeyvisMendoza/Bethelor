@@ -148,8 +148,7 @@
 .accordion-item.active .accordion-header {
   background: #ffffff;
   height: 400px;
-
-  transition: all 0.3s ease;
+  transition: all 1s ease;
   /* justify-content: end; */
 
   .accordion-content-inner h3 {
@@ -189,8 +188,9 @@
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 200px; /* Adjust this value based on your content */
+  max-height: 1000px; /* Adjust this value based on your content */
   padding: 1rem 1.5rem;
+
 }
 
 .accordion-item.active .accordion-header .icon {

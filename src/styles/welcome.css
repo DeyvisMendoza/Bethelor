@@ -2,6 +2,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
+/* === Animaciones === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Section Styles */
 .welcome {
   background-color: #000;
@@ -16,8 +28,6 @@
 .main-section {
   display: flex;
   width: 1450px;
-  /* max-width: 1450px; */
-  /* padding: 2rem 1rem; */
   gap: 5px;
 }
 
@@ -33,8 +43,11 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  /* opacity: 1.5; */
-  /* filter: brightness(1.2); */
+
+  /* Animación */
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .text-container {
@@ -44,7 +57,6 @@
   flex-direction: column;
   justify-content: end;
   padding: 3rem;
-  /* background-color: rgba(0, 0, 0, 0.4); */
 }
 
 .text-container h1 {
@@ -52,10 +64,20 @@
   font-size: 6rem;
   font-weight: bold;
   line-height: 1;
+
+  /* Animación */
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1s;
 }
 
 .text-container p {
   font-size: 1.25rem;
+
+  /* Animación */
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.4s;
 }
 
 /* Right Section: Welcome2 and Welcome3 (50%) */
@@ -77,23 +99,27 @@
   background-size: cover;
   background-position: center;
   height: 100%;
+
+  /* Animación */
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .description {
   flex: 1;
-  color: #fff; /* Texto blanco directamente sobre el fondo negro */
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-left: 50px;
   padding-right: 50px;
+}
 
-  p{
-    font-family: "DM Sans", sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-  }
-
+.description p {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
 }
 
 /* Buttons Section */
@@ -101,20 +127,57 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  /* margin: 2rem auto 0; */
-  }
-
-.button-section a {
-  display: block;
-  text-align: center;
-  background-color: #000;
-  color: #fff;
-  padding: 25px;
-  text-decoration: none;
-  border: 1px solid #383838;
-  transition: background-color 0.3s;
 }
 
-.button-section a:hover {
+.button-item {
+  text-align: center;
+  background-color: #000;
+  border: 1px solid #383838;
+  transition: background-color 0.3s;
+  padding: 25px;
+}
+
+/* Aplicamos el estilo normal al enlace */
+.button-item a {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid transparent;
+}
+
+/* Efecto de escritura cuando se activa */
+.button-item a.animate {
+  animation: typewriter 2s steps(20, end) forwards;
+  border-right: none; /* Eliminamos la línea del cursor al final */
+}
+
+.button-item:hover {
   background-color: #333;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 2s; /* ⏳ Cambia este valor para más demora */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
