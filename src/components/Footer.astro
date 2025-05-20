@@ -1,0 +1,89 @@
+---
+/* Astro Component Script */
+---
+<footer class="bg-black text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Column 1: Logo and Contact -->
+        <div>
+            <h3 class="text-xl font-bold mb-4">BETHELOR</h3>
+            <p class="text-sm">Home Construction & Remodeling</p>
+            <address class="not-italic mt-4 text-sm">
+                59 Serpens Ct, Rosedale, MD 21237<br />
+                Mail us: <a href="mailto:Contact@bethelor.com" class="text-blue-500">Contact@bethelor.com</a><br />
+                Call us: <a href="tel:+12406187916" class="text-blue-500">+1 240 618 7916</a>
+            </address>
+        </div>
+
+        <!-- Column 2: Explore Our Projects -->
+        <div>
+            <h3 class="text-lg font-bold mb-4">Explore Our Projects</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="/projects" class="hover:underline">All Projects</a></li>
+                <li><a href="/projects/kitchens" class="hover:underline">Kitchens</a></li>
+                <li><a href="/projects/bathrooms" class="hover:underline">Bathrooms</a></li>
+                <li><a href="/projects/painting" class="hover:underline">Interior & Exterior Painting</a></li>
+                <li><a href="/projects/additions" class="hover:underline">Home Additions</a></li>
+                <li><a href="/projects/repair" class="hover:underline">Home Repair & Improvement</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Links -->
+        <div>
+            <h3 class="text-lg font-bold mb-4">Links</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="/" class="hover:underline">Home</a></li>
+                <li><a href="/services" class="hover:underline">Services</a></li>
+                <li><a href="/about" class="hover:underline">About Us</a></li>
+                <li><a href="/contact" class="hover:underline">Contact</a></li>
+                <li><a href="/blogs" class="hover:underline">Blogs</a></li>
+                <li><a href="/privacy" class="hover:underline">Privacy Policy</a></li>
+                <li><a href="/terms" class="hover:underline">Terms of Use</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: CTA and Social Links -->
+        <div>
+            <p class="text-sm mb-4">
+                Ready to remodel your house in Maryland? Contact Bethelor today for a free quote and expert guidance from start to finish.
+            </p>
+            <a
+                    href="/contact"
+                    class="inline-block bg-white text-black px-6 py-3 rounded-lg text-sm hover:bg-gray-300"
+            >
+                Let’s Plan Your Remodel →
+            </a>
+            <div class="flex space-x-4 mt-6">
+                <a href="#facebook" class="text-white hover:text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.3h3.127V8.616c0-3.1 1.893-4.788 4.658-4.788 1.325 0 2.464.099 2.795.144v3.24h-1.918c-1.504 0-1.795.715-1.795 1.764v2.31h3.586l-.467 3.406h-3.12V24h6.116c.73 0 1.325-.593 1.325-1.324V1.325C24 .593 23.407 0 22.675 0z" />
+                    </svg>
+                </a>
+                <a href="#twitter" class="text-white hover:text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 4.557a9.93 9.93 0 01-2.828.775 4.932 4.932 0 002.165-2.725 9.864 9.864 0 01-3.127 1.195 4.918 4.918 0 00-8.379 4.482c-4.086-.205-7.713-2.165-10.148-5.144a4.822 4.822 0 00-.666 2.475 4.918 4.918 0 002.188 4.1 4.903 4.903 0 01-2.228-.616v.062a4.919 4.919 0 003.946 4.827 4.996 4.996 0 01-2.224.084 4.922 4.922 0 004.6 3.419A9.867 9.867 0 010 21.54a13.901 13.901 0 007.548 2.212c9.142 0 14.307-7.721 14.307-14.426 0-.219-.005-.437-.014-.653A10.243 10.243 0 0024 4.557z" />
+                    </svg>
+                </a>
+                <a href="#pinterest" class="text-white hover:text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.373 0 0 5.373 0 12c0 4.991 3.657 9.128 8.438 10.163-.117-.863-.223-2.188.046-3.125.241-.825 1.556-5.25 1.556-5.25s-.396-.793-.396-1.963c0-1.837 1.067-3.211 2.396-3.211 1.131 0 1.678.846 1.678 1.86 0 1.132-.719 2.83-1.089 4.405-.309 1.309.655 2.375 1.946 2.375 2.335 0 3.918-2.461 3.918-6.01 0-3.137-2.26-5.334-5.493-5.334-3.741 0-5.932 2.803-5.932 5.705 0 1.132.436 2.348.98 3.009a.394.394 0 01.09.377c-.098.417-.32 1.309-.362 1.492-.056.241-.217.29-.503.175-1.875-.75-3.05-3.104-3.05-5.006 0-4.073 2.956-7.812 8.525-7.812 4.466 0 7.938 3.191 7.938 7.461 0 4.423-2.785 7.983-6.65 7.983-1.297 0-2.515-.677-2.924-1.482l-.796 3.025c-.289 1.103-1.071 2.479-1.603 3.316C10.12 23.768 11.04 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                    </svg>
+                </a>
+                <a href="#instagram" class="text-white hover:text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7.5 2C4.462 2 2 4.462 2 7.5v9C2 19.538 4.462 22 7.5 22h9c3.038 0 5.5-2.462 5.5-5.5v-9C22 4.462 19.538 2 16.5 2h-9zm0 2h9c1.93 0 3.5 1.57 3.5 3.5v9c0 1.93-1.57 3.5-3.5 3.5h-9C5.57 20 4 18.43 4 16.5v-9C4 5.57 5.57 4 7.5 4zm12 1.5a1 1 0 110 2 1 1 0 010-2zM12 7c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
+        <p>Copyright © 2025 Mako by CeeaThemes. All Rights Reserved.</p>
+        <div class="flex justify-center space-x-4 mt-2">
+            <a href="/terms" class="hover:underline">Terms of Use</a>
+            <span>|</span>
+            <a href="/privacy-policy" class="hover:underline">Privacy Environmental Policy</a>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,79 @@
+<section class="projects py-16 px-6 bg-white text-black">
+    <!-- Title and Introduction -->
+    <div class="max-w-7xl mx-auto text-left">
+        <h2 class="text-5xl font-bold mb-4">Our Projects</h2>
+        <p class="text-lg mb-6">
+            Explore some of our featured remodeling projects across Maryland. From kitchens and bathrooms to full home makeovers, we bring quality and creativity into every space.
+        </p>
+        <div class="border-t border-gray-300 my-8"></div>
+    </div>
+
+    <!-- Project Content -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Categories List -->
+        <div class="lg:col-span-1">
+            <ul class="space-y-4 font-bold">
+                <li class="cursor-pointer hover:text-gray-700">All Projects <span class="text-sm text-gray-500 font-normal">(12)</span></li>
+                <li class="cursor-pointer hover:text-gray-700">Kitchen Remodeling <span class="text-sm text-gray-500 font-normal">(3)</span></li>
+                <li class="cursor-pointer hover:text-gray-700">Bathroom Remodeling <span class="text-sm text-gray-500 font-normal">(3)</span></li>
+                <li class="cursor-pointer hover:text-gray-700">Basement Remodeling <span class="text-sm text-gray-500 font-normal">(1)</span></li>
+                <li class="cursor-pointer hover:text-gray-700">Window & Door Replacement <span class="text-sm text-gray-500 font-normal">(5)</span></li>
+            </ul>
+        </div>
+
+        <!-- Featured Projects Slider -->
+        <div class="lg:col-span-3 relative overflow-hidden">
+            <!-- Slider Container -->
+            <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+                <!-- Slide 1 -->
+                <div class="flex-shrink-0 w-[600px] mx-2">
+                    <img
+                            src="public/projects1.png"
+                            alt="Kitchen Remodeling Project"
+                            class="w-full h-auto rounded-lg shadow-md"
+                    />
+                </div>
+                <!-- Slide 2 -->
+                <div class="flex-shrink-0 w-[350px] mx-2">
+                    <img
+                            src="public/projects2.png"
+                            alt="Bathroom Remodeling Project"
+                            class="w-full h-auto rounded-lg shadow-md"
+                    />
+                </div>
+                <!-- Slide 3 (Optional Example Image) -->
+
+            </div>
+            <!-- Navigation Arrows -->
+            <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black text-white w-10 h-10 rounded-full flex justify-center items-center hover:bg-gray-700 focus:outline-none">
+                &#9664; <!-- Left Arrow -->
+            </button>
+            <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black text-white w-10 h-10 rounded-full flex justify-center items-center hover:bg-gray-700 focus:outline-none">
+                &#9654; <!-- Right Arrow -->
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    // JavaScript para hacer funcional el slider con animación
+    const slider = document.getElementById('slider');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+    const slideWidth = 600 + 16; // Ancho de la imagen + margen (600px + 2*8px)
+
+    function updateSliderPosition() {
+        slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slider.children.length) % slider.children.length;
+        updateSliderPosition();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slider.children.length;
+        updateSliderPosition();
+    });
+</script>

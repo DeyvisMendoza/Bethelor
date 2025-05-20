@@ -1,0 +1,545 @@
+.custom-bath {
+    background: #fff;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Top images row */
+.custom-bath__top-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.custom-bath__top-images img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+}
+
+@media (max-width: 1000px) {
+    .custom-bath__top-images {
+        grid-template-columns: 1fr;
+    }
+    .custom-bath__top-images img:last-child {
+        display: none;
+    }
+}
+
+/* Content row */
+.custom-bath__content-row {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 3.5rem;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 2.5rem 1.5rem;
+    align-items: start;
+}
+
+.custom-bath__text {
+    align-self: flex-start;
+    max-width: 670px;
+}
+
+.custom-bath__text h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.06;
+    margin-bottom: 2.2rem;
+    color: #181818;
+    letter-spacing: -2px;
+}
+
+.custom-bath__text p {
+    font-size: 1.08rem;
+    color: #515151;
+    margin-bottom: 1.1rem;
+    line-height: 1.7;
+}
+
+.custom-bath__text ul {
+    margin-bottom: 1.2rem;
+    margin-left: 1.3rem;
+    color: #515151;
+    font-size: 1.08rem;
+    list-style: disc inside;
+}
+
+.custom-bath__cta {
+    display: inline-block;
+    background: #181818;
+    color: #fff;
+    padding: 0.85rem 2.1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    transition: background 0.16s;
+}
+
+.custom-bath__cta:hover {
+    background: #333;
+}
+
+.custom-bath__side-image {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: 2.2rem;
+}
+
+.custom-bath__side-image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.11);
+}
+
+/* Responsive: Stack columns on small screens */
+@media (max-width: 950px) {
+    .custom-bath__content-row {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .custom-bath__side-image {
+        justify-content: flex-start;
+        margin-top: 2.2rem;
+    }
+    .custom-bath__side-image img {
+        max-width: 100%;
+    }
+    .custom-bath__text h1 {
+        font-size: 2.4rem;
+    }
+}
+.approach-bath {
+    background: #f4f4ef;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-top: 1px solid #e9e8e1;
+}
+
+.approach-bath__container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+    max-width: none;
+    width: 100%;
+    min-height: 390px;
+}
+
+.approach-bath__image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.approach-bath__image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end; /* Empuja la imagen hacia la derecha */
+}
+
+.approach-bath__image img {
+    width: 82%;
+    height: 80%;
+    object-fit: cover;
+    min-height: 340px;
+    margin-right: 2.5%; /* Opcional: ajusta este valor para moverla aún más a la derecha */
+}
+
+.approach-bath__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.7rem 5% 3.7rem 7%;
+    background: #f4f4ef;
+}
+
+.approach-bath__content h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1.4rem;
+    color: #181818;
+    line-height: 1.18;
+}
+
+.approach-bath__content p {
+    font-size: 1.07rem;
+    color: #393939;
+    margin-bottom: 1.1rem;
+    line-height: 1.7;
+    max-width: 490px;
+}
+
+@media (max-width: 950px) {
+    .approach-bath__container {
+        grid-template-columns: 1fr;
+    }
+    .approach-bath__content {
+        padding: 2.7rem 7% 2.7rem 7%;
+    }
+    .approach-bath__image img {
+        min-height: 220px;
+    }
+}
+.top-banner {
+    background: #f4f4ef;
+    padding:3.2rem 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    display: flex;
+    justify-content: center;
+}
+
+.top-banner ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: disc inside;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.top-banner li {
+    color: #181818;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-align: center;
+    width: 150%;
+    max-width: 1700px;
+}
+.remodel-bath {
+    background: #fff;
+    padding: 4.5rem 1.5rem 3.5rem 1.5rem;
+    width: 100%;
+}
+
+.remodel-bath__title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #181818;
+    margin-bottom: 2.9rem;
+    letter-spacing: -1px;
+}
+
+.remodel-bath__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.1rem 3.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.remodel-bath__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+
+.remodel-bath__icon {
+    font-size: 1.25rem;
+    color: #111;
+    margin-top: 0.22rem;
+    flex-shrink: 0;
+}
+
+.remodel-bath__item-title {
+    font-size: 1.09rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #181818;
+    margin-bottom: 0.15rem;
+}
+
+.remodel-bath__item-desc {
+    font-size: 0.98rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+@media (max-width: 850px) {
+    .remodel-bath__grid {
+        grid-template-columns: 1fr;
+        gap: 1.6rem 0;
+    }
+}
+.prices {
+    background: #fafbfc;
+    width: 100%;
+    padding: 4rem 1.5rem 3.5rem 1.5rem;
+}
+
+.prices__title {
+    text-align: center;
+    font-size: 3.1rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: #181818;
+    margin-bottom: 1.9rem;
+    line-height: 1.10;
+}
+
+.prices__desc {
+    text-align: center;
+    max-width: 730px;
+    margin: 0 auto 2.8rem auto;
+    font-size: 1.08rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.prices__note {
+    font-size: 0.98rem;
+    color: #888;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.prices__tiers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.7rem;
+    max-width: 1100px;
+    margin: 0 auto 2.4rem auto;
+    flex-wrap: wrap;
+}
+
+.prices__tier {
+    background: #fff;
+    border-radius: 0.7rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    padding: 1.6rem 1.3rem 1.6rem 1.3rem;
+    flex: 1 1 280px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prices__img {
+    width: 100%;
+    max-width: 260px;
+    height: 205px;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    margin-bottom: 1.1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.prices__tier-title {
+    font-weight: 700;
+    font-size: 1.23rem;
+    letter-spacing: 0.01em;
+    color: #181818;
+    text-align: center;
+    margin-bottom: 0.18rem;
+}
+
+.prices__tier-sub {
+    font-size: 0.97rem;
+    color: #666;
+    margin-bottom: 0.45rem;
+    text-align: center;
+}
+
+.prices__tier-price {
+    font-size: 1.22rem;
+    font-weight: 650;
+    color: #181818;
+    margin-bottom: 0.65rem;
+    text-align: center;
+}
+
+.prices__tier-desc {
+    font-size: 0.98rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    width: 100%;
+}
+
+.prices__tier-desc ul {
+    margin: 0.7rem 0 0.7rem 1.2rem;
+    padding: 0;
+    color: #444;
+    font-size: 0.98rem;
+}
+
+.prices__cta-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.prices__cta {
+    display: inline-block;
+    background: #181818;
+    color: #fff;
+    padding: 0.85rem 2.1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    transition: background 0.16s;
+}
+
+.prices__cta:hover {
+    background: #333;
+}
+
+@media (max-width: 1000px) {
+    .prices__tiers {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+    .prices__tier {
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
+.questions-bath {
+    background: #fff;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #cfcfcf;
+    border-width: 0 1px 0 1px;
+    padding: 0;
+}
+
+.questions-bath__inner {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 3.6rem 1.5rem 3rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+}
+
+.questions-bath__intro {
+    flex: 1 1 420px;
+    min-width: 300px;
+    margin-bottom: 0;
+}
+
+.questions-bath__service {
+    font-size: 0.95rem;
+    color: #222;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.questions-bath__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.09;
+    color: #181818;
+    margin-bottom: 0.6rem;
+}
+
+.questions-bath__desc {
+    flex: 1 1 370px;
+    min-width: 270px;
+    color: #6a6a6a;
+    font-size: 1.04rem;
+    margin-top: 2.9rem;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.questions-bath__faq-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2.7rem;
+    width: 100%;
+    margin-top: 2.4rem;
+}
+
+.questions-bath__faq-col {
+    flex: 1 1 0;
+    min-width: 320px;
+    max-width: 50%;
+}
+
+.questions-bath__faq-item {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 0.7rem 0 0.7rem 0;
+}
+
+.questions-bath__faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.03rem;
+    color: #181818;
+    cursor: pointer;
+}
+
+.questions-bath__faq-toggle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 0.9rem;
+}
+
+.questions-bath__faq-a {
+    color: #989898;
+    font-size: 0.98rem;
+    margin-top: 0.59rem;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+@media (max-width: 1000px) {
+    .questions-bath__inner {
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 2.1rem 0.8rem 2.5rem 0.8rem;
+    }
+    .questions-bath__desc {
+        margin-top: 1.2rem;
+    }
+    .questions-bath__faq-grid {
+        flex-direction: column;
+        gap: 1.6rem;
+        margin-top: 1.6rem;
+    }
+    .questions-bath__faq-col {
+        max-width: 100%;
+        min-width: 0;
+    }
+}

@@ -1,0 +1,143 @@
+<section class="about py-16 px-6 bg-gray-100 text-black w-full">
+    <div class="max-w-7xl mx-auto flex items-start">
+        <!-- Left Section: Image -->
+        <div class="relative w-1/3">
+            <img
+                    src="public/contact.png"
+                    alt="Team working on a project"
+                    class="w-full h-auto object-cover rounded-lg shadow-md"
+                    style="height: calc(100% - 200px); max-height: 600px;"
+            />
+        </div>
+
+        <!-- Right Section: Header, Communications, and Form -->
+        <div class="w-2/3 pl-8">
+            <!-- Header -->
+            <div class="mb-8">
+                <h2 class="text-4xl font-bold">Let’s Talk About Your Project in Maryland</h2>
+                <p class="text-lg mt-4">
+                    Tell us your vision, and we’ll make it real. Whether you’re updating a small bathroom or planning a full home remodel, our team is ready to help—on time and within budget.
+                </p>
+            </div>
+
+            <!-- Communications and Form -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Communications -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Communications</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.88 3.549a9 9 0 11-9.45 15.451m9.45-15.451L12 12l-1.88-1.88m6.76-6.571L12 12" />
+                                </svg>
+                            </span>
+                            <p>59 Serpens Ct, Rosedale, MD 21237</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 10l9-6 9 6v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8z" />
+                                </svg>
+                            </span>
+                            <p>
+                                Mail: <a href="mailto:Contact@bethelor.com" class="text-blue-500">Contact@bethelor.com</a><br />
+                                Phone: <a href="tel:+12406187916" class="text-blue-500">+1 240 618 7916</a>
+                            </p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01m6.938-4A8.001 8.001 0 014.062 16m13.876 0A8.001 8.001 0 014.062 16M4.062 8a8.001 8.001 0 0115.876 0m-15.876 0h15.876" />
+                                </svg>
+                            </span>
+                            <p>Monday - Friday: 8:00am - 5:00pm<br />Holiday: Closed</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Drop A Line Form -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Drop A Line</h3>
+                    <form action="/submit" method="POST" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input
+                                    type="text"
+                                    name="fullName"
+                                    placeholder="*Full Name"
+                                    required
+                                    class="border p-3 rounded-lg w-full"
+                            />
+                            <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="*Email"
+                                    required
+                                    class="border p-3 rounded-lg w-full"
+                            />
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input
+                                    type="tel"
+                                    name="phoneNumber"
+                                    placeholder="*Phone Number"
+                                    required
+                                    class="border p-3 rounded-lg w-full"
+                            />
+                            <select
+                                    name="service"
+                                    required
+                                    class="border p-3 rounded-lg w-full"
+                            >
+                                <option value="">Service Needed</option>
+                                <option value="bathroom">Bathroom Remodel</option>
+                                <option value="kitchen">Kitchen Remodel</option>
+                                <option value="full-home">Full Home Remodel</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input
+                                    type="text"
+                                    name="address"
+                                    placeholder="*Address"
+                                    required
+                                    class="border p-3 rounded-lg w-full"
+                            />
+                            <input
+                                    type="text"
+                                    name="zipCode"
+                                    placeholder="Zip Code"
+                                    class="border p-3 rounded-lg w-full"
+                            />
+                        </div>
+                        <textarea
+                                name="description"
+                                rows="4"
+                                placeholder="Briefly describe your project"
+                                class="border p-3 rounded-lg w-full"
+                        ></textarea>
+                        <div class="flex items-start">
+                            <input
+                                    type="checkbox"
+                                    name="agreement"
+                                    id="agreement"
+                                    required
+                                    class="mt-1 mr-2"
+                            />
+                            <label for="agreement" class="text-sm">
+                                I agree to receive occasional project updates and special offers from Bethelor. My information will stay private and never be shared without permission.
+                            </label>
+                        </div>
+                        <button
+                                type="submit"
+                                class="bg-black text-white px-6 py-3 rounded-lg text-sm hover:bg-gray-800 w-full sm:w-auto"
+                        >
+                            Get a Free Estimate →
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
