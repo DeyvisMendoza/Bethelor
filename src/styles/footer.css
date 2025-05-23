@@ -3,14 +3,7 @@ svg {
   height: auto;
 }
 
-img {
-  width: 40px;
-  height: auto;
-  margin-right: 10px;
-}
-img:hover {
-  filter: invert(100%);
-}
+
 
 .footer-bg {
   background-color: #000000;
@@ -21,6 +14,16 @@ img:hover {
   justify-content: start;
   flex-direction: column;
   gap: 20px;
+
+
+  img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+img:hover {
+  filter: invert(100%);
+}
 }
 
 .footer-container {
