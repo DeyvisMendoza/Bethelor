@@ -1,0 +1,140 @@
+svg {
+  width: 40px;
+  height: auto;
+}
+
+img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+img:hover {
+  filter: invert(100%);
+}
+
+.footer-bg {
+  background-color: #000000;
+  color: #efefef;
+  padding: 20px 100px;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 20px;
+  width: 100%;
+  gap: 50px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+}
+
+.footer-contact-item {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+  margin-bottom: 10px;
+
+  span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6d6d6d;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.footer-col {
+  width: 100%;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      font-size: 14px;
+      font-weight: 400;
+      color: #6d6d6d;
+      cursor: pointer;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .footer-cta-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #aeaeae;
+    margin-bottom: 10px;
+  }
+}
+
+.footer-socials {
+  margin-top: 40px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 5px;
+}
+
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    gap: 50px;
+    border-top: 1px solid #373737;
+
+    p{
+        font-size: 14px;
+        font-weight: 400;
+        color: #6d6d6d;
+    }
+
+    a{
+        font-size: 14px;
+        font-weight: 400;
+        color: #6d6d6d;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover{
+            color: #ffffff;
+        }
+    }
+}

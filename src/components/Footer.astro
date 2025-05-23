@@ -1,11 +1,119 @@
-<footer class="bg-gray-800 text-white p-4 mt-8">
-    <div class="max-w-7xl mx-auto text-center">
-      <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.</p>
-      <div class="mt-4">
-        <a href="https://twitter.com" class="text-blue-400 hover:text-blue-600 mx-2">Twitter</a>
-        <a href="https://linkedin.com" class="text-blue-400 hover:text-blue-600 mx-2">LinkedIn</a>
-        <a href="https://facebook.com" class="text-blue-400 hover:text-blue-600 mx-2">Facebook</a>
+---
+import "../styles/global.css";
+import "../styles/footer.css";
+import BotonFooter from "./Boton/BotonFooter.astro";
+---
+
+<style>
+  .name-logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+  }
+
+  .texto-alternativo {
+    display: block;
+    font-size: 10px;
+    margin-top: -15px;
+    margin-bottom: 25px;
+  }
+</style>
+
+<footer class="footer-bg footer-text footer-py footer-px">
+  <div class="footer-container footer-grid footer-gap">
+    <!-- Column 1: Logo and Contact -->
+    <div class="footer-logo">
+      <h3 class="name-logo">BETHELOR</h3>
+      <p class="texto-alternativo">Home Construction & Remodeling</p>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Address</span>
+        <p class="footer-contact-info">59 Serpens Ct, Rosedale, MD 21237</p>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Mail us:</span>
+        <p class="footer-contact-info">Contact@bethelor.com</p>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Call us:</span>
+        <p class="footer-contact-info">+1 240 618 7916</p>
       </div>
     </div>
-  </footer>
-  
+
+    <!-- Column 2: Explore Our Projects -->
+    <div class="footer-col">
+      <h3 class="footer-col-title">Explore Our Projects</h3>
+      <ul class="footer-list">
+        <li><a href="/projects" class="footer-link-hover">All Projects</a></li>
+        <li>
+          <a href="/projects/kitchens" class="footer-link-hover">Kitchens</a>
+        </li>
+        <li>
+          <a href="/projects/bathrooms" class="footer-link-hover">Bathrooms</a>
+        </li>
+        <li>
+          <a href="/projects/painting" class="footer-link-hover"
+            >Interior & Exterior Painting</a
+          >
+        </li>
+        <li>
+          <a href="/projects/additions" class="footer-link-hover"
+            >Home Additions</a
+          >
+        </li>
+        <li>
+          <a href="/projects/repair" class="footer-link-hover"
+            >Home Repair & Improvement</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Links -->
+    <div class="footer-col">
+      <h3 class="footer-col-title">Links</h3>
+      <ul class="footer-list">
+        <li><a href="/" class="footer-link-hover">Home</a></li>
+        <li><a href="/services" class="footer-link-hover">Services</a></li>
+        <li><a href="/about" class="footer-link-hover">About Us</a></li>
+        <li><a href="/contact" class="footer-link-hover">Contact</a></li>
+        <li><a href="/blogs" class="footer-link-hover">Blogs</a></li>
+        <li><a href="/privacy" class="footer-link-hover">Privacy Policy</a></li>
+        <li><a href="/terms" class="footer-link-hover">Terms of Use</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: CTA and Social Links -->
+    <div class="footer-col">
+      <p class="footer-cta-desc">
+        Ready to remodel your house in Maryland? Contact Bethelor today for a
+        free quote and expert guidance from start to finish.
+      </p>
+      <BotonFooter />
+      <div class="footer-socials">
+        <a href="#facebook" class="footer-social-link">
+          <img src="public/icons/facebook.png" alt="" />
+        </a>
+        <a href="#facebook" class="footer-social-link">
+          <img src="public/icons/twitter.png" alt="" />
+        </a>
+        <a href="#facebook" class="footer-social-link">
+          <img src="public/icons/pinterest.png" alt="" />
+        </a>
+        <a href="#facebook" class="footer-social-link">
+          <img src="public/icons/telegram.png" alt="" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>Copyright © 2025 Mako by CeeaThemes. All Rights Reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="/terms" class="footer-link-hover"
+        >Terms of Use / Privacy Environmental Policy</a
+      >
+    </div>
+  </div>
+</footer>
