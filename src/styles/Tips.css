@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.tips-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 10px 40px 10px;
+  flex-direction: column;
+  
+  gap: 20px;
+}
+
+.tips {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 300px;
+  background-color: #ffffff;
+  width: 100%;
+
+  h3 {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+  }
+
+  p {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+
+.tips-card-container{
+  display: flex;
+  gap: 20px;
+}
+
+.tip-card {
+  width: 300px;
+  background: white;
+  overflow: hidden;
+}
+
+.tip-image-container {
+  position: relative;
+}
+
+.tip-image-container img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.tip-date-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tip-date-box {
+  .tip-day p {
+    font-size: 30px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 0.5px;
+  background-color: rgb(89, 89, 89);
+  margin: 10px 0;
+}
+
+.tip-date-box .tip-month {
+  font-size: 12px;
+  font-weight: 300;
+  display: inline-block;
+  padding-top: 5px;
+  border-top: 1px solid rgb(169, 169, 169);
+}
+
+.tip-tag-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  font-size: 8px;
+  text-transform: uppercase;
+  font-family: "DM Sans", sans-serif;
+}
+
+.tip-content {
+  padding: 20px 0px;
+}
+
+.tip-content h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 10px;
+  font-family: "Host Grotesk", sans-serif;
+}
+
+.tip-content p {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+    font-family: "Host Grotesk", sans-serif;
+
+}
