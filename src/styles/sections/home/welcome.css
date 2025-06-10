@@ -13,21 +13,20 @@
 }
 
 /* === Section Styles === */
-/* Asegúrate de que el contenedor principal .welcome tenga sus estilos base */
 .welcome {
-  padding: 1.5rem 0.5rem; /* Ajusta padding para pantallas pequeñas */
+  padding: 1.5rem 0.5rem; 
 }
 
 .main-section {
   width: 100%;
   max-width: 1450px;
-  gap: 0.3125rem; /* 5px convertido a rem */
+  gap: 0.3125rem; 
 }
 
 .image-text-container {
   min-width: 400px;
   height: 700px;
-  position: relative; /* Asegura que los hijos absolutos se posicionen correctamente */
+  position: relative; 
 }
 
 .image-overlay {
@@ -42,7 +41,7 @@
 
 .text-container {
   padding: 3rem;
-  /* Las animaciones de opacidad y desplazamiento para h1 y p se manejan con Framer Motion */
+
 }
 
 .text-container h1 {
@@ -50,17 +49,17 @@
   font-size: 6rem;
   font-weight: bold;
   line-height: 1;
-  /* Removidas las propiedades de animación para h1, Framer Motion las gestiona */
+
 }
 
 .text-container p {
   font-size: 1.25rem;
-  /* Removidas las propiedades de animación para p, Framer Motion las gestiona */
+
 }
 
 .right-container {
   min-width: 400px;
-  display: flex; /* Asegura el flexbox si flex-direction es column en mobile */
+  display: flex;
   flex-direction: column;
 }
 
@@ -68,21 +67,21 @@
   display: flex;
   gap: 0.3125rem;
   height: 100%;
-  flex: 2; /* Para que ocupe más espacio que la descripción si es un flex-column */
+  flex: 2; 
 }
 
 .image {
   flex: 1;
   background-size: cover;
   background-position: center;
-  height: 100%; /* Asegura que la imagen ocupe la altura de su contenedor flex */
-  opacity: 0; /* Mantenemos esta animación CSS para las imágenes secundarias */
+  height: 100%; 
+  opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.4s;
 }
 
 .description {
-  flex: 1; /* Para que ocupe el espacio restante */
+  flex: 1; 
   color: #fff;
   display: flex;
   justify-content: center;
@@ -94,15 +93,15 @@
 .description p {
   font-family: "DM Sans", sans-serif;
   font-weight: 300;
-  font-size: 0.875rem; /* 14px convertido a rem */
+  font-size: 0.875rem; 
 }
 
-/* La clase fade-in se mantiene para animaciones basadas en scroll o retrasos específicos no controlados por Motion */
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 2s; /* Este delay se mantiene si así lo deseas para esta sección */
+  animation-delay: 2s;
 }
 
 /* === Buttons Section === */
@@ -119,7 +118,7 @@
   background-color: #000;
   border: 1px solid #383838;
   transition: background-color 0.3s ease;
-  padding: 1.5625rem; /* 25px convertido a rem */
+  padding: 1.5625rem; 
 }
 
 .button-item a {
@@ -131,7 +130,7 @@
   border-right: 0.09375rem solid transparent;
 }
 
-/* Estas animaciones de máquina de escribir y cursor se mantienen si las estás usando */
+
 .button-item a.animate {
   animation: typewriter 2s steps(20, end) forwards;
   border-right: none;
@@ -154,15 +153,15 @@
 @media (min-width: 1451px) {
   .main-section,
   .button-section {
-    max-width: 1450px; /* Cap the width for very large screens */
+    max-width: 1450px; 
   }
 }
 
 /* Large Tablets / Small Laptops (max-width: 1200px) */
 @media (max-width: 1200px) {
   .main-section {
-    flex-direction: column; /* Stack columns */
-    max-width: 90vw; /* Usa viewport width para un mejor escalado */
+    flex-direction: column; 
+    max-width: 90vw; 
   }
 
   .image-text-container {

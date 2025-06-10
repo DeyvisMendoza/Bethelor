@@ -1,0 +1,386 @@
+/*
+ * CSS para la sección de servicios
+ * Enfocado en el responsive del título y la descripción
+ * Acordeón sin cambios (mantiene tus estilos originales)
+ */
+
+/* -------------------- Variables CSS (Opcional, si no usas Tailwind para fuentes) -------------------- */
+:root {
+  --font-host-grotesk: "Host Grotesk", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
+}
+
+/* -------------------- Sección Principal de Servicios (.services-section) -------------------- */
+.services-section {
+  background-color: white;
+  max-width: 1450px; /* Ancho máximo del contenedor principal */
+  margin: 0 auto; /* Centra la sección horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los ítems internos (header, acordeón) horizontalmente */
+  padding-top: 1rem; /* Espaciado superior e inferior para móviles */
+  padding-bottom: 2rem;
+}
+
+/* -------------------- Encabezado de la Sección (.services-header & .services-intro) -------------------- */
+.services-header {
+  /*
+   * MOBILE-FIRST: Estilos base para pantallas pequeñas (hasta 767px)
+   */
+  min-height: 250px; /* Altura mínima flexible, se expandirá con el contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Alinear contenido hacia abajo */
+  align-items: flex-end; /* Alinear contenido a la derecha */
+  padding: 1.5rem 1rem; /* Padding base para móviles: 24px vertical, 16px horizontal */
+  width: 90%; /* Ancho de la cabecera en móviles */
+  text-align: left; /* Alineación del texto general de la cabecera */
+}
+
+.services-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espaciado entre el título y el párrafo (16px) */
+  max-width: 650px; /* Ancho máximo para el bloque de texto intro */
+  width: 100%; /* Asegura que ocupe el ancho disponible hasta el max-width */
+}
+
+.services-intro h2 {
+  font-family: var(--font-host-grotesk);
+  font-size: 3rem; /* Tamaño de fuente para móviles (aprox. 48px) */
+  font-weight: bold;
+  line-height: 1; /* Altura de línea compacta */
+}
+
+.services-intro p {
+  font-family: var(--font-dm-sans);
+  font-weight: 400;
+  font-size: 0.875rem; /* 14px */
+}
+
+/*
+ * MEDIA QUERY: Para pantallas medianas (de 768px a 1023px)
+ */
+@media (min-width: 768px) {
+  .services-header {
+    min-height: 300px; /* Ajuste de altura mínima */
+    padding-left: 2rem; /* 32px */
+    padding-right: 4rem; /* 64px */
+  }
+
+  .services-intro h2 {
+    font-size: 4.5rem; /* Tamaño de fuente más grande (aprox. 72px) */
+  }
+
+  .services-intro p {
+    font-size: 0.95rem; /* Ligeramente más grande (aprox. 15.2px) */
+  }
+}
+
+/*
+ * MEDIA QUERY: Para pantallas grandes (1024px y más)
+ */
+@media (min-width: 1024px) {
+  .services-header {
+    min-height: 350px; /* Altura mínima original */
+    padding-left: 1.5rem; /* Mantener padding original */
+    padding-right: 7.5rem; /* 120px */
+    width: 90%; /* Opcional: puedes cambiar a width: 100% si el max-width del contenedor padre lo controla */
+  }
+
+  .services-intro h2 {
+    font-size: 6rem; /* Tamaño de fuente original (aprox. 96px) */
+  }
+
+  .services-intro p {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* -------------------- Resto del CSS (Acordeón - tus estilos originales) -------------------- */
+/*
+ * IMPORTANTE:
+ * Mantengo aquí tus estilos originales para el acordeón
+ * NO he aplicado cambios en esta sección para respetar tu petición.
+ */
+
+.accordion {
+  width: 90%;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.accordion-item {
+  /* border-radius: 5px; */
+  overflow: hidden;
+  border-top: 1px solid #c8c8c8;
+  padding: 10px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.accordion-header {
+  width: 100%;
+  overflow: hidden;
+  height: 45px;
+  /* max-height: 0; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  padding: 2rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  /* border-bottom: 1px solid #ddd; */
+  /* transition: background 0.3s; */
+
+  .accordion-content-inner h3 {
+    background-color: transparent;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+
+  p {
+    display: none;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .accordion-content-inner {
+    img {
+      display: none;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .icon-close {
+    display: none;
+  }
+}
+
+.accordion-content-inner {
+  flex: 1;
+}
+
+.accordion-content-img {
+  flex: 1;
+  z-index: 10;
+}
+
+.accordion-content-icons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+/* .accordion-header:hover {
+  background: #ebebeb;
+
+  button {
+    background-color: #ebebeb;
+    color: #000;
+  }
+} */
+
+.accordion-button {
+  font-family: "Host Grotesk", sans-serif;
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  padding: 0 1.5rem;
+  background-color: #fafafa;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.accordion-item.active .accordion-header {
+  display: flex;
+  flex-direction: column;
+  /* background: #b10e0e; */
+  height: 100%;
+  transition: all 1s ease;
+  /* justify-content: end; */
+  gap: 20px;
+
+  .accordion-content-inner h3 {
+    background-color: white;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  p {
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+  }
+
+  ul {
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .accordion-content-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    img {
+      display: block;
+    }
+  }
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 1000px; /* Adjust this value based on your content */
+  padding: 1rem 1.5rem;
+}
+
+.accordion-item.active .accordion-header .icon {
+  display: none;
+}
+.accordion-item.active .accordion-header .icon-close {
+  display: block;
+}
+
+.accordion-content p {
+  margin: 0;
+}
+
+.accordion-content-inner {
+  background-color: rgb(255, 255, 255);
+  padding-right: 50px;
+  /* border: 1px solid #ddd; */
+
+  h3 {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 1.5rem; /* Asegura espacio para los puntos */
+  }
+
+  img {
+    width: 200px;
+    cursor: pointer;
+  }
+}
+
+.accordion-content-icons-general {
+  display: none;
+}
+
+.accordion-item.active .accordion-content-icons-general {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 30px;
+}
+
+.accordion-content-icons-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/*
+ * MEDIA QUERIES ORIGINALES DEL ACORDEÓN (ajustadas para no colisionar con las nuevas)
+ *
+ * NOTA: Tus media queries originales usaban 'max-width'.
+ * Aquí, los breakpoints son:
+ * - Hasta 779px (cubierto por los estilos base del acordeón)
+ * - De 780px a 1199px (tu media query de 1200px)
+ * - De 1200px en adelante (estilos base para elementos del acordeón no sobrescritos)
+ *
+ * He ajustado ligeramente los rangos para que no se pisen con los de arriba (768px, 1024px)
+ * y mantengan la lógica de tu CSS original.
+ */
+
+/* Ajustes para pantallas de 780px a 1199px (tu @media (max-width: 1200px)) */
+@media (min-width: 780px) and (max-width: 1199px) {
+  .services-section {
+    width: 100%;
+    padding: 0px 20px;
+  }
+  /* .services-header ya está cubierto por las nuevas reglas de 768px */
+
+  /* El resto de las reglas del acordeón son tus originales */
+  .accordion {
+    width: 90%;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .accordion-item {
+    overflow: hidden;
+    border-top: 1px solid #c8c8c8;
+    padding: 10px;
+  }
+
+  .accordion-header {
+    padding: 1rem 0.5rem;
+    font-size: 1.1rem;
+    /* ... el resto de tus reglas originales para .accordion-header */
+
+    .accordion-content-inner h3 {
+      font-size: 1.2rem;
+    }
+
+    /* ... el resto de tus reglas originales para elementos dentro del header */
+  }
+
+  /* ... el resto de tus reglas originales del acordeón */
+  .accordion-item.active .accordion-header {
+    height: 400px;
+    /* ... el resto de tus reglas originales */
+
+    h4 {
+      font-size: 12px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+
+    ul {
+      font-size: 12px;
+    }
+  }
+  .accordion-item.active .accordion-content-icons-general {
+    padding-left: 10px;
+  }
+}
+
+/* Tu @media (max-width: 780px) no tiene reglas específicas, así que se omite */
+/* Si necesitas reglas para pantallas muy pequeñas, las agregarías aquí con un @media (max-width: 779px) por ejemplo, o como base mobile-first */
+@media (max-width: 779px) {
+    /* Si hubiese reglas específicas para menos de 780px, irían aquí.
+       Actualmente, se basan en los estilos mobile-first generales. */
+}
