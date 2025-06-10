@@ -1,16 +1,6 @@
 ---
-import BaseLayout from "../layouts/Layout.astro";
+import Welcome from "../sections/home/Welcome.astro";
 import "../styles/global.css";
-import Welcome from "../components/Welcome.astro";
-import Services from "../components/Services.astro";
-import Projects from "../components/Projects.astro";
-import About from "../components/About.astro";
-import Choose from "../components/Choose.astro";
-import Brands from "../components/Brands.astro";
-import Process from "../components/Process.astro";
-import Testimonials from "../components/Testimonials.astro";
-import Boton from "../components/Boton/Boton.astro";
-import Tips from "../components/Tips.astro";
 ---
 
 <html lang="es">
@@ -19,16 +9,6 @@ import Tips from "../components/Tips.astro";
     <title>Bethelor</title>
   </head>
   <body>
-    <BaseLayout title="Bethelor">
-      <Welcome />
-      <Services />
-      <Projects />
-      <About />
-      <Choose />
-      <Brands />
-      <Process />
-      <Testimonials />
-      <Tips />
-    </BaseLayout>
+    <Welcome/>
   </body>
 </html>

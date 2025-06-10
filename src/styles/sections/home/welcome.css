@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* === Animaciones CSS reutilizables === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Section Styles === */
+/* Asegúrate de que el contenedor principal .welcome tenga sus estilos base */
+.welcome {
+  padding: 1.5rem 0.5rem; /* Ajusta padding para pantallas pequeñas */
+}
+
+.main-section {
+  width: 100%;
+  max-width: 1450px;
+  gap: 0.3125rem; /* 5px convertido a rem */
+}
+
+.image-text-container {
+  min-width: 400px;
+  height: 700px;
+  position: relative; /* Asegura que los hijos absolutos se posicionen correctamente */
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0; 
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.text-container {
+  padding: 3rem;
+  /* Las animaciones de opacidad y desplazamiento para h1 y p se manejan con Framer Motion */
+}
+
+.text-container h1 {
+  font-family: "Host Grotesk", sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 1;
+  /* Removidas las propiedades de animación para h1, Framer Motion las gestiona */
+}
+
+.text-container p {
+  font-size: 1.25rem;
+  /* Removidas las propiedades de animación para p, Framer Motion las gestiona */
+}
+
+.right-container {
+  min-width: 400px;
+  display: flex; /* Asegura el flexbox si flex-direction es column en mobile */
+  flex-direction: column;
+}
+
+.right-images {
+  display: flex;
+  gap: 0.3125rem;
+  height: 100%;
+  flex: 2; /* Para que ocupe más espacio que la descripción si es un flex-column */
+}
+
+.image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Asegura que la imagen ocupe la altura de su contenedor flex */
+  opacity: 0; /* Mantenemos esta animación CSS para las imágenes secundarias */
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.description {
+  flex: 1; /* Para que ocupe el espacio restante */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3.125rem;
+  text-align: start;
+}
+
+.description p {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem; /* 14px convertido a rem */
+}
+
+/* La clase fade-in se mantiene para animaciones basadas en scroll o retrasos específicos no controlados por Motion */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 2s; /* Este delay se mantiene si así lo deseas para esta sección */
+}
+
+/* === Buttons Section === */
+.button-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  max-width: 1450px;
+  margin-top: 0.3125rem;
+}
+
+.button-item {
+  text-align: center;
+  background-color: #000;
+  border: 1px solid #383838;
+  transition: background-color 0.3s ease;
+  padding: 1.5625rem; /* 25px convertido a rem */
+}
+
+.button-item a {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.09375rem solid transparent;
+}
+
+/* Estas animaciones de máquina de escribir y cursor se mantienen si las estás usando */
+.button-item a.animate {
+  animation: typewriter 2s steps(20, end) forwards;
+  border-right: none;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+
+/* --- Media Queries para Responsividad --- */
+
+/* Extra Large Screens (e.g., desktops, large laptops) */
+@media (min-width: 1451px) {
+  .main-section,
+  .button-section {
+    max-width: 1450px; /* Cap the width for very large screens */
+  }
+}
+
+/* Large Tablets / Small Laptops (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .main-section {
+    flex-direction: column; /* Stack columns */
+    max-width: 90vw; /* Usa viewport width para un mejor escalado */
+  }
+
+  .image-text-container {
+    flex: none;
+    height: 600px;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .text-container {
+    padding: 2rem;
+  }
+
+  .text-container h1 {
+    font-size: 4.5rem;
+  }
+
+  .text-container p {
+    font-size: 1.1rem;
+  }
+
+  .right-container {
+    flex: none;
+    height: auto;
+    min-width: unset;
+    width: 100%;
+    margin-top: 0.3125rem;
+  }
+
+  .right-images {
+    height: 400px;
+    margin-bottom: 0.3125rem;
+  }
+
+  .description {
+    padding: 1.875rem;
+    text-align: center;
+  }
+
+  .button-section {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 90vw;
+  }
+}
+
+/* Medium Tablets / Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .welcome {
+    padding: 1rem 0.5rem;
+  }
+
+  .main-section {
+    max-width: 95vw;
+    gap: 0.25rem;
+  }
+
+  .image-text-container {
+    height: 500px;
+  }
+
+  .text-container {
+    padding: 1.5rem;
+  }
+
+  .text-container h1 {
+    font-size: 3.5rem;
+  }
+
+  .text-container p {
+    font-size: 1rem;
+  }
+
+  .right-images {
+    height: 300px;
+    margin-bottom: 0.25rem;
+  }
+
+  .description {
+    padding: 1.25rem;
+  }
+
+  .description p {
+    font-size: 0.8125rem;
+  }
+
+  .button-section {
+    grid-template-columns: 1fr;
+    max-width: 95vw;
+    margin-top: 0.25rem;
+  }
+
+  .button-item {
+    padding: 1.25rem;
+  }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .welcome {
+    padding: 0.5rem;
+  }
+
+  .main-section {
+    max-width: 98vw;
+    gap: 0.2rem;
+  }
+
+  .image-text-container {
+    height: 400px;
+  }
+
+  .text-container {
+    padding: 1rem;
+  }
+
+  .text-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .text-container p {
+    font-size: 0.9rem;
+  }
+
+  .right-images {
+    height: 250px;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .image {
+    height: 120px;
+    width: 100%;
+  }
+
+  .description {
+    padding: 0.9375rem;
+  }
+
+  .description p {
+    font-size: 0.75rem;
+  }
+
+  .button-item {
+    padding: 1rem;
+  }
+}

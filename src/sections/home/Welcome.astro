@@ -1,0 +1,64 @@
+---
+import "../../styles/sections/home/welcome.css";
+import "../../styles/global.css";
+
+// No necesitas importar las imágenes si las sigues usando en el CSS,
+// pero si las pasaras directamente al style prop, sí las necesitarías.
+// import Fondo1 from "../../assets/welcome/welcome-fondo1.png";
+// import Fondo2 from "../../assets/welcome/welcome-fondo2.png";
+// import Fondo3 from "../../assets/welcome/welcome-fondo3.png";
+
+// Importa tu componente de React
+import AnimatedWelcomeText from "../../../src/components/AnimatedWelcomeText/AnimatedWelcomeText.jsx";
+---
+
+<section class="welcome bg-black flex flex-col justify-center items-center text-white ">
+  <div class="main-section flex w-full max-w-[1450px] gap-[0.3125rem] flex-wrap ">
+    <div class="image-text-container flex-1 min-w-[400px] h-[700px] relative">
+      <div
+        class="image-overlay"
+        style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo1.png')" }}
+      ></div>
+
+      {/* Aquí reemplazamos el div text-container */}
+      <AnimatedWelcomeText client:load /> {/* <-- Importante: client:load */}
+
+    </div>
+
+    <div class="right-container flex-1 min-w-[400px] flex flex-col">
+      <div class="right-images flex-2 flex gap-[0.3125rem] h-full ">
+        <div
+          class="image"
+          style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo2.png')" }}
+        ></div>
+        <div
+          class="image"
+          style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo3.png')" }}
+        ></div>
+      </div>
+      <div class="description flex-1 text-white flex justify-center items-center px-[3.125rem] text-start max-sm:text-center">
+        <p class="fade-in" data-scroll>
+          At Bethelor, we bring your vision to life with expert remodeling
+          of kitchens, bathrooms, and interiors. Proudly serving Maryland
+          with reliable craftsmanship, personalized designs, and results
+          that feel like home.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-section">
+    <div class="button-item">
+      <a href="/services">View All Services</a>
+    </div>
+    <div class="button-item">
+      <a href="/projects">View All Projects</a>
+    </div>
+    <div class="button-item">
+      <a href="/about">About Us</a>
+    </div>
+    <div class="button-item">
+      <a href="/contact">Contact Us</a>
+    </div>
+  </div>
+</section>
