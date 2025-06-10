@@ -1,108 +1,50 @@
-/*
- * CSS para la sección de servicios
- * Enfocado en el responsive del título y la descripción
- * Acordeón sin cambios (mantiene tus estilos originales)
- */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
 
-/* -------------------- Variables CSS (Opcional, si no usas Tailwind para fuentes) -------------------- */
-:root {
-  --font-host-grotesk: "Host Grotesk", sans-serif;
-  --font-dm-sans: "DM Sans", sans-serif;
-}
-
-/* -------------------- Sección Principal de Servicios (.services-section) -------------------- */
 .services-section {
   background-color: white;
-  max-width: 1450px; /* Ancho máximo del contenedor principal */
-  margin: 0 auto; /* Centra la sección horizontalmente */
+  max-width: 1450px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los ítems internos (header, acordeón) horizontalmente */
-  padding-top: 1rem; /* Espaciado superior e inferior para móviles */
-  padding-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
-/* -------------------- Encabezado de la Sección (.services-header & .services-intro) -------------------- */
 .services-header {
-  /*
-   * MOBILE-FIRST: Estilos base para pantallas pequeñas (hasta 767px)
-   */
-  min-height: 250px; /* Altura mínima flexible, se expandirá con el contenido */
+  height: 350px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Alinear contenido hacia abajo */
-  align-items: flex-end; /* Alinear contenido a la derecha */
-  padding: 1.5rem 1rem; /* Padding base para móviles: 24px vertical, 16px horizontal */
-  width: 90%; /* Ancho de la cabecera en móviles */
-  text-align: left; /* Alineación del texto general de la cabecera */
+  justify-content: center;
+  align-items: end; /* Alinea los ítems al final del eje transversal (abajo en column, derecha en row) */
+  flex-direction: column; /* Coloca los ítems en una columna */
+  padding-left: 15px;
+  padding-right: 120px;
+  padding-top: 55px;
+  padding-bottom: 20px;
+  width: 90%;
 }
 
 .services-intro {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Espaciado entre el título y el párrafo (16px) */
-  max-width: 650px; /* Ancho máximo para el bloque de texto intro */
-  width: 100%; /* Asegura que ocupe el ancho disponible hasta el max-width */
+  /* Elimina el width fijo para que sea responsive */
+  width: 100%; /* Ocupará el 100% del espacio disponible de su padre */
+  max-width: 650px; /* Limita el ancho máximo para pantallas grandes */
+  gap: 15px;
+  /* El h2 y p ahora usan las variables de fuente desde el :root o el @import */
 }
 
 .services-intro h2 {
-  font-family: var(--font-host-grotesk);
-  font-size: 3rem; /* Tamaño de fuente para móviles (aprox. 48px) */
+  font-family: "Host Grotesk", sans-serif;
+  font-size: 6rem; /* Tamaño para desktop */
   font-weight: bold;
-  line-height: 1; /* Altura de línea compacta */
+  line-height: 1;
 }
 
 .services-intro p {
-  font-family: var(--font-dm-sans);
+  font-family: "DM Sans", sans-serif;
   font-weight: 400;
-  font-size: 0.875rem; /* 14px */
+  font-size: 14px; /* Tamaño para desktop */
 }
-
-/*
- * MEDIA QUERY: Para pantallas medianas (de 768px a 1023px)
- */
-@media (min-width: 768px) {
-  .services-header {
-    min-height: 300px; /* Ajuste de altura mínima */
-    padding-left: 2rem; /* 32px */
-    padding-right: 4rem; /* 64px */
-  }
-
-  .services-intro h2 {
-    font-size: 4.5rem; /* Tamaño de fuente más grande (aprox. 72px) */
-  }
-
-  .services-intro p {
-    font-size: 0.95rem; /* Ligeramente más grande (aprox. 15.2px) */
-  }
-}
-
-/*
- * MEDIA QUERY: Para pantallas grandes (1024px y más)
- */
-@media (min-width: 1024px) {
-  .services-header {
-    min-height: 350px; /* Altura mínima original */
-    padding-left: 1.5rem; /* Mantener padding original */
-    padding-right: 7.5rem; /* 120px */
-    width: 90%; /* Opcional: puedes cambiar a width: 100% si el max-width del contenedor padre lo controla */
-  }
-
-  .services-intro h2 {
-    font-size: 6rem; /* Tamaño de fuente original (aprox. 96px) */
-  }
-
-  .services-intro p {
-    font-size: 1rem; /* 16px */
-  }
-}
-
-/* -------------------- Resto del CSS (Acordeón - tus estilos originales) -------------------- */
-/*
- * IMPORTANTE:
- * Mantengo aquí tus estilos originales para el acordeón
- * NO he aplicado cambios en esta sección para respetar tu petición.
- */
 
 .accordion {
   width: 90%;
@@ -113,18 +55,15 @@
 }
 
 .accordion-item {
-  /* border-radius: 5px; */
   overflow: hidden;
   border-top: 1px solid #c8c8c8;
   padding: 10px;
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
 
 .accordion-header {
   width: 100%;
   overflow: hidden;
   height: 45px;
-  /* max-height: 0; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -138,8 +77,6 @@
   border: none;
   outline: none;
   transition: all 0.3s ease;
-  /* border-bottom: 1px solid #ddd; */
-  /* transition: background 0.3s; */
 
   .accordion-content-inner h3 {
     background-color: transparent;
@@ -183,15 +120,6 @@
   justify-content: end;
 }
 
-/* .accordion-header:hover {
-  background: #ebebeb;
-
-  button {
-    background-color: #ebebeb;
-    color: #000;
-  }
-} */
-
 .accordion-button {
   font-family: "Host Grotesk", sans-serif;
 }
@@ -205,13 +133,9 @@
 }
 
 .accordion-item.active .accordion-header {
-  display: flex;
-  flex-direction: column;
-  /* background: #b10e0e; */
-  height: 100%;
+  background: #ffffff;
+  height: 400px; /* Podrías necesitar ajustar esto o hacerlo automático */
   transition: all 1s ease;
-  /* justify-content: end; */
-  gap: 20px;
 
   .accordion-content-inner h3 {
     background-color: white;
@@ -242,7 +166,6 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-
     img {
       display: block;
     }
@@ -268,7 +191,6 @@
 .accordion-content-inner {
   background-color: rgb(255, 255, 255);
   padding-right: 50px;
-  /* border: 1px solid #ddd; */
 
   h3 {
     font-family: "Host Grotesk", sans-serif;
@@ -279,7 +201,7 @@
 
   ul {
     list-style: disc;
-    padding-left: 1.5rem; /* Asegura espacio para los puntos */
+    padding-left: 1.5rem;
   }
 
   img {
@@ -306,81 +228,166 @@
   font-family: "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
+  padding-left: 30px;
 }
 
-/*
- * MEDIA QUERIES ORIGINALES DEL ACORDEÓN (ajustadas para no colisionar con las nuevas)
- *
- * NOTA: Tus media queries originales usaban 'max-width'.
- * Aquí, los breakpoints son:
- * - Hasta 779px (cubierto por los estilos base del acordeón)
- * - De 780px a 1199px (tu media query de 1200px)
- * - De 1200px en adelante (estilos base para elementos del acordeón no sobrescritos)
- *
- * He ajustado ligeramente los rangos para que no se pisen con los de arriba (768px, 1024px)
- * y mantengan la lógica de tu CSS original.
- */
+/* -------------------- MEDIA QUERIES -------------------- */
 
-/* Ajustes para pantallas de 780px a 1199px (tu @media (max-width: 1200px)) */
-@media (min-width: 780px) and (max-width: 1199px) {
+/* Para pantallas medianas (ej. tabletas, algunos laptops) */
+@media (max-width: 1200px) {
   .services-section {
-    width: 100%;
-    padding: 0px 20px;
+    padding: 0 20px; /* Ajusta el padding lateral del contenedor principal */
   }
-  /* .services-header ya está cubierto por las nuevas reglas de 768px */
 
-  /* El resto de las reglas del acordeón son tus originales */
+  .services-header {
+    /* Mantén la altura para mantener la alineación general */
+    height: 280px; /* Un poco menos alto para tabletas */
+    /* Ajusta los paddings para pantallas medianas */
+    padding-left: 30px;
+    padding-right: 50px;
+    padding-top: 40px;
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  }
+
+  .services-intro {
+    /* Ya no tiene width fijo, el max-width lo controla */
+    max-width: 500px; /* Reduce el max-width para pantallas más pequeñas */
+    gap: 10px; /* Reduce el gap */
+  }
+
+  .services-intro h2 {
+    font-size: 4.5rem; /* Reduce el tamaño de la fuente para el título */
+  }
+
+  .services-intro p {
+    font-size: 13px; /* Mantiene el tamaño de la fuente para el párrafo */
+  }
+
+  /* Ajustes para el acordeón en esta resolución si es necesario */
+  .accordion-header {
+    padding: 1.5rem 1rem; /* Ajusta el padding del header del acordeón */
+    font-size: 1rem; /* Reduce el tamaño de fuente del título del acordeón */
+  }
+
+  .accordion-item.active .accordion-header {
+    height: 350px; /* Ajusta la altura del header activo para tabletas */
+  }
+
+  .accordion-content-inner h3 {
+    font-size: 1.2rem; /* Ajusta el tamaño de la fuente del subtítulo en el contenido activo */
+  }
+
+  .accordion-content-inner p {
+    font-size: 12px; /* Ajusta el tamaño de la fuente del párrafo en el contenido activo */
+  }
+
+  .accordion-content-inner ul {
+    font-size: 13px; /* Ajusta el tamaño de la fuente de la lista en el contenido activo */
+  }
+
+  .accordion-content-icons-general {
+    padding-left: 20px; /* Ajusta el padding para los iconos generales */
+  }
+
+  .accordion-content-icons-text {
+    font-size: 13px; /* Ajusta el tamaño de la fuente del texto de los iconos */
+    padding-left: 20px;
+  }
+}
+
+/* Para pantallas móviles (hasta 780px, o lo que consideres el punto de quiebre para móvil) */
+@media (max-width: 780px) {
+  .services-section {
+    padding: 0 15px; /* Más padding para móviles */
+  }
+
+  .services-header {
+    height: auto; /* Permite que la altura se ajuste al contenido */
+    align-items: start; /* Centra el contenido horizontalmente */
+    text-align: start; /* Centra el texto */
+    padding: 30px 20px; /* Ajusta los paddings para móviles */
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  .services-intro {
+    /* No se necesita width aquí, el max-width y padding del padre controlan */
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+    gap: 10px; /* Gap entre h2 y p */
+  }
+
+  .services-intro h2 {
+    font-size: 2.8rem; /* Tamaño de fuente para el título en móvil */
+    line-height: 1.1; /* Ajusta el line-height si es necesario */
+  }
+
+  .services-intro p {
+    font-size: 0.85rem; /* Tamaño de fuente para el párrafo en móvil */
+    width: 95%; /* Asegura que no se desborde */
+    margin: 0 auto; /* Centra el párrafo */
+  }
+
   .accordion {
-    width: 90%;
-    padding-top: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    width: 100%; /* Acordeón ocupa todo el ancho */
+    padding-top: 10px; /* Menor padding superior */
   }
 
   .accordion-item {
-    overflow: hidden;
-    border-top: 1px solid #c8c8c8;
-    padding: 10px;
+    padding: 5px; /* Reduce el padding del item del acordeón */
   }
 
   .accordion-header {
-    padding: 1rem 0.5rem;
-    font-size: 1.1rem;
-    /* ... el resto de tus reglas originales para .accordion-header */
-
-    .accordion-content-inner h3 {
-      font-size: 1.2rem;
-    }
-
-    /* ... el resto de tus reglas originales para elementos dentro del header */
+    height: auto; /* Altura automática para el header del acordeón */
+    padding: 1rem; /* Reduce el padding del header del acordeón */
+    font-size: 0.95rem; /* Reduce el tamaño de fuente del título del acordeón */
+    flex-wrap: wrap; /* Permite que los elementos internos del header se envuelvan */
+    justify-content: center; /* Centra el contenido en el header */
+    text-align: center; /* Centra el texto del header */
   }
 
-  /* ... el resto de tus reglas originales del acordeón */
+  .accordion-header .accordion-content-inner h3 {
+    font-size: 1rem; /* Tamaño de la fuente del título dentro del header cuando está contraído */
+  }
+
+  /* Ajustes para el contenido activo del acordeón en móvil */
   .accordion-item.active .accordion-header {
-    height: 400px;
-    /* ... el resto de tus reglas originales */
-
-    h4 {
-      font-size: 12px;
-    }
-
-    p {
-      font-size: 10px;
-    }
-
-    ul {
-      font-size: 12px;
-    }
+    height: auto; /* Altura automática para el header activo en móvil */
+    flex-direction: column; /* Apila el contenido en el header activo */
+    justify-content: center; /* Centra el contenido */
+    align-items: center; /* Centra horizontalmente */
+    padding: 1rem; /* Reduce el padding del header activo */
   }
-  .accordion-item.active .accordion-content-icons-general {
-    padding-left: 10px;
-  }
-}
 
-/* Tu @media (max-width: 780px) no tiene reglas específicas, así que se omite */
-/* Si necesitas reglas para pantallas muy pequeñas, las agregarías aquí con un @media (max-width: 779px) por ejemplo, o como base mobile-first */
-@media (max-width: 779px) {
-    /* Si hubiese reglas específicas para menos de 780px, irían aquí.
-       Actualmente, se basan en los estilos mobile-first generales. */
+  .accordion-item.active .accordion-header .accordion-content-inner {
+    text-align: center; /* Centra el texto del contenido */
+    padding-right: 0; /* Elimina padding derecho extra */
+  }
+
+  .accordion-item.active .accordion-content-inner h3 {
+    font-size: 1.2rem; /* Tamaño de la fuente del título dentro del header activo */
+    margin-bottom: 10px; /* Espaciado debajo del título */
+  }
+
+  .accordion-item.active .accordion-header h4,
+  .accordion-item.active .accordion-header p,
+  .accordion-item.active .accordion-header ul {
+    text-align: start; /* Centra el texto en el contenido activo */
+    padding-left: 0; /* Elimina el padding de la lista si está centrado */
+  }
+
+  .accordion-item.active .accordion-content-inner img {
+    width: 150px; /* Reduce el tamaño de la imagen en móvil */
+    margin: 10px auto; /* Centra la imagen */
+  }
+
+  .accordion-content-icons-general {
+    flex-direction: row; /* Coloca los iconos en fila si hay espacio */
+    flex-wrap: wrap; /* Permite que se envuelvan */
+    justify-content: center; /* Centra los iconos */
+    padding-left: 0; /* Elimina padding extra */
+  }
+
+  .accordion-content-icons-text {
+    text-align: center; /* Centra el texto de los iconos */
+    padding-left: 0; /* Elimina padding extra */
+  }
 }

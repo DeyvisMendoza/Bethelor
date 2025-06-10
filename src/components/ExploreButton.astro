@@ -1,0 +1,38 @@
+---
+interface Props {
+  service: {
+    textobuton: string;
+    videoLink: string;
+  };
+  target?: '_self' | '_blank'; // Opcional: para abrir en la misma pestaña o en una nueva
+}
+
+const { service, target = '_self' } = Astro.props;
+---
+
+<a
+  href={service.videoLink}
+  
+  class="
+    inline-flex items-center justify-center
+    bg-black text-white
+    px-8 py-4
+    text-base font-semibold
+    transition-colors duration-300 ease-in-out
+    hover:bg-gray-800
+    focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50
+    // Responsive adjustments
+    text-sm sm:text-base // Reduce font size on small screens
+    px-6 py-3 sm:px-8 sm:py-4 // Adjust padding on small screens
+  "
+>
+  {service.textobuton}
+</a>
+
+<style>
+  /* Puedes añadir estilos adicionales aquí si Tailwind no te da todo el control,
+     o si prefieres algo más específico que no sea parte de las utilidades por defecto. */
+  .custom-button-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+</style>
