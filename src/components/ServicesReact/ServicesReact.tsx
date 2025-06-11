@@ -12,7 +12,6 @@ export default function Services() {
     setActiveIndex(activeIndex === idx ? null : idx);
   };
 
-  // Variantes para el contenedor principal de los textos de cabecera
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,7 +23,6 @@ export default function Services() {
     },
   };
 
-  // Variantes para el título y el párrafo de la cabecera
   const headerTextVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -37,7 +35,6 @@ export default function Services() {
     },
   };
 
-  // Variantes para cada ítem individual del acordeón (la aparición escalonada)
   const accordionItemVariants = {
     hidden: { opacity: 0, y: 70 },
     visible: (i: number) => ({
@@ -51,7 +48,6 @@ export default function Services() {
     }),
   };
 
-  // Variantes para el contenido desplegable del acordeón (el texto, lista, botón de video)
   const contentVariants = {
     hidden: { opacity: 0, height: 0, y: -10 },
     visible: {
@@ -59,7 +55,7 @@ export default function Services() {
       height: "auto",
       y: 0,
       transition: {
-        duration: 0.5, // Duración un poco más larga para una apertura más suave
+        duration: 0.5,
         ease: "easeInOut",
         when: "beforeChildren",
       },
@@ -69,13 +65,12 @@ export default function Services() {
       height: 0,
       y: -10,
       transition: {
-        duration: 0.2, // <<--- REDUCIDO A 0.2 PARA UNA DESAPARICIÓN MÁS RÁPIDA
+        duration: 0.2,
         ease: "easeIn",
       },
     },
   };
 
-  // Variantes para los iconos detallados (dentro del acordeón abierto)
   const detailedIconsVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -92,13 +87,12 @@ export default function Services() {
       opacity: 0,
       y: -20,
       transition: {
-        duration: 0.3, // Esta también podrías reducirla si los iconos también se sienten lentos al desaparecer. Por ahora, la dejaré como estaba.
+        duration: 0.3,
         ease: "easeIn",
       },
     },
   };
 
-  // Variantes para cada texto de icono individual
   const singleIconTextVariants = {
     hidden: { opacity: 0, x: 30 },
     visible: {
@@ -179,18 +173,17 @@ export default function Services() {
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className="
-                            inline-flex items-center justify-center
-                            bg-black text-white
-                            px-6 py-3       /* Reducido de px-8 py-4 */
-                            text-sm        /* Reducido de text-base */
-                            font-semibold
-                            transition-colors duration-300 ease-in-out
-                            hover:bg-gray-800
-                            focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50
-                            /* Para pantallas pequeñas, lo mantenemos igual o lo reducimos más si es necesario */
-                            px-4 py-2 sm:px-6 sm:py-3 /* Ajustes para pantallas pequeñas */
-                            text-xs sm:text-sm      /* Ajustes de texto para pantallas pequeñas */
-                            mt-4
+                          inline-flex items-center justify-center
+                          bg-black text-white
+                          px-6 py-3
+                          text-sm
+                          font-semibold
+                          transition-colors duration-300 ease-in-out
+                          hover:bg-gray-800
+                          focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50
+                          px-4 py-2 sm:px-6 sm:py-3
+                          text-xs sm:text-sm
+                          mt-4
                         "
                         onClick={(e) => e.stopPropagation()}
                       >
@@ -213,6 +206,8 @@ export default function Services() {
                     display: "flex",
                     justifyContent: "end",
                     alignItems: "start",
+                    flexDirection: "row",
+                    gap: "10px",
                   }}
                 >
                   <AnimatePresence mode="wait">

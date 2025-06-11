@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
 
-/* === Animaciones CSS reutilizables === */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -12,21 +11,31 @@
   }
 }
 
-/* === Section Styles === */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .welcome {
-  padding: 1.5rem 0.5rem; 
+  padding: 1.5rem 0.5rem;
 }
 
 .main-section {
   width: 100%;
   max-width: 1450px;
-  gap: 0.3125rem; 
+  gap: 0.3125rem;
 }
 
 .image-text-container {
   min-width: 400px;
   height: 700px;
-  position: relative; 
+  position: relative;
 }
 
 .image-overlay {
@@ -34,14 +43,13 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0; 
+  opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.2s;
 }
 
 .text-container {
   padding: 3rem;
-
 }
 
 .text-container h1 {
@@ -49,12 +57,10 @@
   font-size: 6rem;
   font-weight: bold;
   line-height: 1;
-
 }
 
 .text-container p {
   font-size: 1.25rem;
-
 }
 
 .right-container {
@@ -67,21 +73,21 @@
   display: flex;
   gap: 0.3125rem;
   height: 100%;
-  flex: 2; 
+  flex: 2;
 }
 
 .image {
   flex: 1;
   background-size: cover;
   background-position: center;
-  height: 100%; 
+  height: 100%;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.4s;
 }
 
 .description {
-  flex: 1; 
+  flex: 1;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -93,9 +99,8 @@
 .description p {
   font-family: "DM Sans", sans-serif;
   font-weight: 300;
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
 }
-
 
 .fade-in {
   opacity: 0;
@@ -104,7 +109,6 @@
   animation-delay: 2s;
 }
 
-/* === Buttons Section === */
 .button-section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -118,7 +122,10 @@
   background-color: #000;
   border: 1px solid #383838;
   transition: background-color 0.3s ease;
-  padding: 1.5625rem; 
+  padding: 1.5625rem;
+  /* Initial state for animation */
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .button-item a {
@@ -130,38 +137,62 @@
   border-right: 0.09375rem solid transparent;
 }
 
-
 .button-item a.animate {
   animation: typewriter 2s steps(20, end) forwards;
   border-right: none;
 }
 
+/* Animations for individual buttons with staggered delays */
+.button-animate-1 {
+  animation: fadeInSlideUp 0.6s ease forwards;
+  animation-delay: 2.2s; /* Adjust delay as needed */
+}
+
+.button-animate-2 {
+  animation: fadeInSlideUp 0.6s ease forwards;
+  animation-delay: 2.4s; /* Adjust delay as needed */
+}
+
+.button-animate-3 {
+  animation: fadeInSlideUp 0.6s ease forwards;
+  animation-delay: 2.6s; /* Adjust delay as needed */
+}
+
+.button-animate-4 {
+  animation: fadeInSlideUp 0.6s ease forwards;
+  animation-delay: 2.8s; /* Adjust delay as needed */
+}
+
 @keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: white; }
-}
-
-
-/* --- Media Queries para Responsividad --- */
-
-/* Extra Large Screens (e.g., desktops, large laptops) */
-@media (min-width: 1451px) {
-  .main-section,
-  .button-section {
-    max-width: 1450px; 
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 
-/* Large Tablets / Small Laptops (max-width: 1200px) */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+@media (min-width: 1451px) {
+  .main-section,
+  .button-section {
+    max-width: 1450px;
+  }
+}
+
 @media (max-width: 1200px) {
   .main-section {
-    flex-direction: column; 
-    max-width: 90vw; 
+    flex-direction: column;
+    max-width: 90vw;
   }
 
   .image-text-container {
@@ -201,13 +232,16 @@
     text-align: center;
   }
 
+  .description p {
+    font-size: 0.8125rem;
+  }
+
   .button-section {
     grid-template-columns: repeat(2, 1fr);
     max-width: 90vw;
   }
 }
 
-/* Medium Tablets / Large Phones (max-width: 768px) */
 @media (max-width: 768px) {
   .welcome {
     padding: 1rem 0.5rem;
@@ -258,7 +292,6 @@
   }
 }
 
-/* Small Phones (max-width: 480px) */
 @media (max-width: 480px) {
   .welcome {
     padding: 0.5rem;

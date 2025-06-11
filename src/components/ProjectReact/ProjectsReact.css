@@ -1,14 +1,8 @@
-/*
- * ProyectsReact.css - Responsive Styles
- */
-
-/* -------------------- Variables CSS (Opcional, si no usas Tailwind para fuentes) -------------------- */
 :root {
   --font-host-grotesk: "Host Grotesk", sans-serif;
   --font-dm-sans: "DM Sans", sans-serif;
 }
 
-/* -------------------- Estilos Base (Desktop First) -------------------- */
 .projects-section {
   background-color: white;
   width: 100%;
@@ -35,11 +29,6 @@
   gap: 130px;
 }
 
-/* Eliminamos img dentro de projects-header porque ahora es un componente */
-/* .projects-header img {
-  width: 120px;
-} */
-
 .projects-intro {
   display: flex;
   flex-direction: column;
@@ -65,50 +54,46 @@
   color: #838383;
 }
 
-/* Styles for the new InteractiveLinkButton */
 .interactive-link-button {
-  display: flex; /* Para centrar la flecha */
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px; /* Tamaño del círculo como en la imagen original */
+  width: 120px;
   height: 120px;
-  border-radius: 50%; /* Para hacerlo circular */
+  border-radius: 50%;
   background-color: black;
-  text-decoration: none; /* Quita el subrayado del enlace */
-  overflow: hidden; /* **CRUCIAL** para que la flecha no se salga al moverse */
-  position: relative; /* Para posicionar el wrapper de la flecha */
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
-  flex-shrink: 0; /* Evita que el botón se encoja */
-  transition: background-color 0.3s ease; /* Transición suave para el hover del botón */
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
 }
 
 .interactive-link-button:hover {
-  background-color: #333; /* Un ligero cambio al hover */
+  background-color: #333;
 }
 
 .button-arrow-wrapper {
-  position: absolute; /* Para que la flecha se mueva libremente dentro del botón */
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  /* Las transformaciones x, y se manejan con Framer Motion directamente en el style prop */
 }
 
 .interactive-link-button svg {
-  width: 24px; /* Tamaño de la flecha */
+  width: 24px;
   height: 24px;
-  color: white; /* Color de la flecha */
+  color: white;
 }
 
-
-/* Project Content */
 .project-content {
   max-width: 1520px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 3fr; /* Para desktop */
+  grid-template-columns: 1fr 3fr;
   gap: 2rem;
   padding-left: 200px;
   padding-right: 20px;
@@ -195,7 +180,6 @@
   cursor: pointer;
 }
 
-/* -------------------- MEDIA QUERIES para Móviles (hasta 767px) -------------------- */
 @media (max-width: 767px) {
   .projects-section {
     padding-bottom: 30px;
@@ -214,13 +198,12 @@
     border-bottom: 1px solid #1b1b1b;
   }
 
-  /* Ajusta el nuevo botón para móvil */
   .projects-view-all-button {
-    width: 80px; /* Tamaño del círculo más pequeño en móvil */
+    width: 80px;
     height: 80px;
   }
   .projects-view-all-button svg {
-    width: 20px; /* Tamaño de la flecha más pequeña en móvil */
+    width: 20px;
     height: 20px;
   }
 
@@ -241,7 +224,6 @@
     margin: 0 auto;
   }
 
-  /* Project Content - Cambia a una sola columna para móvil */
   .project-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -297,7 +279,6 @@
   }
 }
 
-/* -------------------- MEDIA QUERIES para Tabletas (768px a 1023px) -------------------- */
 @media (min-width: 768px) and (max-width: 1023px) {
   .projects-section {
     padding-bottom: 40px;
@@ -312,13 +293,12 @@
     gap: 80px;
   }
 
-  /* Ajusta el nuevo botón para tabletas */
   .projects-view-all-button {
-    width: 100px; /* Tamaño del círculo para tabletas */
+    width: 100px;
     height: 100px;
   }
   .projects-view-all-button svg {
-    width: 22px; /* Tamaño de la flecha para tabletas */
+    width: 22px;
     height: 22px;
   }
 
@@ -367,7 +347,5 @@
   }
 }
 
-/* -------------------- MEDIA QUERIES para Desktop (1024px y más) -------------------- */
 @media (min-width: 1024px) {
-  /* No se necesitan cambios aquí ya que los estilos base son para desktop. */
 }

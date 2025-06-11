@@ -1,7 +1,16 @@
 ---
+import Footer from "../components/Footer/Footer";
+import Form from "../components/FormReact/FormReact";
 import ProjectsReact from "../components/ProjectReact/ProjectsReact";
+import About from "../sections/home/About.astro";
+import Brands from "../sections/home/Brands.astro";
+import Choose from "../sections/home/Choose.astro";
+import Formulario from "../sections/home/Formulario.astro";
+import Process from "../sections/home/Process.astro";
 import Projects from "../sections/home/Projects.astro";
 import Services from "../sections/home/Services.astro";
+import Testimonials from "../sections/home/Testimonials.astro";
+import Tips from "../sections/home/Tips.astro";
 import Welcome from "../sections/home/Welcome.astro";
 import "../styles/global.css";
 ---
@@ -12,8 +21,16 @@ import "../styles/global.css";
     <title>Bethelor</title>
   </head>
   <body>
-    <Welcome/>
-    <Services/>
-    <Projects/>
+    <Welcome />
+    <Services />
+    <Projects />
+    <About />
+    <Choose />
+    <Brands />
+    <Process/>
+    <Testimonials/>
+    <Tips/>
+    <Formulario/>
+    <Footer/>
   </body>
 </html>

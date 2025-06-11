@@ -13,9 +13,9 @@
 .services-header {
   height: 350px;
   display: flex;
-  justify-content: center;
-  align-items: end; /* Alinea los ítems al final del eje transversal (abajo en column, derecha en row) */
-  flex-direction: column; /* Coloca los ítems en una columna */
+  justify-content: end;
+  align-items: end;
+  flex-direction: column;
   padding-left: 15px;
   padding-right: 120px;
   padding-top: 55px;
@@ -26,16 +26,14 @@
 .services-intro {
   display: flex;
   flex-direction: column;
-  /* Elimina el width fijo para que sea responsive */
-  width: 100%; /* Ocupará el 100% del espacio disponible de su padre */
-  max-width: 650px; /* Limita el ancho máximo para pantallas grandes */
+  width: 100%;
+  max-width: 650px;
   gap: 15px;
-  /* El h2 y p ahora usan las variables de fuente desde el :root o el @import */
 }
 
 .services-intro h2 {
   font-family: "Host Grotesk", sans-serif;
-  font-size: 6rem; /* Tamaño para desktop */
+  font-size: 6rem;
   font-weight: bold;
   line-height: 1;
 }
@@ -43,7 +41,7 @@
 .services-intro p {
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
-  font-size: 14px; /* Tamaño para desktop */
+  font-size: 14px;
 }
 
 .accordion {
@@ -134,7 +132,7 @@
 
 .accordion-item.active .accordion-header {
   background: #ffffff;
-  height: 400px; /* Podrías necesitar ajustar esto o hacerlo automático */
+  height: 400px;
   transition: all 1s ease;
 
   .accordion-content-inner h3 {
@@ -173,7 +171,7 @@
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 1000px; /* Adjust this value based on your content */
+  max-height: 1000px;
   padding: 1rem 1.5rem;
 }
 
@@ -231,163 +229,153 @@
   padding-left: 30px;
 }
 
-/* -------------------- MEDIA QUERIES -------------------- */
-
-/* Para pantallas medianas (ej. tabletas, algunos laptops) */
 @media (max-width: 1200px) {
   .services-section {
-    padding: 0 20px; /* Ajusta el padding lateral del contenedor principal */
+    padding: 0 20px;
   }
 
   .services-header {
-    /* Mantén la altura para mantener la alineación general */
-    height: 280px; /* Un poco menos alto para tabletas */
-    /* Ajusta los paddings para pantallas medianas */
+    height: 280px;
     padding-left: 30px;
     padding-right: 50px;
     padding-top: 40px;
-    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    width: 100%;
   }
 
   .services-intro {
-    /* Ya no tiene width fijo, el max-width lo controla */
-    max-width: 500px; /* Reduce el max-width para pantallas más pequeñas */
-    gap: 10px; /* Reduce el gap */
+    max-width: 500px;
+    gap: 10px;
   }
 
   .services-intro h2 {
-    font-size: 4.5rem; /* Reduce el tamaño de la fuente para el título */
+    font-size: 4.5rem;
   }
 
   .services-intro p {
-    font-size: 13px; /* Mantiene el tamaño de la fuente para el párrafo */
+    font-size: 13px;
   }
 
-  /* Ajustes para el acordeón en esta resolución si es necesario */
   .accordion-header {
-    padding: 1.5rem 1rem; /* Ajusta el padding del header del acordeón */
-    font-size: 1rem; /* Reduce el tamaño de fuente del título del acordeón */
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
   }
 
   .accordion-item.active .accordion-header {
-    height: 350px; /* Ajusta la altura del header activo para tabletas */
+    height: 350px;
   }
 
   .accordion-content-inner h3 {
-    font-size: 1.2rem; /* Ajusta el tamaño de la fuente del subtítulo en el contenido activo */
+    font-size: 1.2rem;
   }
 
   .accordion-content-inner p {
-    font-size: 12px; /* Ajusta el tamaño de la fuente del párrafo en el contenido activo */
+    font-size: 12px;
   }
 
   .accordion-content-inner ul {
-    font-size: 13px; /* Ajusta el tamaño de la fuente de la lista en el contenido activo */
+    font-size: 13px;
   }
 
   .accordion-content-icons-general {
-    padding-left: 20px; /* Ajusta el padding para los iconos generales */
+    padding-left: 20px;
   }
 
   .accordion-content-icons-text {
-    font-size: 13px; /* Ajusta el tamaño de la fuente del texto de los iconos */
+    font-size: 13px;
     padding-left: 20px;
   }
 }
 
-/* Para pantallas móviles (hasta 780px, o lo que consideres el punto de quiebre para móvil) */
 @media (max-width: 780px) {
   .services-section {
-    padding: 0 15px; /* Más padding para móviles */
+    padding: 0 15px;
   }
 
   .services-header {
-    height: auto; /* Permite que la altura se ajuste al contenido */
-    align-items: start; /* Centra el contenido horizontalmente */
-    text-align: start; /* Centra el texto */
-    padding: 30px 20px; /* Ajusta los paddings para móviles */
-    width: 100%; /* Ocupa todo el ancho disponible */
+    height: auto;
+    align-items: start;
+    text-align: start;
+    padding: 30px 20px;
+    width: 100%;
   }
 
   .services-intro {
-    /* No se necesita width aquí, el max-width y padding del padre controlan */
-    max-width: 100%; /* Ocupa todo el ancho disponible */
-    gap: 10px; /* Gap entre h2 y p */
+    max-width: 100%;
+    gap: 10px;
   }
 
   .services-intro h2 {
-    font-size: 2.8rem; /* Tamaño de fuente para el título en móvil */
-    line-height: 1.1; /* Ajusta el line-height si es necesario */
+    font-size: 2.8rem;
+    line-height: 1.1;
   }
 
   .services-intro p {
-    font-size: 0.85rem; /* Tamaño de fuente para el párrafo en móvil */
-    width: 95%; /* Asegura que no se desborde */
-    margin: 0 auto; /* Centra el párrafo */
+    font-size: 0.85rem;
+    width: 95%;
+    margin: 0 auto;
   }
 
   .accordion {
-    width: 100%; /* Acordeón ocupa todo el ancho */
-    padding-top: 10px; /* Menor padding superior */
+    width: 100%;
+    padding-top: 10px;
   }
 
   .accordion-item {
-    padding: 5px; /* Reduce el padding del item del acordeón */
+    padding: 5px;
   }
 
   .accordion-header {
-    height: auto; /* Altura automática para el header del acordeón */
-    padding: 1rem; /* Reduce el padding del header del acordeón */
-    font-size: 0.95rem; /* Reduce el tamaño de fuente del título del acordeón */
-    flex-wrap: wrap; /* Permite que los elementos internos del header se envuelvan */
-    justify-content: center; /* Centra el contenido en el header */
-    text-align: center; /* Centra el texto del header */
+    height: auto;
+    padding: 1rem;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 
   .accordion-header .accordion-content-inner h3 {
-    font-size: 1rem; /* Tamaño de la fuente del título dentro del header cuando está contraído */
+    font-size: 1rem;
   }
 
-  /* Ajustes para el contenido activo del acordeón en móvil */
   .accordion-item.active .accordion-header {
-    height: auto; /* Altura automática para el header activo en móvil */
-    flex-direction: column; /* Apila el contenido en el header activo */
-    justify-content: center; /* Centra el contenido */
-    align-items: center; /* Centra horizontalmente */
-    padding: 1rem; /* Reduce el padding del header activo */
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
   }
 
   .accordion-item.active .accordion-header .accordion-content-inner {
-    text-align: center; /* Centra el texto del contenido */
-    padding-right: 0; /* Elimina padding derecho extra */
+    text-align: center;
+    padding-right: 0;
   }
 
   .accordion-item.active .accordion-content-inner h3 {
-    font-size: 1.2rem; /* Tamaño de la fuente del título dentro del header activo */
-    margin-bottom: 10px; /* Espaciado debajo del título */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
   }
 
   .accordion-item.active .accordion-header h4,
   .accordion-item.active .accordion-header p,
   .accordion-item.active .accordion-header ul {
-    text-align: start; /* Centra el texto en el contenido activo */
-    padding-left: 0; /* Elimina el padding de la lista si está centrado */
+    text-align: start;
+    padding-left: 0;
   }
 
   .accordion-item.active .accordion-content-inner img {
-    width: 150px; /* Reduce el tamaño de la imagen en móvil */
-    margin: 10px auto; /* Centra la imagen */
+    width: 150px;
+    margin: 10px auto;
   }
 
   .accordion-content-icons-general {
-    flex-direction: row; /* Coloca los iconos en fila si hay espacio */
-    flex-wrap: wrap; /* Permite que se envuelvan */
-    justify-content: center; /* Centra los iconos */
-    padding-left: 0; /* Elimina padding extra */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
   }
 
   .accordion-content-icons-text {
-    text-align: center; /* Centra el texto de los iconos */
-    padding-left: 0; /* Elimina padding extra */
+    text-align: center;
+    padding-left: 0;
   }
 }

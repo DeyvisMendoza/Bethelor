@@ -1,0 +1,99 @@
+---
+// Importa cualquier componente React si es necesario (ej. BotonFooter si es React)
+import { BotonFooter } from "../BotonFooter/BotonFooter";
+
+// Define los iconos sociales
+const socialIcons = [
+  { href: "#facebook", src: "/footer/facebook.png", alt: "Facebook" },
+  { href: "#twitter", src: "/footer/twitter.png", alt: "Twitter" },
+  { href: "#pinterest", src: "/footer/pinterest.png", alt: "Pinterest" },
+  { href: "#telegram", src: "/footer/telegram.png", alt: "Telegram" },
+];
+---
+
+<style is:global>
+  /* Puedes mantener estas reglas CSS globales aquí si no quieres convertirlas a Tailwind */
+  /* O mejor aún, agregarlas a tu archivo global.css o directamente en tailwind.config.cjs */
+  .name-logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+  }
+  .texto-alternativo {
+    display: block;
+    font-size: 10px;
+    margin-top: -15px;
+    margin-bottom: 25px;
+  }
+</style>
+
+<footer class="bg-black text-efefef py-5 px-24 text-left flex flex-col gap-5">
+  <div class="flex justify-between items-start p-5 w-full gap-12.5 flex-wrap">
+    <div class="flex flex-col items-start w-auto basis-1/4 min-w-48"> {/* Equivalent to footer-logo */}
+      <h3 class="name-logo">BETHELOR</h3>
+      <p class="texto-alternativo">Home Construction & Remodeling</p>
+      <div class="flex justify-start items-start gap-2.5 mb-2.5"> {/* Equivalent to footer-contact-item */}
+        <span class="text-sm font-normal text-6d6d6d">Address</span>
+        <p class="text-sm font-normal m-0">59 Serpens Ct, Rosedale, MD 21237</p>
+      </div>
+      <div class="flex justify-start items-start gap-2.5 mb-2.5">
+        <span class="text-sm font-normal text-6d6d6d">Mail us:</span>
+        <p class="text-sm font-normal m-0">Contact@bethelor.com</p>
+      </div>
+      <div class="flex justify-start items-start gap-2.5 mb-2.5">
+        <span class="text-sm font-normal text-6d6d6d">Call us:</span>
+        <p class="text-sm font-normal m-0">+1 240 618 7916</p>
+      </div>
+    </div>
+
+    <div class="w-auto text-left flex flex-col items-start justify-start basis-1/5 min-w-36"> {/* Equivalent to footer-col */}
+      <h3 class="text-base font-bold text-white mb-2.5 uppercase text-left">Explore Our Projects</h3>
+      <ul class="list-none p-0 m-0 flex flex-col gap-2.5 items-start">
+        <li><a href="/projects" class="text-sm font-normal text-6d6d6d hover:text-white">All Projects</a></li>
+        <li><a href="/projects/kitchens" class="text-sm font-normal text-6d6d6d hover:text-white">Kitchens</a></li>
+        <li><a href="/projects/bathrooms" class="text-sm font-normal text-6d6d6d hover:text-white">Bathrooms</a></li>
+        <li><a href="/projects/painting" class="text-sm font-normal text-6d6d6d hover:text-white">Interior & Exterior Painting</a></li>
+        <li><a href="/projects/additions" class="text-sm font-normal text-6d6d6d hover:text-white">Home Additions</a></li>
+        <li><a href="/projects/repair" class="text-sm font-normal text-6d6d6d hover:text-white">Home Repair & Improvement</a></li>
+      </ul>
+    </div>
+
+    <div class="w-auto text-left flex flex-col items-start justify-start basis-1/5 min-w-36">
+      <h3 class="text-base font-bold text-white mb-2.5 uppercase text-left">Links</h3>
+      <ul class="list-none p-0 m-0 flex flex-col gap-2.5 items-start">
+        <li><a href="/" class="text-sm font-normal text-6d6d6d hover:text-white">Home</a></li>
+        <li><a href="/services" class="text-sm font-normal text-6d6d6d hover:text-white">Services</a></li>
+        <li><a href="/about" class="text-sm font-normal text-6d6d6d hover:text-white">About Us</a></li>
+        <li><a href="/contact" class="text-sm font-normal text-6d6d6d hover:text-white">Contact</a></li>
+        <li><a href="/blogs" class="text-sm font-normal text-6d6d6d hover:text-white">Blogs</a></li>
+        <li><a href="/privacy" class="text-sm font-normal text-6d6d6d hover:text-white">Privacy Policy</a></li>
+        <li><a href="/terms" class="text-sm font-normal text-6d6d6d hover:text-white">Terms of Use</a></li>
+      </ul>
+    </div>
+
+    <div class="w-auto text-left flex flex-col items-start justify-start basis-1/5 min-w-36">
+      <p class="text-sm font-normal text-aeaeae mb-2.5 text-left">
+        Ready to remodel your house in Maryland? Contact Bethelor today for a
+        free quote and expert guidance from start to finish.
+      </p>
+      <BotonFooter client:load /> {/* client:load para hidratar el componente si tiene JS */}
+      <div class="mt-10 flex justify-start items-start gap-1.5">
+        {socialIcons.map((icon) => (
+          <a href={icon.href} class="block">
+            <img src={icon.src} alt={icon.alt} class="w-10 h-auto mr-2.5 hover:filter-invert" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-between items-center p-5 w-full gap-12.5 border-t border-373737 flex-wrap">
+    <p class="text-sm font-normal text-6d6d6d m-0 flex-grow text-left">Copyright © 2025 Mako by CeeaThemes. All Rights Reserved.</p>
+    <div class="flex flex-col items-start"> {/* Adjusted for left alignment on mobile */}
+      <a href="/terms" class="text-sm font-normal text-6d6d6d no-underline cursor-pointer text-left hover:text-white">
+        Terms of Use / Privacy Environmental Policy
+      </a>
+    </div>
+  </div>
+</footer>

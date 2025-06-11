@@ -1,14 +1,9 @@
-// src/components/Header.js
-
-import "./HeaderBlack.css"; // Importa el archivo CSS
-
-// Asumiendo que el logotipo está en src/assets/bethelhor-logo.png
+import "./HeaderBlack.css";
 import { BotonHeader } from "../BotonHeader/BotonHeader";
 
 function Header() {
   return (
     <header className="header-container">
-      {/* Top Bar */}
       <div className="header-top-bar">
         <div className="header-top-content">
           <div className="contact-info">
@@ -20,7 +15,6 @@ function Header() {
               />
               <p>59 Serpent Cir, Roadside, MO 21337</p>
             </div>
-            {/* Phone */}
             <div className="flex items-center space-x-2 gap-2 cursor-pointer">
               <img
                 src="public/header/phone.png"
@@ -29,7 +23,6 @@ function Header() {
               />
               <p>+1 240 618 7916</p>
             </div>
-            {/* Email */}
             <div className="flex items-center space-x-2 gap-2 cursor-pointer">
               <img
                 src="public/header/send.png"
@@ -42,11 +35,9 @@ function Header() {
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
       <div className="header-bottom-bar">
         <div className="header-bottom-content">
           <div className="logo">
-            {/* <img src={bethelhorLogo} alt="Bethelhor Logo" /> */}
             <div className="logo-text">
               <h1>BETHELHOR</h1>
               <p>Home Construction & Remodeling</p>
@@ -62,8 +53,7 @@ function Header() {
               </li>
               <li>
                 <a href="/services">SERVICES</a>
-              </li>{" "}
-              {/* Subrayado en la imagen */}
+              </li>
               <li>
                 <a href="/projects">PROJECTS</a>
               </li>

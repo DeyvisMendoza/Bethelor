@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
-// SVG de la flecha con una rotación para inclinarla
 const ArrowSVG = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -13,8 +12,6 @@ const ArrowSVG = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    // Añade la transformación de rotación aquí
-    // rotate(-45) rota 45 grados en sentido anti-horario, lo que hará que apunte arriba-derecha
     transform="rotate(-45)"
   >
     <line x1="5" y1="12" x2="19" y2="12"></line>

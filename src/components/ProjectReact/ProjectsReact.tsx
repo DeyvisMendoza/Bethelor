@@ -18,7 +18,7 @@ const categories = [
 ];
 
 export const Projects: React.FC = () => {
-  const [current, setCurrent] = useState(1); // Inicia en 1 para la primera imagen real
+  const [current, setCurrent] = useState(1); 
   const trackRef = useRef<HTMLDivElement>(null);
   const [imageWidth, setImageWidth] = useState(0);
 
@@ -26,20 +26,19 @@ export const Projects: React.FC = () => {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   const imagesWithClones = [
-    projectImages[projectImages.length - 1], // last as first clone
+    projectImages[projectImages.length - 1], 
     ...projectImages,
-    projectImages[0], // first as last clone
+    projectImages[0], 
   ];
 
-  // Función para calcular el ancho de la imagen dinámicamente y el gap
+  
   const calculateSlideWidth = useCallback(() => {
     if (trackRef.current && trackRef.current.children.length > 1) {
-      const firstImage = trackRef.current.children[1] as HTMLImageElement; // Acceder a la primera imagen real (segundo hijo)
+      const firstImage = trackRef.current.children[1] as HTMLImageElement; 
 
       // Si la imagen no está cargada aún, reintenta
       if (firstImage.clientWidth === 0) {
-        // Podrías añadir un pequeño retraso aquí o usar un onLoad en la imagen
-        // para asegurar que ha cargado. Para este ejemplo, solo retorna.
+
         return;
       }
 
@@ -55,22 +54,20 @@ export const Projects: React.FC = () => {
         );
         gapValue = parseFloat(gapString) * rootFontSize;
       } else {
-        gapValue = 10; // Fallback al valor que tienes en CSS por defecto (0.625rem = 10px)
+        gapValue = 10; 
       }
 
-      // El ancho de una "slide" es el ancho de la imagen más el gap
+      
       setImageWidth(firstImage.clientWidth + gapValue);
     }
   }, []);
 
-  // Hook para observar el tamaño de la imagen y recalcular slideWidth
+  
   useEffect(() => {
-    // Ejecuta el cálculo inicialmente
     calculateSlideWidth();
 
-    // Configura un ResizeObserver para re-calcular cuando el tamaño del track o sus hijos cambie
     const observer = new ResizeObserver((entries) => {
-      // Solo recalcula si el track o la primera imagen real han cambiado de tamaño
+      
       const trackEntry = entries.find(
         (entry) => entry.target === trackRef.current
       );
@@ -86,30 +83,29 @@ export const Projects: React.FC = () => {
     });
 
     if (trackRef.current) {
-      observer.observe(trackRef.current); // Observa el contenedor del track
-      // También observa la primera imagen real, si existe, para detectar cambios en su ancho
+      observer.observe(trackRef.current);
+      
       if (trackRef.current.children.length > 1) {
         observer.observe(trackRef.current.children[1]);
       }
     }
 
-    return () => observer.disconnect(); // Limpiar el observador al desmontar
+    return () => observer.disconnect(); 
   }, [calculateSlideWidth]);
 
-  // Actualiza la posición inicial del slider sin transición cuando imageWidth cambia
-  // Esto asegura que el slider se posicione correctamente al cargar y al redimensionar
+  
   useEffect(() => {
     if (trackRef.current && imageWidth > 0) {
       trackRef.current.style.transition = "none";
       trackRef.current.style.transform = `translateX(-${
         current * imageWidth
       }px)`;
-      // Forzar un reflow para asegurar que la transición 'none' se aplique
-      void trackRef.current.offsetHeight; // Usar 'void' para indicar que no usamos el valor de retorno
+      
+      void trackRef.current.offsetHeight; 
     }
-  }, [imageWidth]); // Dependencia: imageWidth
+  }, [imageWidth]); 
 
-  // updateSlider ahora solo actualiza la posición del transform con o sin transición
+  
   const updateSlider = useCallback(
     (index: number, animate = true) => {
       if (trackRef.current && imageWidth > 0) {
@@ -136,7 +132,7 @@ export const Projects: React.FC = () => {
     updateSlider(nextIndex);
   };
 
-  // Infinite loop effect
+
   useEffect(() => {
     const handleTransitionEnd = () => {
       if (current === imagesWithClones.length - 1) {
@@ -266,7 +262,7 @@ export const Projects: React.FC = () => {
                 /> */}
         <InteractiveLinkButton
           href={""}
-          className="projects-view-all-button" // Clase CSS para el estilo
+          className="projects-view-all-button"
         />
       </div>
 
@@ -305,7 +301,6 @@ export const Projects: React.FC = () => {
             {imagesWithClones.map((src, idx) => (
               <img
                 key={idx}
-                // Eliminar el ID fijo aquí. Usaremos el ref para el cálculo.
                 // id={`slider-img-${idx}`}
                 src={src}
                 className="slider-img"
@@ -316,7 +311,7 @@ export const Projects: React.FC = () => {
             ))}
           </div>
 
-          {/* Arrows */}
+          
           <div className="slider-controls">
             <motion.img
               src="/project/boton-left.png"

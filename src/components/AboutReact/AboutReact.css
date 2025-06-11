@@ -1,0 +1,418 @@
+.about-section {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  gap: 10px;
+}
+
+.about-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 60px;
+  padding-right: 100px;
+  width: 1150px;
+  gap: 130px;
+}
+
+.about-header img {
+  width: 120px;
+}
+
+.about-intro {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+  gap: 15px;
+}
+
+.about-intro h2 {
+  font-family: "Host Grotesk", sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.about-intro p {
+  width: 90%;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #838383;
+}
+
+.about-cicle-text {
+  display: flex;
+  flex-direction: row;
+  width: 1100px;
+  padding: 50px;
+  z-index: 5;
+  gap: 50px;
+}
+
+.container-cicles {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: 140px;
+  justify-content: flex-start;
+}
+
+.cicle-white,
+.cicle-black {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 35px;
+  font-family: "Host Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  user-select: none;
+  transition: transform 0.5s ease, z-index 0.3s ease;
+}
+
+.container-cicles:not(.swap) .cicle-white {
+  background-color: rgb(227, 227, 227);
+  color: rgb(121, 121, 121);
+  z-index: 2;
+  left: 0;
+}
+
+.container-cicles:not(.swap) .cicle-black {
+  background-color: black;
+  color: white;
+  z-index: 1;
+  left: 70px;
+}
+
+.container-cicles.swap .cicle-white {
+  background-color: rgb(227, 227, 227);
+  color: rgb(121, 121, 121);
+  left: 70px;
+  z-index: 1;
+}
+
+.container-cicles.swap .cicle-black {
+  background-color: black;
+  color: white;
+  left: 0;
+  z-index: 2;
+}
+
+.cicle-white p,
+.cicle-black p {
+  font-size: 12px;
+}
+
+.cicle-white span,
+.cicle-black span {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.container-text {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-text h3 {
+  font-family: "Host Grotesk", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+.container-text p {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: #838383;
+  user-select: none;
+}
+
+.about-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+  gap: 15px;
+  width: 1100px;
+  position: relative;
+  margin-top: -70px;
+  z-index: 100;
+}
+
+.about-image1 {
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.about-image2 {
+  width: 315px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.about-image3 {
+  width: 315px;
+  height: 350px;
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .about-section {
+    padding: 60px 40px;
+    gap: 40px;
+    box-sizing: border-box;
+  }
+
+  .about-header {
+    width: 100%;
+    padding-right: 0;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-top: 40px;
+  }
+
+  .about-header img {
+    width: 100px;
+  }
+
+  .about-intro {
+    width: auto;
+    flex: 1;
+    gap: 10px;
+  }
+
+  .about-intro h2 {
+    font-size: 4.5rem;
+  }
+
+  .about-intro p {
+    font-size: 13px;
+    width: 95%;
+  }
+
+  .about-cicle-text {
+    flex-direction: row;
+    width: 100%;
+    padding: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .container-cicles {
+    width: 200px;
+    height: 120px;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+
+  .cicle-white,
+  .cicle-black {
+    width: 120px;
+    height: 120px;
+    padding-bottom: 25px;
+    font-size: 13px;
+  }
+
+  .container-cicles:not(.swap) .cicle-white {
+    left: -15px;
+  }
+
+  .container-cicles:not(.swap) .cicle-black {
+    left: 45px;
+  }
+
+  .container-cicles.swap .cicle-white {
+    left: 45px;
+  }
+
+  .container-cicles.swap .cicle-black {
+    left: -15px;
+  }
+
+  .cicle-white p,
+  .cicle-black p {
+    font-size: 11px;
+  }
+
+  .cicle-white span,
+  .cicle-black span {
+    font-size: 1.6rem;
+  }
+
+  .container-text {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
+  }
+
+  .container-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .container-text p {
+    font-size: 12px;
+  }
+
+  .about-images {
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    margin-top: -40px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .about-image1 {
+    width: 30%;
+    height: 350px;
+    max-width: 250px;
+  }
+
+  .about-image2 {
+    width: 25%;
+    height: 280px;
+    max-width: 200px;
+  }
+
+  .about-image3 {
+    width: 25%;
+    height: 230px;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+
+  .about-header {
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 15px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-header img {
+    width: 70px;
+  }
+
+  .about-intro {
+    width: 100%;
+    align-items: center;
+  }
+
+  .about-intro h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .about-intro p {
+    font-size: 12px;
+    width: 90%;
+  }
+
+  .about-cicle-text {
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .container-cicles {
+    width: 150px;
+    height: 100px;
+  }
+
+  .cicle-white,
+  .cicle-black {
+    width: 100px;
+    height: 100px;
+    padding-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .container-cicles:not(.swap) .cicle-white {
+    left: -10px;
+  }
+
+  .container-cicles:not(.swap) .cicle-black {
+    left: 30px;
+  }
+
+  .container-cicles.swap .cicle-white {
+    left: 30px;
+  }
+
+  .container-cicles.swap .cicle-black {
+    left: -10px;
+  }
+
+  .cicle-white p,
+  .cicle-black p {
+    font-size: 9px;
+  }
+
+  .cicle-white span,
+  .cicle-black span {
+    font-size: 1.3rem;
+  }
+
+  .container-text {
+    width: 90%;
+    align-items: start;
+    text-align: start;
+    gap: 10px;
+    margin-top: 105px;
+  }
+
+  .container-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .container-text p {
+    font-size: 11px;
+    width: 90%;
+  }
+
+  .about-images {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 0;
+    align-items: center;
+  }
+
+  .about-image1,
+  .about-image2,
+  .about-image3 {
+    width: 90%;
+    height: 300px;
+    max-width: 450px;
+  }
+}

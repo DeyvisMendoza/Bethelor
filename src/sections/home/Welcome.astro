@@ -6,7 +6,6 @@ import "../../styles/global.css";
 // import Fondo2 from "../../assets/welcome/welcome-fondo2.png";
 // import Fondo3 from "../../assets/welcome/welcome-fondo3.png";
 
-// Importa tu componente de React
 import AnimatedWelcomeText from "../../../src/components/AnimatedWelcomeText/AnimatedWelcomeText.jsx";
 ---
 
@@ -18,8 +17,8 @@ import AnimatedWelcomeText from "../../../src/components/AnimatedWelcomeText/Ani
         style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo1.png')" }}
       ></div>
 
-      {/* Aquí reemplazamos el div text-container */}
-      <AnimatedWelcomeText client:load /> {/* <-- Importante: client:load */}
+      
+      <AnimatedWelcomeText client:load />
 
     </div>
 
@@ -46,16 +45,16 @@ import AnimatedWelcomeText from "../../../src/components/AnimatedWelcomeText/Ani
   </div>
 
   <div class="button-section">
-    <div class="button-item">
+    <div class="button-item button-animate-1">
       <a href="/services">View All Services</a>
     </div>
-    <div class="button-item">
+    <div class="button-item button-animate-2">
       <a href="/projects">View All Projects</a>
     </div>
-    <div class="button-item">
+    <div class="button-item button-animate-3">
       <a href="/about">About Us</a>
     </div>
-    <div class="button-item">
+    <div class="button-item button-animate-4">
       <a href="/contact">Contact Us</a>
     </div>
   </div>

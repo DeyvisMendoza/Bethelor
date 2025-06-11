@@ -21,15 +21,14 @@
   display: inline-block;
   font-size: 25px;
     transition: all 0.3s ease;
-  /* Estado normal: visible y sin movimiento */
+
 }
 
-/* Hover del botón dispara la animación en la flecha */
 .fancy-btn:hover .arrow {
   font-size: 20px;
 }
 
-/* Estilos comunes para todas las líneas */
+
 .corner {
   position: absolute;
   background-color: rgb(0, 0, 0);
@@ -37,7 +36,7 @@
   z-index: 100;
 }
 
-/* Posiciones con variables ajustables */
+
 .corner.top {
   width: 210px;
   height: 0.5px;
@@ -70,7 +69,6 @@
   transition: all 0.4s ease;
 }
 
-/* Ocultar líneas al hacer hover */
 
 .fancy-btn:hover .corner.top {
   width: 10px;
