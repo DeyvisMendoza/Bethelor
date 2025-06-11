@@ -571,6 +571,10 @@
         font-size: 15px;
     }
 
+    .forminput-input{
+        padding: 15px;
+    }
+
     .privacy-container {
         align-items: flex-start;
     }

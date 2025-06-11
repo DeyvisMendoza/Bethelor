@@ -2,6 +2,7 @@
 import Footer from "../components/Footer/Footer";
 import Form from "../components/FormReact/FormReact";
 import ProjectsReact from "../components/ProjectReact/ProjectsReact";
+import Layout from "../layouts/Layout.astro";
 import About from "../sections/home/About.astro";
 import Brands from "../sections/home/Brands.astro";
 import Choose from "../sections/home/Choose.astro";
@@ -21,16 +22,18 @@ import "../styles/global.css";
     <title>Bethelor</title>
   </head>
   <body>
-    <Welcome />
-    <Services />
-    <Projects />
-    <About />
-    <Choose />
-    <Brands />
-    <Process/>
-    <Testimonials/>
-    <Tips/>
-    <Formulario/>
-    <Footer/>
+    <Layout>
+      <Welcome />
+      <Services />
+      <Projects />
+      <About />
+      <Choose />
+      <Brands />
+      <Process />
+      <Testimonials />
+      <Tips />
+      <Formulario />
+      <!-- <Footer /> -->
+    </Layout>
   </body>
 </html>
