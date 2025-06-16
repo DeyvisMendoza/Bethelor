@@ -4,6 +4,10 @@ import Layout from "../layouts/Layout.astro";
 import Process from "../sections/home/Process.astro";
 import Projects from "../sections/home/Projects.astro";
 import Testimonials from "../sections/home/Testimonials.astro";
+import FAQSection from "../sections/kitchen/FAQSection";
+import KitchonCostSection from "../sections/kitchen/KitchonCostSection.astro";
+import SectionCustom from "../sections/kitchen/SectionCustom.astro";
+import SectionOptions from "../sections/kitchen/SectionOptions.astro";
 import Welcome3 from "../sections/kitchen/Welcome3.astro";
 import HomeServices from "../sections/services/HomeServices.astro";
 import SectionBlack from "../sections/services/SectionBlack.astro";
@@ -14,11 +18,16 @@ import "../styles/global.css";
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-  </head>
-  <title>Bethelor</title>
+    <title>Bethelor</title></head
+  >
+
   <body class="bg-white text-gray-900">
     <Welcome3 />
+    <SectionCustom />
+    <SectionOptions />
+    <KitchonCostSection />
     <Process />
+    <FAQSection client:load />
     <Projects />
     <Testimonials />
     <Footer />

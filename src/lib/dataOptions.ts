@@ -1,10 +1,4 @@
-import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
-import "./SectionOptions.css";
-
-export const SectionOptions = () => {
-  // Datos de los servicios para facilitar la renderización
-  const services = [
+ export const services = [
     {
       title: "CUSTOM CABINETS INSTALLATION",
       description:
@@ -56,24 +50,3 @@ export const SectionOptions = () => {
         "Complete the project with fresh wall paint, trim, and finishing touches to tie everything together.",
     },
   ];
-
-  return (
-    <section className="kitchen-features-section-container">
-      <h2 className="kitchen-features-title">
-        What's included in a full kitchen remodel?
-      </h2>
-
-      <div className="features-grid">
-        {services.map((service, index) => (
-          <div key={index} className="feature-item">
-            <FaCheckCircle className="feature-icon" />
-            <div className="feature-content">
-              <h3 className="feature-title">{service.title}</h3>
-              <p className="feature-description">{service.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};

@@ -1,0 +1,258 @@
+---
+import { kitchenTypes } from "../../lib/dataKitchen";
+
+import { Image } from "astro:assets";
+---
+
+<section class="kitchen-cost-section-container">
+  <div class="cost-header">
+    <h2 class="cost-title">
+      How Much Does a Kitchen <br /> Remodel Cost in Maryland?
+    </h2>
+    <p class="cost-intro-paragraph">
+      See the average investment by kitchen size - and what's included in each
+      remodel. If you're planning to remodel your kitchen in Maryland, it's
+      important to understand the typical investment based on kitchen size.
+      Whether you're upgrading a compact space or designing a luxury cooking
+      area, this guide gives you a general price range for small, medium, and
+      large kitchens - and what's usually included in each.
+    </p>
+    <p class="cost-disclaimer-paragraph">
+      *Prices shown are estimates and may vary depending on materials, finishes,
+      structural changes, and overall project complexity.
+    </p>
+  </div>
+
+  <div class="kitchen-types-grid">
+    {
+      kitchenTypes.map((kitchen, index) => (
+        <div class="kitchen-type-card">
+          <img
+            src={kitchen.image}
+            alt={kitchen.title}
+            class="kitchen-type-image"
+          />
+          <h3 class="kitchen-type-title">{kitchen.title}</h3>
+          <p class="kitchen-type-size">{kitchen.size}</p>
+          <p class="kitchen-type-price">{kitchen.price}</p>
+          <ul class="kitchen-type-features">
+            {kitchen.features.map((feature, featIndex) => (
+              <li>{feature}</li>
+            ))}
+          </ul>
+          <p class="kitchen-type-description">{kitchen.description}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="cost-button-wrapper">
+    <a href="/request-quote" class="cost-quote-button">
+      Request your free quote <span class="arrow-right">→</span>
+    </a>
+  </div>
+</section>
+
+<style>
+
+
+  .kitchen-cost-section-container {
+    background-color: #ffffff; 
+    padding: 80px 40px;
+    font-family: Arial, sans-serif; 
+    color: #333333; 
+    text-align: center; 
+  }
+
+  .cost-header {
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+  }
+
+  .cost-title {
+    font-size: 64px; 
+    line-height: 1.1;
+    margin-top: 0;
+    text-align: start;
+    font-weight: 550;
+    margin-bottom: 30px; /
+    color: #000000; 
+  }
+
+  .cost-intro-paragraph {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #808080;
+    text-align: start;
+  }
+
+  .cost-disclaimer-paragraph {
+    font-size: 14px;
+    color: #808080;
+    text-align: start;
+    margin-bottom: 50px; 
+  }
+
+
+  .kitchen-types-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; 
+    max-width: 1100px; 
+    margin: 0 auto 60px auto; 
+  }
+
+  .kitchen-type-card {
+    background-color: #ffffff; 
+    padding-bottom: 20px;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kitchen-type-image {
+    width: 100%;
+    height: 400px; 
+    object-fit: cover; 
+
+    margin-bottom: 20px;
+  }
+
+  .kitchen-type-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+    font-family: "Host Grotesk", sans-serif;
+  }
+
+  .kitchen-type-size {
+    font-size: 0.95em;
+    color: #777777;
+    margin-bottom: 10px;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .kitchen-type-price {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 25px;
+    font-family: "Host Grotesk", sans-serif;
+  }
+
+  .kitchen-type-features {
+    list-style: none; 
+    padding: 0 20px; 
+    margin: 0 0 20px 0; 
+    text-align: left; 
+    width: 100%; /
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .kitchen-type-features li {
+    font-size: 0.95em;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px; 
+    color: #555555;
+  }
+
+  .kitchen-type-features li::before {
+    content: "•"; 
+    color: #000000; 
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .kitchen-type-description {
+    font-size: 0.9em;
+    color: #777777;
+    padding: 0 20px; 
+    margin-top: 0;
+    font-family: "DM Sans", sans-serif;
+  }
+
+ 
+  .cost-button-wrapper {
+    margin-top: 40px;
+    text-align: center; 
+  }
+
+  .cost-quote-button {
+    display: inline-flex; 
+    align-items: center;
+    background-color: #000000; 
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none; 
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+  }
+
+  .cost-quote-button:hover {
+    background-color: #333333; 
+  }
+
+  .cost-quote-button .arrow-right {
+    margin-left: 10px; 
+    font-size: 1.2em;
+  }
+
+
+  @media (max-width: 1024px) {
+    .kitchen-types-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .cost-title {
+      font-size: 2.2em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .kitchen-cost-section-container {
+      padding: 60px 20px;
+    }
+
+    .kitchen-types-grid {
+      grid-template-columns: 1fr; 
+      gap: 30px;
+    }
+
+    .cost-title {
+      font-size: 1.8em;
+    }
+
+    .cost-intro-paragraph,
+    .cost-disclaimer-paragraph,
+    .kitchen-type-features li,
+    .kitchen-type-description {
+      font-size: 0.95em;
+    }
+
+    .kitchen-type-image {
+      height: 200px; 
+    }
+  }
+
+  @media (max-width: 480px) {
+    .kitchen-cost-section-container {
+      padding: 40px 15px;
+    }
+    .cost-title {
+      font-size: 1.5em;
+    }
+    .kitchen-type-price {
+      font-size: 1.4em;
+    }
+  }
+</style>
