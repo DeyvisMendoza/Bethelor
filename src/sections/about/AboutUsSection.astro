@@ -1,0 +1,189 @@
+---
+
+---
+
+<section class="about-us-section-container">
+  <div class="about-us-content-wrapper">
+    <div class="about-us-column">
+      <h3 class="column-title">OUR CLIENTS</h3>
+      <div class="title-underline"></div>
+      <p class="column-description">
+        At Bethelor, our clients are at the heart of everything we do. We work
+        closely with homeowners to understand their vision and deliver results
+        that exceed expectations—every project is a partnership built on trust,
+        communication, and quality craftsmanship.
+      </p>
+    </div>
+
+    <div class="about-us-column">
+      <h3 class="column-title">OUR MISSION</h3>
+      <div class="title-underline"></div>
+      <p class="column-description">
+        Our mission is to elevate homes and lives through high-quality
+        remodeling. We aim to turn ideas into reality by combining design,
+        function, and precision in every renovation project we take on.
+      </p>
+    </div>
+
+    <div class="about-us-column">
+      <h3 class="column-title">OUR VISION</h3>
+      <div class="title-underline"></div>
+      <p class="column-description">
+        To become Maryland’s most trusted home remodeling partner, recognized
+        for our commitment to excellence, innovation, and creating homes that
+        inspire pride and comfort.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+
+
+  .about-us-section-container {
+    background-color: #000000; 
+    padding: 100px 0; 
+    color: #ffffff; 
+    font-family: "DM Sans", sans-serif;
+    box-sizing: border-box;
+  }
+
+.about-us-content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 80px;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.about-us-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.column-title {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.title-underline {
+    width: 100%;
+    max-width: 200px;
+    height: 1px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    margin-bottom: 30px;
+}
+
+.column-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cccccc;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .about-us-section-container {
+        padding: 80px 0;
+    }
+
+    .about-us-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding: 0 30px;
+    }
+
+    .about-us-column {
+        width: 100%;
+        max-width: 600px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .column-title {
+        font-size: 1.4em;
+        margin-bottom: 8px;
+    }
+
+    .title-underline {
+        max-width: 150px;
+        margin-bottom: 25px;
+    }
+
+    .column-description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us-section-container {
+        padding: 60px 0;
+    }
+
+    .about-us-content-wrapper {
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .about-us-column {
+        max-width: 450px;
+    }
+
+    .column-title {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .title-underline {
+        max-width: 120px;
+        margin-bottom: 20px;
+    }
+
+    .column-description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-us-section-container {
+        padding: 40px 0;
+    }
+
+    .about-us-content-wrapper {
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .about-us-column {
+        max-width: 300px;
+    }
+
+    .column-title {
+        font-size: 1.1em;
+    }
+
+    .title-underline {
+        max-width: 100px;
+        margin-bottom: 15px;
+    }
+
+    .column-description {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}

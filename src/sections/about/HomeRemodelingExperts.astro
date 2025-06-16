@@ -1,0 +1,334 @@
+---
+
+import mainImage from "../../assets/about/about1.png"; 
+---
+
+<section class="home-remodeling-experts-section">
+  <div class="experts-content-wrapper">
+    <h1 class="experts-main-title">Home Remodeling Experts <br /> in Maryland</h1>
+
+    <div class="experts-columns-container">
+      <div class="experts-image-column">
+        <img src={mainImage.src} alt="Home remodeling expert working on cabinets" class="experts-main-image" />
+      </div>
+
+      <div class="experts-text-column">
+        <p>
+          At Bethelor, we are dedicated to delivering high-quality home remodeling
+          services across Maryland, including kitchen renovations, bathroom
+          remodeling, and complete home improvement projects. Whether it's a small
+          upgrade or a full transformation, we bring precision, passion, and personalized
+          service to every home we touch.
+        </p>
+        <p>
+          With years of hands-on experience, our team of skilled professionals takes
+          pride in using smart design, modern trends, and durable materials to bring
+          your vision to life. We believe that remodeling is not just about construction—
+          it's about creating beautiful, functional spaces that improve your daily life.
+        </p>
+
+        <p class="commitment-text">What sets Bethelor apart is our commitment to:</p>
+        <ul class="commitment-list">
+          <li>Clear and honest communication from start to finish</li>
+          <li>Attention to detail and custom-tailored solutions</li>
+          <li>Respect for your home, time, and budget</li>
+          <li>Lasting craftsmanship that adds real value to your property</li>
+        </ul>
+
+        <p class="serving-areas">
+          • Serving Baltimore, Montgomery County, and surrounding areas.
+        </p>
+
+        <a href="#" class="request-quote-button">
+          Request your free quote <span class="arrow-right">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+
+
+.home-remodeling-experts-section {
+  background-color: #ffffff; 
+  padding: 100px 0; 
+  font-family: 'DM Sans', sans-serif;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+.experts-content-wrapper {
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding: 0 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+}
+
+.experts-main-title {
+  font-family: 'Host Grotesk', sans-serif;
+  font-size: 4.5em; /* Título grande */
+  font-weight: 600;
+  line-height: 1.1;
+  color: #000000;
+  margin: 0 0 50px 0px; 
+  max-width: 800px; 
+  padding-left: 20px; 
+}
+
+.experts-columns-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  gap: 60px; 
+  width: 100%; 
+}
+
+.experts-image-column {
+  flex: 1.2; 
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start;
+}
+
+.experts-main-image {
+  max-width: 100%; 
+  height: auto;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; 
+}
+
+.experts-text-column {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 10px; 
+}
+
+.experts-text-column p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.commitment-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 10px; 
+}
+
+.commitment-list {
+  list-style: none; 
+  padding: 0;
+  margin: 0 0 20px 0; 
+}
+
+.commitment-list li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555555;
+  margin-bottom: 8px; 
+  position: relative;
+  padding-left: 20px; 
+}
+
+.commitment-list li::before {
+  content: "•";
+  font-size: 1.2em;
+  color: #000000; 
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.serving-areas {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+  margin-top: 20px; 
+  margin-bottom: 30px; 
+}
+
+.request-quote-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  border-radius: 4px; 
+}
+
+.request-quote-button:hover {
+  background-color: #333333;
+}
+
+.request-quote-button .arrow-right {
+  margin-left: 10px;
+  font-size: 1.1em;
+}
+
+@media (max-width: 1024px) {
+  .home-remodeling-experts-section {
+    padding: 80px 0;
+  }
+
+  .experts-content-wrapper {
+    padding: 0 30px; 
+  }
+
+  .experts-main-title {
+    font-size: 3.5em; 
+    margin-bottom: 40px;
+    padding-left: 0; 
+    text-align: center;
+  }
+
+  .experts-columns-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; 
+  }
+
+  .experts-image-column,
+  .experts-text-column {
+    flex: none; 
+    width: 100%; 
+    max-width: 650px;
+    margin: 0 auto; 
+    align-items: center; 
+  }
+
+  .experts-main-image {
+    max-width: 90%; 
+  }
+
+  .experts-text-column p,
+  .commitment-text,
+  .serving-areas,
+  .request-quote-button {
+    text-align: center; 
+    max-width: 90%; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+
+  .commitment-list {
+    text-align: left; 
+    max-width: 90%;
+    margin-left: auto; 
+    margin-right: auto;
+  }
+
+  .commitment-list li {
+    padding-left: 25px; 
+  }
+
+  .commitment-list li::before {
+    left: 5px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .home-remodeling-experts-section {
+    padding: 60px 0;
+  }
+
+  .experts-content-wrapper {
+    padding: 0 20px;
+  }
+
+  .experts-main-title {
+    font-size: 2.8em; 
+    margin-bottom: 30px;
+  }
+
+  .experts-columns-container {
+    gap: 30px; 
+  }
+
+  .experts-image-column,
+  .experts-text-column {
+    max-width: 500px;
+  }
+
+  .experts-main-image {
+    max-width: 100%;
+  }
+
+  .experts-text-column p,
+  .commitment-text,
+  .serving-areas {
+    font-size: 13px; 
+    max-width: 100%; 
+  }
+
+  .commitment-list li {
+    font-size: 13px; 
+    padding-left: 20px;
+  }
+
+  .commitment-list li::before {
+    left: 0;
+  }
+
+  .request-quote-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-remodeling-experts-section {
+    padding: 40px 0;
+  }
+
+  .experts-content-wrapper {
+    padding: 0 15px;
+  }
+
+  .experts-main-title {
+    font-size: 2.2em; 
+    margin-bottom: 25px;
+    line-height: 1.1;
+  }
+
+  .experts-columns-container {
+    gap: 25px;
+  }
+
+  .experts-image-column,
+  .experts-text-column {
+    max-width: 350px;
+  }
+
+  .experts-text-column p,
+  .commitment-text,
+  .serving-areas,
+  .commitment-list li {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .request-quote-button {
+    padding: 8px 15px;
+    font-size: 11px;
+  }
+
+  .request-quote-button .arrow-right {
+    margin-left: 8px;
+    font-size: 1em;
+  }
+}
+</style>
