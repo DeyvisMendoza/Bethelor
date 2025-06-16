@@ -1,6 +1,8 @@
 // src/components/AnimatedWelcomeText.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import "../../styles/sections/home/welcome.css";
+
 
 const containerVariants = {
   hidden: { opacity: 0 },

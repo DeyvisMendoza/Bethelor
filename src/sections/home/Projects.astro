@@ -1,5 +1,291 @@
 ---
-import ProjectsReact from "../../../src/components/ProjectReact/ProjectsReact.tsx";
+import { InteractiveLinkButton } from "../../components/InteractiveLinkButton/InteractiveLinkButton";
+import "../../styles/sections/home/ProjectsReact.css";
+
+const projectImages = [
+  "/project/project1.png",
+  "/project/project2.png",
+];
+
+const categories = [
+  { name: "ALL PROJECTS", count: 12 },
+  { name: "KITCHEN REMODELING", count: 3 },
+  { name: "BATHROOM REMODELING", count: 3 },
+  { name: "BASEMENT REMODELING", count: 1 },
+  { name: "WINDOW & DOOR REPLACEMENT", count: 5 },
+];
+
+const imagesWithClones = [
+  projectImages[projectImages.length - 1], 
+  ...projectImages, 
+  projectImages[0], 
+];
 ---
 
-<ProjectsReact client:load />
+<section class="projects-section" id="projects-section-id">
+  <div class="projects-header">
+    <div class="projects-intro">
+      <h2 class="projects-title">Our Projects.</h2>
+      <p class="projects-description">
+        Explore some of our featured remodeling projects across Maryland. From
+        kitchens and bathrooms to full home makeovers, we bring quality and
+        creativity into every space.
+      </p>
+    </div>
+    <InteractiveLinkButton client:load href={""} className="projects-view-all-button" />
+  </div>
+
+  <div class="project-content">
+    <div class="project-categories">
+      <ul class="categories-list">
+        {
+          categories.map((cat, index) => (
+            <li class="category-item" data-index={index}>
+              {cat.name} <span class="category-count">{cat.count}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="slider-container">
+      <div class="slider-track" style="display: flex;">
+        {
+          imagesWithClones.map((src, idx) => (
+            <img
+              src={src}
+              class="slider-img"
+              alt={`Project ${idx}`}
+              draggable="false"
+              style="user-select: none;"
+              loading="lazy"
+            />
+          ))
+        }
+      </div>
+
+
+      <div class="slider-controls">
+        <img
+          src="/project/boton-left.png"
+          class="slider-btn left animated-button-hover-effect"
+          alt="Previous"
+          id="slider-btn-left"
+          style="cursor: pointer;"
+        />
+        <img
+          src="/project/boton-rigth-white.png"
+          class="slider-btn right animated-button-hover-effect"
+          alt="Next"
+          id="slider-btn-right"
+          style="cursor: pointer;"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+
+  const projectImages = [
+    "/project/project1.png",
+    "/project/project2.png",
+    
+  ];
+  const imagesWithClones = [
+    projectImages[projectImages.length - 1],
+    ...projectImages,
+    projectImages[0],
+  ];
+
+  const trackRef = document.querySelector(".slider-track");
+  const leftButton = document.getElementById("slider-btn-left");
+  const rightButton = document.getElementById("slider-btn-right");
+  const sectionRef = document.getElementById("projects-section-id");
+
+  let currentSlide = 1; 
+  let slideWidth = 0; 
+
+
+  const calculateSlideWidth = () => {
+    if (!trackRef || trackRef.children.length < 2) return;
+
+
+    const firstImage = trackRef.children[1];
+    if (!firstImage) return;
+
+    const img = firstImage as HTMLImageElement;
+    if (img.clientWidth === 0 && !img.complete) {
+      img.onload = () => {
+        calculateSlideWidth(); 
+      };
+      return;
+    }
+
+    let gapValue = 0;
+    const computedTrackStyle = window.getComputedStyle(trackRef);
+    const gapString = computedTrackStyle.gap || computedTrackStyle.columnGap;
+
+    if (gapString && gapString.endsWith("px")) {
+      gapValue = parseFloat(gapString);
+    } else if (gapString && gapString.endsWith("rem")) {
+      const rootFontSize = parseFloat(
+        getComputedStyle(document.documentElement).fontSize
+      );
+      gapValue = parseFloat(gapString) * rootFontSize;
+    } else {
+      gapValue = 10; 
+    }
+
+    slideWidth = firstImage.clientWidth + gapValue;
+ 
+    updateSlider(currentSlide, false); 
+  };
+
+
+  /**
+   * @param {number} index
+   * @param {boolean} [animate=true]
+   */
+  /**
+   * @param {number} index
+   * @param {boolean} [animate=true]
+   */
+  const updateSlider = (index: number, animate = true) => {
+    if (trackRef && slideWidth > 0) {
+      const track = trackRef as HTMLElement;
+      track.style.transition = animate ? "transform 0.8s ease-in-out" : "none";
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+  };
+
+  const handleRight = () => {
+    currentSlide++;
+    updateSlider(currentSlide);
+  };
+
+  const handleLeft = () => {
+    currentSlide--;
+    updateSlider(currentSlide);
+  };
+
+  const handleTransitionEnd = () => {
+    if (currentSlide === imagesWithClones.length - 1) {
+      currentSlide = 1; 
+      updateSlider(currentSlide, false); 
+    } else if (currentSlide === 0) {
+      
+      currentSlide = imagesWithClones.length - 2; 
+      updateSlider(currentSlide, false); 
+    }
+  };
+
+  const animateOnScroll = (element: Element, className: string, delay = 0) => {
+    if (!element) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (delay > 0) {
+              (entry.target as HTMLElement).style.transitionDelay = `${delay}s`;
+            }
+            entry.target.classList.add(className);
+            observer.unobserve(entry.target); 
+          }
+        });
+      },
+      { threshold: 0.2 } 
+    );
+    observer.observe(element);
+  };
+
+  const applyStaggeredAnimations = (
+    elements: any[] | NodeListOf<Element>,
+    baseDelay: number
+  ) => {
+    elements.forEach((element: any, index: number) => {
+      animateOnScroll(element, "animate", baseDelay + index * 0.1); 
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    calculateSlideWidth(); 
+
+    if (trackRef) {
+      trackRef.addEventListener("transitionend", handleTransitionEnd);
+      const resizeObserver = new ResizeObserver((entries) => {
+        const trackEntry = entries.find((entry) => entry.target === trackRef);
+        let firstImageEntry;
+        if (trackRef.children.length > 1) {
+          firstImageEntry = entries.find(
+            (entry) => entry.target === trackRef.children[1]
+          );
+        }
+        if (trackEntry || firstImageEntry) {
+          calculateSlideWidth(); 
+        }
+      });
+      resizeObserver.observe(trackRef);
+      if (trackRef.children.length > 1) {
+        resizeObserver.observe(trackRef.children[1]); 
+      }
+    }
+
+    if (leftButton) {
+      leftButton.addEventListener("click", handleLeft);
+    }
+    if (rightButton) {
+      rightButton.addEventListener("click", handleRight);
+    }
+
+    if (sectionRef) {
+      const projectsTitle = sectionRef.querySelector(".projects-title");
+      if (projectsTitle) {
+        animateOnScroll(projectsTitle, "animate", 0.2);
+      }
+      const projectsDescription = sectionRef.querySelector(
+        ".projects-description"
+      );
+      if (projectsDescription) {
+        animateOnScroll(projectsDescription, "animate", 0.35);
+      }
+      const viewAllButton = sectionRef.querySelector(
+        ".projects-view-all-button"
+      );
+      if (viewAllButton) {
+        animateOnScroll(viewAllButton, "animate", 0.5);
+      }
+
+    
+      const categoryItems = sectionRef.querySelectorAll(".category-item");
+      applyStaggeredAnimations(categoryItems, 0.7); // Retardo base de 0.7s
+
+      const sliderContainer = sectionRef.querySelector(".slider-container");
+      if (sliderContainer) {
+        animateOnScroll(sliderContainer, "animate", 0.9);
+      }
+
+   
+      const sliderBtnLeft = sectionRef.querySelector(".slider-btn.left");
+      if (sliderBtnLeft) {
+        animateOnScroll(sliderBtnLeft, "animate", 1.1);
+      }
+      const sliderBtnRight = sectionRef.querySelector(".slider-btn.right");
+      if (sliderBtnRight) {
+        animateOnScroll(sliderBtnRight, "animate", 1.1);
+      } 
+    }
+  });
+
+  document.addEventListener("astro:before-swap", () => {
+    if (trackRef) {
+      trackRef.removeEventListener("transitionend", handleTransitionEnd);
+    }
+    if (leftButton) {
+      leftButton.removeEventListener("click", handleLeft);
+    }
+    if (rightButton) {
+      rightButton.removeEventListener("click", handleRight);
+    }
+  });
+</script>

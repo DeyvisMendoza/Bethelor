@@ -1,7 +1,13 @@
 ---
+import AboutSection from "../components/AboutReact/AboutSection.astro";
+import BrandsSection from "../components/BrandsReact/BrandsSection.astro";
+import ChooseSection from "../components/ChooseReact/ChooseSection.astro";
 import Footer from "../components/Footer/Footer";
 import Form from "../components/FormReact/FormReact";
+import ProcessSection from "../components/ProcessReact/ProcessSection.astro";
 import ProjectsReact from "../components/ProjectReact/ProjectsReact";
+import ProjectsSection from "../components/ProjectReact/ProjectsSection.astro";
+import ServicesSection from "../components/ServicesReact/ServicesSection.astro";
 import Layout from "../layouts/Layout.astro";
 import About from "../sections/home/About.astro";
 import Brands from "../sections/home/Brands.astro";
@@ -16,24 +22,15 @@ import Welcome from "../sections/home/Welcome.astro";
 import "../styles/global.css";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Bethelor</title>
-  </head>
-  <body>
-    <Layout>
-      <Welcome />
-      <Services />
-      <Projects />
-      <About />
-      <Choose />
-      <Brands />
-      <Process />
-      <Testimonials />
-      <Tips />
-      <Formulario />
-      <!-- <Footer /> -->
-    </Layout>
-  </body>
-</html>
+<Layout title="Bethelor">
+  <Welcome />
+  <Services/>
+  <Projects />
+  <AboutSection />
+  <Choose />
+  <Brands />
+  <Process />
+  <Testimonials />
+  <Tips />
+  <Formulario />
+</Layout>

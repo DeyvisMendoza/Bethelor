@@ -1,0 +1,681 @@
+---
+// src/components/Services.astro
+import { services } from "../../lib/dataServices"; // Ajusta la ruta si es necesario
+---
+
+<section class="services-section">
+  <div class="services-header">
+    <div class="services-intro">
+      <h2 class="services-title">Our Services.</h2>
+      <p class="services-description">
+        At Bethelor, we offer high-quality home remodeling services in Maryland,
+        specializing in kitchens, bathrooms, basements, full home renovations,
+        and more. Our team is committed to turning your ideas into reality with
+        reliable craftsmanship and attention to detail.
+      </p>
+    </div>
+  </div>
+  <div class="accordion">
+    {
+      services.map((service, idx) => (
+        <div class={`accordion-item`} data-index={idx}>
+          <div class="accordion-header">
+            <div class="accordion-content-inner">
+              <h3 class="accordion-button">{service.title}</h3>
+              <div class="accordion-expanded-content">
+                <p>
+                  {service.description.split("\n").map((line, i) => (
+                    <Fragment key={i}>
+                      {line}
+                      <br />
+                    </Fragment>
+                  ))}
+                </p>
+                <ul>
+                  {service.list.map((item, i) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+                <a
+                  href={service.videoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="
+                  inline-flex items-center justify-center
+                  bg-black text-white
+                  px-6 py-3
+                  text-sm
+                  font-semibold
+                  transition-colors duration-300 ease-in-out
+                  hover:bg-gray-800
+                  focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50
+                  px-4 py-2 sm:px-6 sm:py-3
+                  text-xs sm:text-sm
+                  mt-4
+                  animated-button-hover-effect
+                "
+                  onclick="event.stopPropagation();"
+                >
+                  {service.textobuton}
+                </a>
+              </div>
+            </div>
+            <div class="accordion-content-img">
+              <img
+                src={service.image}
+                alt={service.title}
+                class="animated-img-hover-effect"
+              />
+            </div>
+            <div class="accordion-content-icons">
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  alignItems: "flex-start",
+                  flexDirection: "row",
+                  gap: "10px",
+                }}
+              >
+                <span class="icon-toggle">+</span>
+              </div>
+              <div class="accordion-content-icons-general">
+                {service.icons.map((icon, i) => (
+                  <div class="accordion-content-icons-text" data-icon-index={i}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        flexDirection: "row",
+                        gap: "10px",
+                      }}
+                    >
+                      <img src={icon.icon} alt="" />
+                      <h4>{icon.title}</h4>
+                    </div>
+                    <p>{icon.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+
+.services-section {
+  background-color: white;
+  max-width: 1450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.services-header {
+  height: 350px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 120px;
+  padding-top: 55px;
+  padding-bottom: 20px;
+  width: 90%;
+}
+
+.services-intro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 650px;
+  gap: 15px;
+}
+
+.services-intro h2 {
+  font-family: "Host Grotesk", sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.services-intro p {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.accordion {
+  width: 90%;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.accordion-item {
+  overflow: hidden;
+  border-top: 1px solid #c8c8c8;
+  padding: 10px;
+}
+
+.accordion-header {
+  width: 100%;
+  overflow: hidden;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  padding: 2rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+
+  .accordion-content-inner h3 {
+    background-color: transparent;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+
+  p {
+    display: none;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .accordion-content-inner {
+    img {
+      display: none;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .icon-close {
+    display: none;
+  }
+}
+
+.accordion-content-inner {
+  flex: 1;
+}
+
+.accordion-content-img {
+  flex: 1;
+  z-index: 10;
+}
+
+.accordion-content-icons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.accordion-button {
+  font-family: "Host Grotesk", sans-serif;
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  padding: 0 1.5rem;
+  background-color: #fafafa;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.accordion-item.active .accordion-header {
+  background: #ffffff;
+  height: 400px;
+  transition: all 1s ease;
+
+  .accordion-content-inner h3 {
+    background-color: white;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  p {
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+  }
+
+  ul {
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .accordion-content-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    img {
+      display: block;
+    }
+  }
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 1000px;
+  padding: 1rem 1.5rem;
+}
+
+.accordion-item.active .accordion-header .icon {
+  display: none;
+}
+.accordion-item.active .accordion-header .icon-close {
+  display: block;
+}
+
+.accordion-content p {
+  margin: 0;
+}
+
+.accordion-content-inner {
+  background-color: rgb(255, 255, 255);
+  padding-right: 50px;
+
+  h3 {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  img {
+    width: 200px;
+    cursor: pointer;
+  }
+}
+
+.accordion-content-icons-general {
+  display: none;
+}
+
+.accordion-item.active .accordion-content-icons-general {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 30px;
+  height: 100%;
+}
+
+.accordion-content-icons-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding-left: 30px;
+}
+
+@media (max-width: 1200px) {
+  .services-section {
+    padding: 0 20px;
+  }
+
+  .services-header {
+    height: 280px;
+    padding-left: 30px;
+    padding-right: 50px;
+    padding-top: 40px;
+    width: 100%;
+  }
+
+  .services-intro {
+    max-width: 500px;
+    gap: 10px;
+  }
+
+  .services-intro h2 {
+    font-size: 4.5rem;
+  }
+
+  .services-intro p {
+    font-size: 13px;
+  }
+
+  .accordion-header {
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .accordion-item.active .accordion-header {
+    height: 350px;
+    
+
+  }
+
+  .accordion-content-inner h3 {
+    font-size: 1.2rem;
+  }
+
+  .accordion-item.active .accordion-content-inner p {
+    font-size: 12px;
+  }
+
+  .accordion-item.active .accordion-content-inner ul {
+    font-size: 11px;
+  }
+
+  .accordion-content-icons-general {
+    padding-left: 20px;
+  }
+
+   .accordion-item.active .accordion-content-icons-text h4{
+    font-size: 10px;
+  }
+
+    .accordion-item.active .accordion-content-icons-text p{
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 780px) {
+  .services-section {
+    padding: 0 15px;
+  }
+
+  .services-header {
+    height: auto;
+    align-items: start;
+    text-align: start;
+    padding: 30px 20px;
+    width: 100%;
+  }
+
+  .services-intro {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .services-intro h2 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+  }
+
+  .services-intro p {
+    font-size: 0.85rem;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .accordion {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .accordion-item {
+    padding: 5px;
+  }
+  .accordion-header {
+    height: auto;
+    padding: 1rem;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .accordion-header .accordion-content-inner h3 {
+    font-size: 1rem;
+  }
+
+  .accordion-item.active .accordion-header {
+    height: auto;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 1rem;
+    display: flex;
+    gap: 20px;
+  }
+
+  .accordion-item.active .accordion-header .accordion-content-inner {
+    text-align: start;
+    padding-right: 0;
+  }
+
+  .accordion-item.active .accordion-content-inner h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .accordion-item.active .accordion-header h4,
+  .accordion-item.active .accordion-header p,
+  .accordion-item.active .accordion-header ul {
+    text-align: start;
+    padding-left: 0;
+  }
+
+  .accordion-item.active .accordion-content-inner img {
+    width: 150px;
+    margin: 10px auto;
+  }
+
+  .accordion-content-icons-general {
+    justify-content: center;
+    padding-left: 0;
+    padding: 15px;
+  }
+
+  .accordion-item.active .accordion-content-icons-text h4{
+    font-size: 10px;
+  }
+
+  .accordion-item.active .accordion-content-icons-text img{
+    width: 15px;
+  }
+
+  .accordion-item.active .accordion-content-icons-text p{
+    text-align: center;
+    padding-left: 0;
+    display: none;
+  }
+}
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    // --- Lógica del Acordeón ---
+    let activeIndex = null;
+
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach((item, index) => {
+      item.setAttribute("data-index", index.toString());
+
+      const header = item.querySelector(".accordion-header");
+      const expandedContent = item.querySelector(".accordion-expanded-content");
+      const detailedIconsContainer = item.querySelector(
+        ".accordion-content-icons-general"
+      ); // El contenedor de todos los iconos detallados
+      const toggleIcon = item.querySelector(".icon-toggle");
+
+      // Inicializar estado de oculto y reinicio de paddings para que max-height funcione
+      if (expandedContent) {
+        expandedContent.style.maxHeight = "0px";
+        expandedContent.style.opacity = "0";
+        expandedContent.style.paddingTop = "0px";
+        expandedContent.style.paddingBottom = "0px";
+      }
+      if (detailedIconsContainer) {
+        detailedIconsContainer.style.maxHeight = "0px";
+        detailedIconsContainer.style.opacity = "0";
+        detailedIconsContainer.style.paddingTop = "0px"; // Asegura que no tenga padding inicial
+        detailedIconsContainer.style.paddingBottom = "0px"; // Asegura que no tenga padding inicial
+        // Ocultar individualmente los hijos para la animación escalonada al abrir
+        const individualIcons = detailedIconsContainer.querySelectorAll(
+          ".accordion-content-icons-text"
+        );
+        individualIcons.forEach((iconElem) => {
+          iconElem.style.opacity = "0";
+          iconElem.style.transform = "translateX(30px)";
+          iconElem.style.transitionDelay = "0s"; // Reiniciar delay al cerrar/inicializar
+        });
+      }
+
+      if (toggleIcon) toggleIcon.textContent = "+";
+
+      header.addEventListener("click", (event) => {
+        if (event.target.tagName === "A" || event.target.closest("a")) {
+          return;
+        }
+
+        const clickedIndex = parseInt(item.dataset.index);
+
+        if (activeIndex === clickedIndex) {
+          // Si el elemento clicado ya está activo, ciérralo
+          item.classList.remove("active");
+          if (expandedContent) {
+            expandedContent.style.maxHeight = "0px";
+            expandedContent.style.opacity = "0";
+            expandedContent.style.paddingTop = "0px";
+            expandedContent.style.paddingBottom = "0px";
+          }
+          if (detailedIconsContainer) {
+            detailedIconsContainer.style.maxHeight = "0px";
+            detailedIconsContainer.style.opacity = "0";
+            detailedIconsContainer.style.paddingTop = "0px";
+            detailedIconsContainer.style.paddingBottom = "0px";
+            const individualIcons = detailedIconsContainer.querySelectorAll(
+              ".accordion-content-icons-text"
+            );
+            individualIcons.forEach((iconElem) => {
+              iconElem.style.opacity = "0";
+              iconElem.style.transform = "translateX(30px)";
+              iconElem.style.transitionDelay = "0s"; // Resetear el delay al cerrar
+            });
+          }
+          if (toggleIcon) toggleIcon.textContent = "+";
+          activeIndex = null;
+        } else {
+          // Cerrar el elemento previamente activo (si lo hay)
+          if (activeIndex !== null) {
+            const prevActiveItem = document.querySelector(
+              `.accordion-item[data-index="${activeIndex}"]`
+            );
+            if (prevActiveItem) {
+              prevActiveItem.classList.remove("active");
+              const prevExpandedContent = prevActiveItem.querySelector(
+                ".accordion-expanded-content"
+              );
+              const prevDetailedIconsContainer = prevActiveItem.querySelector(
+                ".accordion-content-icons-general"
+              );
+              const prevToggleIcon =
+                prevActiveItem.querySelector(".icon-toggle");
+
+              if (prevExpandedContent) {
+                prevExpandedContent.style.maxHeight = "0px";
+                prevExpandedContent.style.opacity = "0";
+                prevExpandedContent.style.paddingTop = "0px";
+                prevExpandedContent.style.paddingBottom = "0px";
+              }
+              if (prevDetailedIconsContainer) {
+                prevDetailedIconsContainer.style.maxHeight = "0px";
+                prevDetailedIconsContainer.style.opacity = "0";
+                prevDetailedIconsContainer.style.paddingTop = "0px";
+                prevDetailedIconsContainer.style.paddingBottom = "0px";
+                const prevIndividualIcons =
+                  prevDetailedIconsContainer.querySelectorAll(
+                    ".accordion-content-icons-text"
+                  );
+                prevIndividualIcons.forEach((iconElem) => {
+                  iconElem.style.opacity = "0";
+                  iconElem.style.transform = "translateX(30px)";
+                  iconElem.style.transitionDelay = "0s"; // Resetear el delay al cerrar
+                });
+              }
+              if (prevToggleIcon) prevToggleIcon.textContent = "+";
+            }
+          }
+
+          // Abrir el elemento clicado
+          item.classList.add("active");
+          if (expandedContent) {
+            expandedContent.style.paddingTop = "1rem";
+            expandedContent.style.paddingBottom = "1rem";
+            expandedContent.style.maxHeight =
+              expandedContent.scrollHeight + "px";
+            expandedContent.style.opacity = "1";
+          }
+          if (detailedIconsContainer) {
+            detailedIconsContainer.style.paddingTop = "10px"; // Ajusta este padding si es necesario
+            detailedIconsContainer.style.paddingBottom = "10px"; // Ajusta este padding si es necesario
+            detailedIconsContainer.style.maxHeight =
+              detailedIconsContainer.scrollHeight + "px";
+            detailedIconsContainer.style.opacity = "1";
+
+            // Animación escalonada para los íconos detallados
+            const individualIcons = detailedIconsContainer.querySelectorAll(
+              ".accordion-content-icons-text"
+            );
+            individualIcons.forEach((iconElem, iconIdx) => {
+              iconElem.style.opacity = "1";
+              iconElem.style.transform = "translateX(0)";
+              iconElem.style.transitionDelay = `${0.1 + iconIdx * 0.08}s`; // Aplica el delay de forma programática
+            });
+          }
+          if (toggleIcon) toggleIcon.textContent = "-";
+          activeIndex = clickedIndex;
+        }
+      });
+    });
+
+    // --- Lógica de Animación al Entrar en la Vista (Intersection Observer) ---
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const headerTitle = document.querySelector(".services-header h2");
+    const headerDescription = document.querySelector(".services-header p");
+    if (headerTitle) observer.observe(headerTitle);
+    if (headerDescription) observer.observe(headerDescription);
+
+    document.querySelectorAll(".accordion-item").forEach((item) => {
+      observer.observe(item);
+    });
+  });
+</script>

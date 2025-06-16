@@ -1,6 +1,368 @@
 ---
-import TestimonialsReact from "../../components/TestimonialsReact/TestimonialsReact";
-
+import { testimonials } from "../../lib/dataTestimonials";
 ---
 
-<TestimonialsReact client:load />
+<section class="testimonials-section">
+    <h2>Testimonials</h2>
+    <div class="testimonials-slider-container">
+        <div class="testimonials-slider-track">
+            {
+                (() => {
+                    const slides = [
+                        testimonials[testimonials.length - 1],
+                        ...testimonials,
+                        testimonials[0],
+                    ];
+                    return slides.map((t, idx) => (
+                        <div class="testimonials-slider-img" data-index={idx}>
+                            <div class="testimonial-image">
+                                <img src={t.img} alt={`Testimonial by ${t.name}`} />
+                                <h4 class="testimonial-name">{t.name}</h4>
+                                <p class="testimonial-location">{t.location}</p>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>{t.text}</p>
+                            </div>
+                            <div class="testimonial-pagination">
+                                {idx === 0 ? (
+                                    <span>{testimonials.length}/{testimonials.length}</span>
+                                ) : idx === slides.length - 1 ? (
+                                    <span>1/{testimonials.length}</span>
+                                ) : (
+                                    <span>{idx}/{testimonials.length}</span>
+                                )}
+                            </div>
+                        </div>
+                    ));
+                })()
+            }
+        </div>
+        <div class="testimonials-slider-controls">
+            <img
+                src="/project/boton-left.png"
+                class="testimonials-slider-btn testimonials-left"
+                alt="Previous Testimonial"
+            />
+            <img
+                src="/project/boton-rigth-white.png"
+                class="testimonials-slider-btn testimonials-right"
+                alt="Next Testimonial"
+            />
+        </div>
+    </div>
+</section>
+
+<script>
+import { testimonials } from "../../lib/dataTestimonials";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const track = document.querySelector(".testimonials-slider-track") as HTMLElement;
+        if (!track) {
+            console.error("Testimonials track element not found.");
+            return;
+        }
+
+        const testimonialsCount = testimonials.length;
+        const slidesCount = testimonialsCount + 2;
+        let currentSlideIndex = 1;
+        let slideWidth = 0;
+
+        const calculateSlideWidth = () => {
+            const firstSlide = track.querySelector(".testimonials-slider-img") as HTMLElement;
+            if (firstSlide) {
+                const style = window.getComputedStyle(firstSlide);
+                const marginRight = parseFloat(style.marginRight);
+                const gap = 10;
+                slideWidth = firstSlide.offsetWidth + gap;
+            }
+        };
+
+        const updateSliderPosition = (index: number, animate = true) => {
+            if (!track) return;
+            if (!animate) {
+                track.style.transition = "none";
+            } else {
+                track.style.transition = "transform 0.5s ease-in-out";
+            }
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+            currentSlideIndex = index;
+        };
+
+        calculateSlideWidth();
+        updateSliderPosition(currentSlideIndex, false);
+
+        window.addEventListener('resize', () => {
+            calculateSlideWidth();
+            updateSliderPosition(currentSlideIndex, false);
+        });
+
+        const handleRight = () => {
+            if (currentSlideIndex >= slidesCount - 1) return;
+            updateSliderPosition(currentSlideIndex + 1);
+        };
+
+        const handleLeft = () => {
+            if (currentSlideIndex <= 0) return;
+            updateSliderPosition(currentSlideIndex - 1);
+        };
+
+        const leftButton = document.querySelector(".testimonials-left") as HTMLElement;
+        const rightButton = document.querySelector(".testimonials-right") as HTMLElement;
+
+        if (leftButton) {
+            leftButton.addEventListener("click", handleLeft);
+        }
+        if (rightButton) {
+            rightButton.addEventListener("click", handleRight);
+        }
+
+        const handleTransitionEnd = () => {
+            if (!track) return;
+            if (currentSlideIndex === slidesCount - 1) {
+                updateSliderPosition(1, false);
+            } else if (currentSlideIndex === 0) {
+                updateSliderPosition(testimonialsCount, false);
+            }
+        };
+
+        track.addEventListener("transitionend", handleTransitionEnd);
+
+        document.addEventListener("astro:before-swap", () => {
+            if (track) {
+                track.removeEventListener("transitionend", handleTransitionEnd);
+            }
+            if (leftButton) {
+                leftButton.removeEventListener("click", handleLeft);
+            }
+            if (rightButton) {
+                rightButton.removeEventListener("click", handleRight);
+            }
+            window.removeEventListener('resize', calculateSlideWidth);
+        });
+    });
+</script>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+
+    .testimonials-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 70px;
+    }
+
+    .testimonials-section h2 {
+        font-family: "Host Grotesk", sans-serif;
+        font-size: 6rem;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    .testimonials-slider-container {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .testimonials-slider-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .testimonials-slider-img {
+        width: 100%;
+        height: 500px;
+        flex-shrink: 0;
+        object-fit: cover;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    .testimonial-image {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .testimonial-image img {
+        filter: grayscale(100%);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .testimonial-image h4 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 17px;
+        font-weight: bold;
+        color: #383838;
+    }
+
+    .testimonial-image p {
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        color: #383838;
+    }
+
+    .testimonial-text p {
+        display: block;
+        width: 500px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .testimonial-pagination {
+        margin-top: 18px;
+        font-weight: 600;
+        font-family: "DM Sans", sans-serif;
+    }
+
+    .testimonials-slider-controls {
+        position: absolute;
+        top: 50%;
+        width: 1200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .testimonials-slider-container {
+        padding: 0 50px;
+    }
+    .testimonials-slider-btn {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 1023px) {
+        .testimonials-section {
+            padding: 50px;
+        }
+
+        .testimonials-section h2 {
+            font-size: 4rem;
+        }
+
+        .testimonials-slider-container {
+            max-width: 768px;
+            padding: 0 40px;
+        }
+
+        .testimonials-slider-img {
+            height: 400px;
+            padding: 30px;
+        }
+
+        .testimonial-image h4 {
+            font-size: 16px;
+        }
+
+        .testimonial-image p {
+            font-size: 13px;
+        }
+
+        .testimonial-text p {
+            width: 90%;
+            max-width: 500px;
+            font-size: 15px;
+            line-height: 25px;
+        }
+
+        .testimonials-slider-controls {
+            width: calc(100% - 40px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 768px;
+            padding: 0;
+        }
+
+        .testimonials-slider-btn {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .testimonials-section {
+            padding: 30px;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .testimonials-slider-container {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+
+        .testimonials-slider-img {
+            height: auto;
+            min-height: 350px;
+            padding: 20px;
+        }
+
+        .testimonial-image img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .testimonial-image h4 {
+            font-size: 15px;
+        }
+
+        .testimonial-image p {
+            font-size: 12px;
+        }
+
+        .testimonial-text p {
+            width: 100%;
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        .testimonial-pagination {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .testimonials-slider-controls {
+            width: calc(100% - 20px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 45%;
+            padding: 0;
+        }
+
+        .testimonials-slider-btn {
+            width: 30px;
+            height: 30px;
+        }
+    }
+</style>
