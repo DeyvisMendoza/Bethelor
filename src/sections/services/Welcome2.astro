@@ -1,0 +1,197 @@
+---
+// src/components/Welcome2.astro
+// Restaurado con CSS tradicional, con responsividad añadida.
+// Las animaciones se mantienen con el script JS si las quieres.
+---
+
+<div id="welcome-two-wrapper" class="main-content-wrapper">
+  <!-- <HeaderTwo /> -->
+  <div class="welcome-two-header">
+    <h2 class="welcome-two-title">Home Remodeling Services in Maryland</h2>
+    <p>
+      At Bethelor, we specialize in home remodeling services across Maryland —
+      including kitchen renovations, bathroom makeovers, interior & exterior
+      painting, flooring, and more. Whether you're updating one room or planning
+      a full home renovation, our team delivers expert craftsmanship, reliable
+      timelines, and personalized results that feel like home.
+    </p>
+  </div>
+</div>
+
+<script>
+  // Script para las animaciones, si las mantienes.
+  // Las clases .opacity-0, .translate-y-10, .translate-y-5 deben estar definidas en el CSS
+  // o como inline styles iniciales si no quieres que Tailwind las defina.
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.getElementById('welcome-two-wrapper');
+    const title = wrapper?.querySelector('h2');
+    const paragraph = wrapper?.querySelector('p');
+
+    // Estado inicial para la animación (asegúrate de que estas clases estén en tu CSS si no quieres Tailwind)
+    if (wrapper) {
+      wrapper.style.opacity = '0';
+      wrapper.style.transform = 'translateY(40px)'; // Equivalente a Tailwind translate-y-10
+      wrapper.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+    }
+    if (title) {
+      title.style.opacity = '0';
+      title.style.transform = 'translateY(20px)'; // Equivalente a Tailwind translate-y-5
+      title.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+    }
+    if (paragraph) {
+      paragraph.style.opacity = '0';
+      paragraph.style.transform = 'translateY(20px)'; // Equivalente a Tailwind translate-y-5
+      paragraph.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      paragraph.style.transitionDelay = '0.2s'; // Retraso para el párrafo
+    }
+
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (wrapper) {
+            wrapper.style.opacity = '1';
+            wrapper.style.transform = 'translateY(0)';
+          }
+          if (title) {
+            title.style.opacity = '1';
+            title.style.transform = 'translateY(0)';
+          }
+          if (paragraph) {
+            paragraph.style.opacity = '1';
+            paragraph.style.transform = 'translateY(0)';
+          }
+          observer.unobserve(entry.target); // Stop observing after animating
+        }
+      });
+    }, {
+      threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    if (wrapper) {
+      observer.observe(wrapper);
+    }
+  });
+</script>
+
+<style>
+  /* Importa la fuente si no está ya importada globalmente */
+  @import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+
+  .main-content-wrapper {
+    background-image: url("./public/welcometwo/welcome-two.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    color: white;
+  }
+
+  .welcome-two-header {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: end; /* Alinea los elementos al final del eje transversal (abajo) */
+    flex-direction: row; /* Desktop: Elementos en fila */
+    padding-left: 105px;
+    padding-right: 105px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #000;
+  }
+
+  .welcome-two-header h2 {
+    display: block;
+    position: relative;
+    z-index: 100;
+    width: 2000px; /* Ancho muy grande, se ajustará con max-width */
+
+    margin-right: -60px;
+    font-size: 6rem; /* 96px */
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  .welcome-two-header p {
+    display: block;
+    width: 1100px; /* Ancho muy grande, se ajustará con max-width */
+    max-width: 45%; /* Limita el ancho del p para que el h2 quepa al lado */
+    color: rgb(240, 240, 240);
+  }
+
+  /* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+
+  /* Tablet: 1024px (o un valor similar a tu 'lg' o 'md' breakpoint de Tailwind si lo tuvieras) */
+  @media (max-width: 1024px) {
+    .welcome-two-header {
+      padding-left: 40px;
+      padding-right: 40px;
+      flex-direction: column; /* Tablet: Elementos apilados */
+      align-items: center; /* Centrar al apilar */
+      text-align: center; /* Centrar texto al apilar */
+      padding-bottom: 30px; /* Reducir padding */
+    }
+
+    .welcome-two-header h2 {
+      font-size: 3.5rem; /* Ajustar tamaño de fuente */
+      max-width: 100%; /* Ocupa todo el ancho disponible */
+      margin-right: 0; /* Eliminar margen negativo */
+      margin-bottom: 20px; /* Añadir espacio entre h2 y p */
+    }
+
+    .welcome-two-header p {
+      font-size: 1rem; /* Ajustar tamaño de fuente */
+      max-width: 700px; /* Limitar ancho del párrafo en tablet */
+      width: auto; /* Dejar que el contenido defina el ancho */
+    }
+  }
+
+  /* Mobile: 768px (o tu breakpoint 'md' o 'sm' de Tailwind) */
+  @media (max-width: 768px) {
+    .welcome-two-header {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+    }
+
+    .welcome-two-header h2 {
+      font-size: 2.5rem; /* Reducir aún más el tamaño de fuente */
+      margin-bottom: 15px;
+    }
+
+    .welcome-two-header p {
+      font-size: 0.9rem; /* Reducir tamaño de fuente */
+      max-width: 90%; /* Limitar ancho del párrafo en móvil */
+    }
+  }
+
+  /* Small Mobile: 480px (o tu breakpoint 'xs' de Tailwind) */
+  @media (max-width: 480px) {
+    .welcome-two-header {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 15px;
+    }
+
+    .welcome-two-header h2 {
+      font-size: 2rem; /* Tamaño de fuente para móviles muy pequeños */
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .welcome-two-header p {
+      font-size: 0.8rem; /* Tamaño de fuente para móviles muy pequeños */
+      max-width: 95%;
+    }
+  }
+
+  /*
+    Clases para la animación (estas las necesita el script JS).
+    Si bien ya no es Tailwind, definimos las propiedades CSS que el JS modificará.
+    Las transiciones se definirán como inline styles en el JS para mayor control
+    y evitar conflictos con otras transiciones CSS.
+  */
+</style>

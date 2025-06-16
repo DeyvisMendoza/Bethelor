@@ -1,0 +1,471 @@
+---
+import React from "react";
+import { services } from "../../lib/dataServices";
+---
+
+<section class="services-section">
+  <div class="services-header">
+    <h2 class="services-title">
+      Home Remodeling & Construction Services in Maryland
+    </h2>
+  </div>
+  <div class="services-list">
+    {
+      services.map((service, idx) => (
+        <div class="service-item">
+          {idx % 2 === 0 ? (
+            <>
+              <div class="service-content-inner">
+                <h3 class="service-title">{service.title}</h3>
+                <p>
+                  {service.description.split("\n").map((line, i) => (
+                    <Fragment key={i}>
+                      {line}
+                      <br />
+                    </Fragment>
+                  ))}
+                </p>
+                <ul>
+                  {service.list.map((item, i) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+                <a
+                  href={service.videoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center
+                          bg-black text-white
+                          px-6 py-3
+                          text-sm
+                          font-semibold
+                          transition-colors duration-300 ease-in-out
+                          hover:bg-gray-800
+                          focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50
+                          px-4 py-2 sm:px-6 sm:py-3
+                          text-xs sm:text-sm
+                          mt-4"
+                >
+                  {service.textobuton}
+                </a>
+              </div>
+
+              <div class="service-content-icons">
+                <div class="service-content-icons-general">
+                  {service.icons.map((icon, i) => (
+                    <div class="service-content-icons-text">
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "start",
+                          alignItems: "center",
+                          flexDirection: "row",
+                          gap: "10px",
+                        }}
+                      >
+                        <img src={icon.icon} alt="" />
+                        <h4>{icon.title}</h4>
+                      </div>
+                      <p>{icon.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div class="service-content-img">
+                <img src={service.image} alt="" />
+              </div>
+            </>
+          ) : (
+            <>
+              <div class="service-content-img">
+                <img src={service.image} alt="" />
+              </div>
+              <div class="service-content-inner">
+                <h3 class="service-title">{service.title}</h3>
+                <p>
+                  {service.description.split("\n").map((line, i) => (
+                    <Fragment key={i}>
+                      {line}
+                      <br />
+                    </Fragment>
+                  ))}
+                </p>
+                <ul>
+                  {service.list.map((item, i) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+                <a
+                  href={service.videoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center
+                          bg-black text-white
+                          px-6 py-3
+                          text-sm
+                          font-semibold
+                          transition-colors duration-300 ease-in-out
+                          hover:bg-gray-800
+                          focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50
+                          px-4 py-2 sm:px-6 sm:py-3
+                          text-xs sm:text-sm
+                          mt-4
+                          "
+                >
+                  {service.textobuton}
+                 </a>
+              </div>
+
+              <div class="service-content-icons">
+                <div class="service-content-icons-general">
+                  {service.icons.map((icon, i) => (
+                    <div class="service-content-icons-text">
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "start",
+                          alignItems: "center",
+                          flexDirection: "row",
+                          gap: "10px",
+                        }}
+                      >
+                        <img src={icon.icon} alt="" />
+                        <h4>{icon.title}</h4>
+                      </div>
+                      <p>{icon.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+
+  /* --- ESTILOS BASE (DESKTOP) - SIN CAMBIOS AQUÍ --- */
+  .services-section {
+    background-color: white;
+    width: 1450px; /* Ancho fijo para desktop */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .services-header {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-left: 105px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    padding-right: 150px;
+    width: 90%; /* Ancho relativo dentro de 1450px */
+    font-size: 5rem;
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #000;
+  }
+
+  .services-list {
+    width: 90%; /* Ancho relativo dentro de 1450px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .service-item {
+    width: 100%;
+    height: 450px; /* Altura fija para desktop */
+    display: flex;
+    flex-direction: row; /* Desktop: Elementos en fila */
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    gap: 20px;
+    border-top: #7d7d7d solid 1px;
+  }
+  /* Asegurar el borde inferior para el último item en desktop si se necesita */
+  .services-list .service-item:last-of-type {
+    border-bottom: #7d7d7d solid 1px;
+  }
+
+  .service-content-inner {
+    flex: 1; /* Ocupa 1/3 del espacio */
+    background-color: rgb(255, 255, 255);
+    padding-right: 50px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-family: "Host Grotesk", sans-serif;
+      font-size: 1.7rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    p {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+
+  .service-content-icons {
+    flex: 1; /* Ocupa 1/3 del espacio */
+  }
+
+  .service-content-img {
+    flex: 1; /* Ocupa 1/3 del espacio */
+  }
+
+  .service-content-img img {
+    width: 400px; /* Ancho fijo para desktop */
+    height: 350px; /* Altura fija para desktop */
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .service-content-icons-general {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-content-icons-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 5px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+
+    p {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+    }
+  }
+
+  /* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+
+  /* Tablet Grande / Desktop Pequeño: max-width 1200px */
+  @media (max-width: 1200px) {
+    .services-section {
+      width: 100%; /* Permite que la sección ocupe todo el ancho disponible */
+      padding: 0 20px; /* Añade un poco de padding lateral */
+      box-sizing: border-box; /* Incluye padding en el width */
+    }
+
+    .services-header {
+      font-size: 4rem; /* Reduce el tamaño del título principal */
+      padding-left: 50px; /* Ajusta padding */
+      padding-right: 50px; /* Ajusta padding */
+      width: 100%; /* Ocupa todo el ancho */
+    }
+
+    .services-list {
+      width: 100%; /* Ocupa todo el ancho */
+    }
+
+    .service-item {
+      padding: 1rem; /* Ajusta el padding del item */
+      gap: 15px; /* Reduce un poco el gap */
+    }
+
+    .service-content-inner {
+      padding-right: 20px; /* Reduce el padding derecho */
+      h3 {
+        font-size: 1.5rem; /* Reduce el tamaño de los títulos de servicio */
+      }
+      p,
+      ul {
+        font-size: 12px; /* Reduce el tamaño del texto y lista */
+      }
+    }
+
+    .service-content-img img {
+      width: 300px; /* Reduce el ancho de la imagen */
+      height: 250px; /* Reduce la altura de la imagen */
+    }
+
+    .service-content-icons-text {
+      font-size: 13px; /* Reduce el tamaño de fuente de los íconos */
+      p {
+        font-size: 12px; /* Reduce el tamaño de fuente de la descripción del ícono */
+      }
+    }
+  }
+
+  /* Tablet (Landscape) - Breakpoint principal para apilamiento: 992px */
+  @media (max-width: 992px) {
+    .services-header {
+      font-size: 3.2rem; /* Reduce aún más el título */
+      padding: 40px 30px; /* Ajusta el padding del header */
+      text-align: center; /* Centra el texto del header */
+      align-items: center; /* Centra el contenido del header */
+    }
+
+    .service-item {
+      flex-direction: column; /* ¡Apila los elementos! */
+      height: auto; /* La altura se ajusta al contenido */
+      min-height: auto; /* Elimina la altura mínima si no es necesaria */
+      padding: 2rem 1rem; /* Ajusta el padding vertical */
+      gap: 30px; /* Aumenta el espacio entre elementos apilados */
+    }
+
+    /* REORDENAMIENTO: La imagen siempre va primero, luego el contenido, luego los íconos */
+    .service-item > .service-content-img {
+      order: 1;
+    }
+    .service-item > .service-content-inner {
+      order: 2;
+    }
+    .service-item > .service-content-icons {
+      order: 3;
+    }
+
+    /* Estilos para los elementos apilados */
+    .service-content-inner,
+    .service-content-icons,
+    .service-content-img {
+      width: 100%; /* Ocupan todo el ancho disponible */
+      max-width: 600px; /* Limita el ancho máximo para legibilidad en tablet */
+      padding: 0; /* Elimina el padding específico de desktop */
+      margin: 0 auto; /* Centra los bloques */
+      text-align: center; /* Centra el texto */
+    }
+
+    .service-content-inner {
+      h3 {
+        font-size: 1.4rem; /* Ajusta el tamaño del título de servicio */
+      }
+      p,
+      ul {
+        text-align: left; /* Mantiene el texto alineado a la izquierda para legibilidad */
+        font-size: 13px; /* Ajusta el tamaño de fuente */
+      }
+      ul {
+        padding-left: 20px; /* Restaura un poco el padding de la lista */
+      }
+    }
+
+    .service-content-img img {
+      width: 100%; /* Imagen al 100% del ancho del contenedor */
+      max-width: 500px; /* Limita el ancho máximo de la imagen */
+      height: 280px; /* Ajusta la altura de la imagen */
+      margin: 0 auto; /* Centra la imagen */
+    }
+
+    .service-content-icons-general {
+      flex-direction: row; /* Vuelve a poner los íconos en fila en tablet */
+      flex-wrap: wrap; /* Permite que los íconos se envuelvan */
+      justify-content: center; /* Centra los íconos */
+      gap: 20px; /* Espacio entre íconos */
+    }
+
+    .service-content-icons-text {
+      align-items: center; /* Centra el contenido de cada ícono-texto */
+      text-align: center; /* Centra el texto de la descripción del ícono */
+      flex: 1 1 100px; /* Permite 2 o 3 íconos por fila */
+      max-width: 250px; /* Limita el ancho de cada bloque de ícono */
+    }
+    /* Centra el grupo de icono y título */
+    .service-content-icons-text > div {
+      /* Selector para el div que contiene img y h4 */
+      justify-content: center;
+    }
+  }
+
+  /* Mobile (Portrait): 768px */
+  @media (max-width: 768px) {
+    .services-header {
+      font-size: 2.5rem; /* Reduce el título para móvil */
+      padding: 30px 15px; /* Ajusta el padding */
+    }
+
+    .service-item {
+      padding: 1.5rem 0.5rem; /* Reduce el padding general */
+      gap: 20px; /* Ajusta el gap */
+    }
+
+    .service-content-inner {
+      h3 {
+        font-size: 1.2rem; /* Título de servicio más pequeño */
+      }
+      p,
+      ul {
+        font-size: 11px; /* Texto y lista más pequeños */
+      }
+    }
+
+    .service-content-img img {
+      height: 200px; /* Reduce la altura de la imagen en móvil */
+    }
+
+    .service-content-icons-general {
+      flex-direction: column; /* Apila los íconos en móvil verticalmente */
+      gap: 15px; /* Espacio entre íconos apilados */
+    }
+
+    .service-content-icons-text {
+      width: 100%; /* Cada ícono ocupa el 100% del ancho */
+      max-width: 300px; /* Limita el ancho si es muy estrecho */
+      margin: 0 auto; /* Centra cada ícono */
+    }
+    /* Centra el grupo de icono y título */
+    .service-content-icons-text > div {
+      justify-content: center;
+    }
+  }
+
+  /* Mobile Pequeño: 480px */
+  @media (max-width: 480px) {
+    .services-header {
+      font-size: 2rem; /* Título aún más pequeño */
+      padding: 20px 10px;
+    }
+
+    .service-item {
+      padding: 1rem 0.5rem;
+    }
+
+    .service-content-inner {
+      h3 {
+        font-size: 1.1rem;
+      }
+      p,
+      ul {
+        font-size: 10px;
+      }
+    }
+
+    .service-content-img img {
+      height: 180px; /* Imagen más pequeña */
+    }
+  }
+</style>

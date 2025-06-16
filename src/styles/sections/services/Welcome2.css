@@ -1,0 +1,42 @@
+.main-content-wrapper {
+    background-image: url('./public/welcometwo/welcome-two.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+.welcome-two-header {
+  /* background-color: red; */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: row;
+  padding-left: 105px;
+  padding-right: 105px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #000;
+
+  h2 {
+    display: block;
+    position: relative;
+    z-index: 10;
+    width: 2000px;
+    margin-right: -60px;
+    font-size: 6rem;
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  p {
+    display: block;
+    width: 1100px;
+    color: rgb(240, 240, 240);
+  }
+}

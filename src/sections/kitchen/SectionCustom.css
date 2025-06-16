@@ -1,0 +1,263 @@
+.kitchen-remodeling-section-container {
+  background-color: #ffffff;
+  padding: 80px 0;
+  font-family: Arial, sans-serif;
+  color: #333333;
+}
+
+.kitchen-remodeling-content-wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 80px;
+  align-items: flex-end;
+}
+
+.kitchen-remodeling-text-column {
+  flex: 1;
+  max-width: 50%;
+}
+
+.kitchen-remodeling-title {
+  font-size: 6em;
+  margin-top: 0;
+  color: #000000;
+  display: block;
+  position: relative;
+  width: 700px;
+  margin-right: -400px;
+  z-index: 100;
+  margin-bottom: 50px;
+  font-family: "Host Grotesk", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.kitchen-remodeling-paragraph {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555555;
+}
+
+.kitchen-remodeling-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.kitchen-remodeling-list li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  color: #555555;
+}
+
+.kitchen-remodeling-list li::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #000000;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+}
+
+.kitchen-remodeling-paragraph.last-paragraph {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.kitchen-quote-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.kitchen-quote-button:hover {
+  background-color: #333333;
+}
+
+.kitchen-quote-button .arrow-right {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+.kitchen-remodeling-image-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.kitchen-main-image {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .kitchen-remodeling-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 0 20px;
+  }
+
+  .kitchen-remodeling-text-column {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .kitchen-remodeling-title {
+    font-size: 2.8em;
+  }
+
+  .kitchen-remodeling-list {
+    text-align: left;
+    display: inline-block;
+  }
+  .kitchen-remodeling-list li {
+    padding-left: 0;
+    text-align: left;
+    margin-left: 20px;
+  }
+  .kitchen-remodeling-list li::before {
+    left: -10px;
+  }
+
+  .kitchen-remodeling-image-column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .kitchen-remodeling-section-container {
+    padding: 60px 0;
+  }
+
+  .kitchen-remodeling-title {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+
+  .kitchen-remodeling-paragraph,
+  .kitchen-remodeling-list li {
+    font-size: 1em;
+  }
+
+  .kitchen-quote-button {
+    padding: 12px 25px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .kitchen-remodeling-title {
+    font-size: 1.8em;
+  }
+}
+
+.section-color {
+  background-color: #f1f2eb;
+}
+
+.ticker-text-wrapper {
+  width: 100%;
+  background-color: #f1f2eb;
+  font-family: "Host Grotesk", sans-serif;
+  border-bottom: 1px solid #adadad;
+  color: #333333;
+  padding: 40px 0;
+  font-size: 30px;
+  font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.ticker-text-container {
+  display: inline-block;
+  animation: scroll-left 100s linear infinite;
+}
+
+.ticker-item {
+  padding-right: 50px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.ticker-item::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #333333;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.kitchen-remodeling-info-row {
+  display: flex;
+  width: 100%;
+}
+
+.kitchen-remodeling-info-image {
+  flex: 1;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.kitchen-remodeling-info-content {
+  flex: 1;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
+  background-color: #f1f2eb;
+
+  h2 {
+    display: block;
+    width: 550px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #000000;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  p {
+    display: block;
+    width: 550px;
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.5;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555555;
+  }
+}

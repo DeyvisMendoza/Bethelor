@@ -1,0 +1,201 @@
+/* src/components/KitchenCostSection.css */
+
+.kitchen-cost-section-container {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 80px 40px; /* Padding superior, inferior y lateral */
+  font-family: Arial, sans-serif; /* Fuente general */
+  color: #333333; /* Color de texto predeterminado */
+  text-align: center; /* Para centrar el título y el párrafo de intro */
+}
+
+.cost-header {
+  max-width: 1100px; /* Ancho máximo para el texto de cabecera */
+  margin: 0 auto 60px auto; /* Centra y añade espacio inferior */
+}
+
+.cost-title {
+  font-size: 64px; /* Tamaño grande del título */
+  line-height: 1.1;
+  margin-top: 0;
+  text-align: start;
+  font-weight: 550;
+  margin-bottom: 30px; /* Espacio debajo del título */
+  color: #000000; /* Título en negro */
+}
+
+.cost-intro-paragraph {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #808080;
+  text-align: start;
+}
+
+.cost-disclaimer-paragraph {
+  font-size: 14px;
+  color: #808080;
+  text-align: start;
+  margin-bottom: 50px; /* Espacio antes de la cuadrícula de tarjetas */
+}
+
+/* --- Cuadrícula de Tipos de Cocina --- */
+.kitchen-types-grid {
+  display: grid;
+  /* 3 columnas de ancho igual para pantallas grandes */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; /* Espacio entre las tarjetas */
+  max-width: 1100px; /* Ancho máximo de la cuadrícula */
+  margin: 0 auto 60px auto; /* Centra y añade espacio inferior antes del botón */
+}
+
+.kitchen-type-card {
+  background-color: #ffffff; /* Fondo blanco para las tarjetas */
+  padding-bottom: 20px; /* Padding interno */
+  text-align: center; /* Centra el contenido de la tarjeta */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea los elementos al centro horizontalmente */
+}
+
+.kitchen-type-image {
+  width: 100%;
+  height: 400px; /* Altura fija para las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+
+  margin-bottom: 20px;
+}
+
+.kitchen-type-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 10px;
+  font-family: "Host Grotesk", sans-serif;
+}
+
+.kitchen-type-size {
+  font-size: 0.95em;
+  color: #777777;
+  margin-bottom: 10px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.kitchen-type-price {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 25px;
+  font-family: "Host Grotesk", sans-serif;
+}
+
+.kitchen-type-features {
+  list-style: none; /* Quita los puntos por defecto */
+  padding: 0 20px; /* Padding interno para los ítems de la lista */
+  margin: 0 0 20px 0; /* Espacio debajo de la lista */
+  text-align: left; /* Alinea los ítems de la lista a la izquierda */
+  width: 100%; /* Ocupa el ancho completo de la tarjeta */
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+.kitchen-type-features li {
+  font-size: 0.95em;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px; /* Espacio para el bullet personalizado */
+  color: #555555;
+}
+
+.kitchen-type-features li::before {
+  content: "•"; /* El bullet point */
+  color: #000000; /* Color del bullet */
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.kitchen-type-description {
+  font-size: 0.9em;
+  color: #777777;
+  padding: 0 20px; /* Padding para el texto descriptivo */
+  margin-top: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* --- Botón Central --- */
+.cost-button-wrapper {
+  margin-top: 40px;
+  text-align: center; /* Centra el botón */
+}
+
+.cost-quote-button {
+  display: inline-flex; /* Permite alinear el texto y la flecha */
+  align-items: center;
+  background-color: #000000; /* Fondo negro para el botón */
+  color: #ffffff; /* Texto blanco */
+  padding: 10px 20px;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.cost-quote-button:hover {
+  background-color: #333333; /* Un tono más claro al pasar el mouse */
+}
+
+.cost-quote-button .arrow-right {
+  margin-left: 10px; /* Espacio entre el texto y la flecha */
+  font-size: 1.2em;
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 1024px) {
+  .kitchen-types-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para tablets */
+    gap: 25px;
+  }
+
+  .cost-title {
+    font-size: 2.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .kitchen-cost-section-container {
+    padding: 60px 20px;
+  }
+
+  .kitchen-types-grid {
+    grid-template-columns: 1fr; /* 1 columna para móviles */
+    gap: 30px;
+  }
+
+  .cost-title {
+    font-size: 1.8em;
+  }
+
+  .cost-intro-paragraph,
+  .cost-disclaimer-paragraph,
+  .kitchen-type-features li,
+  .kitchen-type-description {
+    font-size: 0.95em;
+  }
+
+  .kitchen-type-image {
+    height: 200px; /* Ajusta la altura de las imágenes en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .kitchen-cost-section-container {
+    padding: 40px 15px;
+  }
+  .cost-title {
+    font-size: 1.5em;
+  }
+  .kitchen-type-price {
+    font-size: 1.4em;
+  }
+}

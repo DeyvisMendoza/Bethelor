@@ -1,0 +1,225 @@
+/* src/components/FAQSection.css */
+
+.faq-section-container {
+  background-color: #ffffff;
+  padding: 80px 40px;
+  font-family: Arial, sans-serif;
+  color: #333333;
+}
+
+/* --- Encabezado --- */
+.faq-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-end;
+  max-width: 1200px; 
+  margin: 0 auto 60px auto; 
+  text-align: left;
+  gap: 10px; 
+}
+
+.faq-header-left {
+  flex: 2; 
+  max-width: 60%; 
+}
+
+.faq-intro-text-right {
+  flex: 1; 
+  max-width: 600px; 
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+  font-family: "DM Sans", sans-serif;
+  margin-top: 20px; 
+}
+
+.faq-subtitle {
+  font-size: 0.9em;
+  color: #777777;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  display: inline-block;
+  font-family: "DM Sans", sans-serif;
+}
+
+.faq-subtitle::before {
+  content: "•";
+  color: #000000;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.faq-title {
+  font-size: 2.8em;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0; 
+  color: #000000;
+  font-family: "Host Grotesk", sans-serif;
+  font-weight: 600;
+}
+
+/* --- Wrapper de Acordeones (sin cambios relevantes) --- */
+.faq-accordions-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 80px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.faq-accordions-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* --- Estilos del Acordeón Individual --- */
+.faq-item {
+    border-bottom: 1px solid #eeeeee;
+    overflow: hidden; 
+}
+
+
+.faq-question-button {
+    background-color: transparent;
+    color: #000000;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 18px 0;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-question-button:hover {
+    color: #555555;
+}
+
+.faq-question-button .question-text {
+    flex-grow: 1;
+    padding-right: 15px;
+    font-size: 16px;
+      font-family: "Host Grotesk", sans-serif;
+
+}
+
+.faq-question-button .toggle-icon {
+    font-size: 1em;
+    color: #000000;
+    transition: transform 0.3s ease;
+}
+
+/* Este es el panel de respuesta */
+.faq-answer-panel {
+    background-color: transparent; 
+    padding: 0; 
+    max-height: 0; 
+    overflow: hidden; 
+   
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.faq-answer-panel p {
+    margin: 0; 
+    padding: 0 0px; 
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555555;
+}
+
+/* Estado cuando el acordeón está abierto */
+.faq-item.open .faq-answer-panel {
+    
+    padding: 20px; 
+    max-height: 200px; 
+}
+
+/* Estilo para la pregunta cuando su acordeón está abierto, como se ve en la imagen */
+.faq-item.open .faq-question-button {
+    color: #555555;
+}
+
+/* --- Media Queries para Responsividad (sin cambios relevantes) --- */
+@media (max-width: 1024px) {
+    .faq-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .faq-header-left,
+    .faq-intro-text-right {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .faq-subtitle {
+        padding-left: 0;
+        text-align: center;
+    }
+    .faq-subtitle::before {
+        position: static;
+        margin-right: 5px;
+    }
+
+    .faq-intro-text-right {
+        margin-top: 0;
+        padding: 0 20px;
+    }
+
+    .faq-accordions-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .faq-accordions-column {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+
+    .faq-title {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-section-container {
+        padding: 60px 0;
+    }
+    .faq-title {
+        font-size: 1.8em;
+    }
+    .faq-question-button {
+        font-size: 1em;
+        padding: 15px 0;
+    }
+    .faq-answer-panel p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section-container {
+        padding: 40px 15px;
+    }
+    .faq-title {
+        font-size: 1.5em;
+    }
+    .faq-question-button {
+        font-size: 0.9em;
+    }
+}
