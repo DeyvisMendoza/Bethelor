@@ -1,19 +1,48 @@
 ---
 import "../../styles/global.css";
 // import "../../styles/sections/home/welcome.css";
-// import Fondo1 from "../../assets/welcome/welcome-fondo1.png";
-// import Fondo2 from "../../assets/welcome/welcome-fondo2.png";
-// import Fondo3 from "../../assets/welcome/welcome-fondo3.png";
+import Fondo1 from "../../assets/welcome/welcome-fondo1.png";
+import Fondo2 from "../../assets/welcome/welcome-fondo2.png";
+import Fondo3 from "../../assets/welcome/welcome-fondo3.png";
 import AnimatedWelcomeText from "../../../src/components/AnimatedWelcomeText/AnimatedWelcomeText.jsx";
+
+import { getImage } from "astro:assets";
+
+const optimizedFondo1 = await getImage({
+  src: Fondo1,
+  width: 1000,
+  format: "webp",
+  quality: 85,
+});
+
+const optimizedFondo2 = await getImage({
+  src: Fondo2,
+  width: 1000,
+  format: "webp",
+  quality: 85,
+});
+
+const optimizedFondo3 = await getImage({
+  src: Fondo3,
+  width: 1000,
+  format: "webp",
+  quality: 85,
+});
+
 ---
 
-<section class="welcome bg-black flex flex-col justify-center items-center text-white">
-  <div class="main-section flex w-full max-w-[1450px] gap-[0.3125rem] flex-wrap">
+<section
+  class="welcome bg-black flex flex-col justify-center items-center text-white"
+>
+  <div
+    class="main-section flex w-full max-w-[1450px] gap-[0.3125rem] flex-wrap"
+  >
     <div class="image-text-container flex-1 min-w-[400px] h-[700px] relative">
       <div
         class="image-overlay"
-        style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo1.png')" }}
-      ></div>
+        style={{ backgroundImage: `url(${optimizedFondo1.src})` }}
+      >
+      </div>
       <AnimatedWelcomeText client:load />
     </div>
 
@@ -21,19 +50,23 @@ import AnimatedWelcomeText from "../../../src/components/AnimatedWelcomeText/Ani
       <div class="right-images flex-2 flex gap-[0.3125rem] h-full">
         <div
           class="image"
-          style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo2.png')" }}
-        ></div>
+          style={{ backgroundImage: `url(${optimizedFondo2.src})` }}
+        >
+        </div>
         <div
           class="image"
-          style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo3.png')" }}
-        ></div>
+          style={{ backgroundImage: `url(${optimizedFondo3.src})` }}
+        >
+        </div>
       </div>
-      <div class="description flex-1 text-white flex justify-center items-center px-[3.125rem] text-start max-sm:text-center">
+      <div
+        class="description flex-1 text-white flex justify-center items-center px-[3.125rem] text-start max-sm:text-center"
+      >
         <p class="fade-in" data-scroll>
-          At Bethelor, we bring your vision to life with expert remodeling
-          of kitchens, bathrooms, and interiors. Proudly serving Maryland
-          with reliable craftsmanship, personalized designs, and results
-          that feel like home.
+          At Bethelor, we bring your vision to life with expert remodeling of
+          kitchens, bathrooms, and interiors. Proudly serving Maryland with
+          reliable craftsmanship, personalized designs, and results that feel
+          like home.
         </p>
       </div>
     </div>

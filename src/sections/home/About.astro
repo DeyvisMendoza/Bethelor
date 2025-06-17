@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+
+import img1 from "../../assets/about/about1.png"
 
 ---
 
@@ -44,8 +47,8 @@
   </div>
 
   <div class="about-images">
-    <img
-      src="/about/about1.png"
+    <Image
+      src={img1}
       alt="About image 1"
       class="about-image1"
       data-animation-direction="left"
