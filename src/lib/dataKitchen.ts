@@ -1,7 +1,9 @@
-
+import img1 from "../assets/kitchen-remodel/img1.png"
+import img2 from "../assets/kitchen-remodel/img2.png"
+import img3 from "../assets/kitchen-remodel/img3.png"
 export const kitchenTypes = [
     {
-      image: "../../../public/kitchen-remodel/img1.png",
+      image: img1,
       title: "Small Kitchen",
       size: "Under 70 ft²",
       price: "$12,000 – $20,000*",
@@ -14,7 +16,7 @@ export const kitchenTypes = [
       description: "Efficient, modern upgrades for tight spaces.",
     },
     {
-      image: "../../../public/kitchen-remodel/img2.png",
+      image: img2,
       title: "Medium Kitchen",
       size: "70 – 150 ft²",
       price: "$20,000 – $40,000*",
@@ -27,7 +29,7 @@ export const kitchenTypes = [
       description: "Balanced design for everyday comfort and function.",
     },
     {
-      image: "../../../public/kitchen-remodel/img3.png",
+      image: img3,
       title: "Large Kitchen",
       size: "Over 150 ft²*",
       price: "$40,000 – $70,000+*",

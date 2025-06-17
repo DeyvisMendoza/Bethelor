@@ -19,7 +19,7 @@ import { Image } from 'astro:assets';
                     return slides.map((t, idx) => (
                         <div class="testimonials-slider-img" data-index={idx}>
                             <div class="testimonial-image">
-                                <img src={t.img} alt={`Testimonial by ${t.name}`} />
+                                <Image src={t.img} alt={`Testimonial by ${t.name}`} />
                                 <h4 class="testimonial-name">{t.name}</h4>
                                 <p class="testimonial-location">{t.location}</p>
                             </div>

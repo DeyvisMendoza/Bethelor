@@ -1,7 +1,13 @@
+import img1 from "../assets/testimonial/testimonial1.png"
+import img2 from "../assets/testimonial/testimonial2.png"
+import img3 from "../assets/testimonial/testimonial3.png"
+import img4 from "../assets/testimonial/testimonial4.png"
+import img5 from "../assets/testimonial/testimonial5.png"
+import img6 from "../assets/testimonial/testimonial6.png"
 
 export const testimonials = [
   {
-    img: "public/testimonial/testimonial1.png",
+    img: img1,
     name: "Lisa Thompson",
     location: "Bathroom Remodel - Essex, MD",
     text: `“I only needed a small bathroom repair, but Anthony and Valerie made
@@ -12,7 +18,7 @@ export const testimonials = [
             Maryland looking for bathroom remodeling.”`,
   },
   {
-    img: "public/testimonial/testimonial2.png",
+    img: img2,
     name: "Michael Rivera",
     location: "Interior & Exterior Painting - Dundalk, MD",
     text: `“Bethelor painted my entire home inside and out, and the difference
@@ -23,7 +29,7 @@ export const testimonials = [
             Maryland that’s on time and affordable, this is the team to call.”`,
   },
   {
-    img: "public/testimonial/testimonial3.png",
+    img: img3,
     name: "Jasmine Brooks",
     location: "Kitchen Remodeling - Towson, MD",
     text: `“I couldn’t believe how beautiful my kitchen turned out. From the 3D
@@ -33,19 +39,19 @@ export const testimonials = [
             price, and a team that truly cares.”`,
   },
   {
-    img: "public/testimonial/testimonial4.png",
+    img: img4,
     name: "Daniel Morgan",
     location: "Small Bathroom Refresh - Glen Burnie, MD",
     text: `“My bathroom had water damage and looked outdated. Anthony and Valerie stepped in and made it feel brand new. They fixed the plumbing, painted, and installed a new toilet—fast and clean. Even though it was a small bathroom remodel, they treated it like a big project. Honest, affordable, and truly professional.”`,
   },
   {
-    img: "public/testimonial/testimonial5.png",
+    img: img5,
     name: "Karen White",
     location: "Full Exterior Paint & Repairs - Bethesda, MD",
     text: `“My home looked tired, but Bethelor brought it back to life. They painted the exterior and interior, and repaired the window and door trim. Anthony and Valerie were kind, punctual, and detailed. If you need exterior house painting in Bethesda at a fair price, this is your team.”`,
   },
   {
-    img: "public/testimonial/testimonial6.png",
+    img: img6,
     name: "Brian Carter",
     location: "Kitchen Remodel - Gaithersburg, MD",
     text: `"I dreamed of a modern kitchen, and Bethelor made it real. Anthony's 3D design gave me confidence, and the blue cabinets look stunning. They handled everything—from permits to the final touch—on time and stress-free. If you're remodeling a kitchen in Maryland, call them."`,
