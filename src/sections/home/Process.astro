@@ -1,6 +1,7 @@
 ---
 import processSteps from "../../data/data.json";
 import BotonProcess from ".././../components/BotonProcess/BotonProcess";
+import Image from "astro/components/Image.astro";
 ---
 
 <section class="process-section">
@@ -18,7 +19,7 @@ import BotonProcess from ".././../components/BotonProcess/BotonProcess";
         processSteps.map((step, idx) => {
           return (
             <div class="process-item">
-              <img class="process-item-image" src={step.img} alt={step.title} />
+              <Image class="process-item-image" src={step.img} alt={step.title} width={200} height={200} />
               <h4 class="process-item-title">{step.title}</h4>
               <p class="process-item-description">{step.description}</p>
             </div>

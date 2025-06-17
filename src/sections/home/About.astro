@@ -1,5 +1,8 @@
 ---
-
+import About1 from "../../assets/about/about1.png"
+import About2 from "../../assets/about/about2.png"
+import About3 from "../../assets/about/about3.png"
+import { Image } from "astro:assets"
 ---
 
 <section class="about-section" id="about-section-id">
@@ -44,22 +47,22 @@
   </div>
 
   <div class="about-images">
-    <img
-      src="/about/about1.png"
+    <Image
+      src={About1}
       alt="About image 1"
       class="about-image1"
       data-animation-direction="left"
       loading="lazy"
     />
-    <img
-      src="/about/about2.png"
+    <Image
+    src={About2}
       alt="About image 2"
       class="about-image2"
       data-animation-direction="bottom"
       loading="lazy"
     />
-    <img
-      src="/about/about3.png"
+    <Image
+      src={About3}
       alt="About image 3"
       class="about-image3"
       data-animation-direction="right"

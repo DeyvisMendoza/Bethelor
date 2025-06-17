@@ -2,6 +2,8 @@
 import { BotonChoose } from "../../components/BotonChoose/BotonChoose";
 import Choose1 from "../../assets/choose/choose1.png"
 import { getImage } from "astro:assets";
+import { Image } from "astro:assets";
+import boton from "../../assets/choose/boton.png";
 
 const optimizedFondo = await getImage({
   src: Choose1,
@@ -66,7 +68,7 @@ const optimizedFondo = await getImage({
 
   <div class="f-box">
     <h3>Thinking About Remodeling Your Home?</h3>
-    <img class="imgchoose" src="/choose/boton.png" alt="Get a Free Estimate" />
+    <Image class="imgchoose" src={boton} alt="Get a Free Estimate" />
   </div>
 </section>
 

@@ -46,7 +46,7 @@ function Header() {
           <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
             <ul>
               <li><a href="/">HOME</a></li>
-              <li><a href="/about-us">ABOUT US</a></li>
+              <li><a href="/about">ABOUT US</a></li>
               <li><a href="/services">SERVICES</a></li>
               <li><a href="/projects">PROJECTS</a></li>
               <li><a href="/blogs">BLOGS</a></li>

@@ -2,6 +2,7 @@
 
 import { BotonTip } from "../../components/BotonTip/BotonTip";
 import { tips } from "../../lib/dataTips";
+import { Image } from "astro:assets";
 
 ---
 
@@ -21,7 +22,7 @@ import { tips } from "../../lib/dataTips";
       tips.map((tip, idx) => (
         <div class="tip-card" data-index={idx}>
           <div class="tip-image-container">
-            <img src={tip.img} alt={tip.alt} />
+            <Image src={tip.img} alt={tip.alt} width={200} height={200}/>
             <div class="tip-date-box">
               <div class="tip-day">
                 <p>{tip.day}</p>

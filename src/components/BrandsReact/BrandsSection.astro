@@ -14,10 +14,13 @@ import { Image } from "astro:assets";
   <div class="brand-details">
     {brandItemsData.map((item) => (
       <div class="brand-item" data-id={item.id}>
-        <img
+        <Image
           src={item.imgSrc}
           alt={item.title}
           class="brand-item-img"
+          width={200}
+          height={100}
+          format="webp"
         />
         <div class="brand-description">
           <h3 class="brand-title">

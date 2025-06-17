@@ -1,5 +1,8 @@
 ---
 import { testimonials } from "../../lib/dataTestimonials";
+import button_left from "../../assets/project/boton-left.png"
+import button_right from "../../assets/project/boton-rigth-white.png"
+import { Image } from 'astro:assets';
 ---
 
 <section class="testimonials-section">
@@ -38,13 +41,13 @@ import { testimonials } from "../../lib/dataTestimonials";
             }
         </div>
         <div class="testimonials-slider-controls">
-            <img
-                src="/project/boton-left.png"
+            <Image
+                src={button_left}
                 class="testimonials-slider-btn testimonials-left"
                 alt="Previous Testimonial"
             />
-            <img
-                src="/project/boton-rigth-white.png"
+            <Image
+                src={button_right}
                 class="testimonials-slider-btn testimonials-right"
                 alt="Next Testimonial"
             />

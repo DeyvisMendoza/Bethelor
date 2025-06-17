@@ -8,7 +8,7 @@ export const services = [
       "We remodel kitchens with custom cabinets, new countertops, lighting, backsplashes, and flooring. We focus on both style and functionality to create the heart of your home.",
     list: ["Serving all Maryland"],
     textobuton: "Explore Kitchen Remodel", // Cambiado de 'video' a 'textobuton'
-    videoLink: "https://www.youtube.com/watch?v=B-HLtGTEyLk",
+    videoLink: "/kitchen",
     image: "/services/service1.png",
     icons: [
       {
