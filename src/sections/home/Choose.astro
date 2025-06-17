@@ -1,12 +1,21 @@
 ---
 import { BotonChoose } from "../../components/BotonChoose/BotonChoose";
+import Choose1 from "../../assets/choose/choose1.png"
+import { getImage } from "astro:assets";
+
+const optimizedFondo = await getImage({
+  src: Choose1,
+  width: 1000,
+  format: 'webp',
+  quality: 80
+});
 ---
 
 <section class="choose-section" id="choose-section-id">
   <div class="choose-image-text-container">
     <div
       class="choose-image-overlay"
-      style="background-image: url('/choose/choose1.png')"
+      style={`background-image: url('${optimizedFondo.src}')`}
     >
     </div>
     <div class="choose-text-container">

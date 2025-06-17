@@ -1,5 +1,7 @@
 ---
-
+import { Image } from "astro:assets"
+import Img1 from "../../assets/section-custom/img1.png"
+import Img2 from "../../assets/section-custom/img2.png"
 ---
 
 <section class="kitchen-remodeling-section-container">
@@ -43,8 +45,8 @@
     </div>
 
     <div class="kitchen-remodeling-image-column">
-      <img
-        src="public/section-custom/img1.png"
+      <Image
+        src={Img1}
         alt="Modern kitchen remodeling example"
         class="kitchen-main-image"
       />
@@ -73,8 +75,8 @@
 
   <div class="kitchen-remodeling-info-row">
     <div class="kitchen-remodeling-info-image">
-      <img
-        src="public/section-custom/img2.png"
+      <Image
+        src={Img2}
         alt="Kitchen design inspiration"
       />
     </div>

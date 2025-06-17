@@ -5,6 +5,32 @@ import "../../styles/global.css";
 // import Fondo2 from "../../assets/welcome/welcome-fondo2.png";
 // import Fondo3 from "../../assets/welcome/welcome-fondo3.png";
 import AnimatedWelcomeText from "../../../src/components/AnimatedWelcomeText/AnimatedWelcomeText.jsx";
+import fondo1 from "../../assets/welcome/welcome-fondo1.png"
+import fondo2 from "../../assets/welcome/welcome-fondo2.png"
+import fondo3 from "../../assets/welcome/welcome-fondo3.png"
+import { getImage } from "astro:assets";
+
+const optimizedFondo = await getImage({
+  src: fondo1,
+  width: 1000,
+  format: 'webp',
+  quality: 80
+});
+
+const optimizedFondo2 = await getImage({
+  src: fondo2,
+  width: 1000,
+  format: 'webp',
+  quality: 80
+});
+
+const optimizedFondo3 = await getImage({
+  src: fondo3,
+  width: 1000,
+  format: 'webp',
+  quality: 80
+});
+
 ---
 
 <section class="welcome bg-black flex flex-col justify-center items-center text-white">
@@ -12,7 +38,7 @@ import AnimatedWelcomeText from "../../../src/components/AnimatedWelcomeText/Ani
     <div class="image-text-container flex-1 min-w-[400px] h-[700px] relative">
       <div
         class="image-overlay"
-        style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo1.png')" }}
+        style={`background-image: url('${optimizedFondo.src}')`}
       ></div>
       <AnimatedWelcomeText client:load />
     </div>
@@ -21,11 +47,11 @@ import AnimatedWelcomeText from "../../../src/components/AnimatedWelcomeText/Ani
       <div class="right-images flex-2 flex gap-[0.3125rem] h-full">
         <div
           class="image"
-          style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo2.png')" }}
+          style={`background-image: url('${optimizedFondo2.src}')`}
         ></div>
         <div
           class="image"
-          style={{ backgroundImage: "url('src/assets/welcome/welcome-fondo3.png')" }}
+          style={`background-image: url('${optimizedFondo3.src}')`}
         ></div>
       </div>
       <div class="description flex-1 text-white flex justify-center items-center px-[3.125rem] text-start max-sm:text-center">

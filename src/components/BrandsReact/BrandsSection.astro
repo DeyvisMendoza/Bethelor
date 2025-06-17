@@ -1,11 +1,14 @@
 ---
 
 import { brandItemsData } from "../../lib/dataBrands"; 
+import brands0 from "../../assets/brands/brands0.png";
+import brands5 from "../../assets/brands/brands5.svg";
+import { Image } from "astro:assets";
 ---
 
 <section class="brands-section" id="brands-section-id">
   <div class="brand-logo">
-    <img src="/brands/brands0.png" alt="Bethelor Logo" />
+    <Image src={brands0} alt="Bethelor Logo" />
   </div>
 
   <div class="brand-details">
@@ -33,7 +36,7 @@ import { brandItemsData } from "../../lib/dataBrands";
       Brands We Trust for Remodeling in Maryland
     </h3>
     <div class="trusted-brands-logo">
-      <img src="/brands/brands5.svg" alt="Trusted Brands Logos" />
+      <Image src={brands5} alt="Trusted Brands Logos" />
     </div>
   </div>
 </section>

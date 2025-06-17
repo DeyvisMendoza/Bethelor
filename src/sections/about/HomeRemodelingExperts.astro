@@ -1,6 +1,7 @@
 ---
 
 import mainImage from "../../assets/about/about1.png"; 
+import { Image } from "astro:assets";
 ---
 
 <section class="home-remodeling-experts-section">
@@ -9,7 +10,7 @@ import mainImage from "../../assets/about/about1.png";
 
     <div class="experts-columns-container">
       <div class="experts-image-column">
-        <img src={mainImage.src} alt="Home remodeling expert working on cabinets" class="experts-main-image" />
+        <Image src={mainImage} alt="Home remodeling expert working on cabinets" class="experts-main-image" />
       </div>
 
       <div class="experts-text-column">

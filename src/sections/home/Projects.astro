@@ -2,10 +2,18 @@
 import { InteractiveLinkButton } from "../../components/InteractiveLinkButton/InteractiveLinkButton";
 import "../../styles/sections/home/ProjectsReact.css";
 
-const projectImages = [
-  "/project/project1.png",
-  "/project/project2.png",
-];
+
+import project1 from "../../assets/project/project1.png"
+import project2 from "../../assets/project/project2.png"
+import button_left from "../../assets/project/boton-left.png"
+import button_right from "../../assets/project/boton-rigth-white.png"
+import { Image } from 'astro:assets';
+
+
+const projectImages = [project1, project2];
+
+
+
 
 const categories = [
   { name: "ALL PROJECTS", count: 12 },
@@ -23,6 +31,7 @@ const imagesWithClones = [
 ---
 
 <section class="projects-section" id="projects-section-id">
+
   <div class="projects-header">
     <div class="projects-intro">
       <h2 class="projects-title">Our Projects.</h2>
@@ -52,34 +61,36 @@ const imagesWithClones = [
       <div class="slider-track" style="display: flex;">
         {
           imagesWithClones.map((src, idx) => (
-            <img
-              src={src}
-              class="slider-img"
-              alt={`Project ${idx}`}
-              draggable="false"
-              style="user-select: none;"
-              loading="lazy"
-            />
+          <Image
+            src={src}
+            alt={`Project ${idx}`}
+            class="slider-img"
+            draggable={false}
+            style="user-select: none;"
+            loading="lazy"
+          />
           ))
         }
       </div>
 
 
-      <div class="slider-controls">
-        <img
-          src="/project/boton-left.png"
+      
+      <div class="slider-controls"> 
+        <Image
+          src={button_left}
           class="slider-btn left animated-button-hover-effect"
           alt="Previous"
           id="slider-btn-left"
           style="cursor: pointer;"
         />
-        <img
-          src="/project/boton-rigth-white.png"
+        <Image
+          src={button_right}
           class="slider-btn right animated-button-hover-effect"
           alt="Next"
           id="slider-btn-right"
           style="cursor: pointer;"
         />
+        
       </div>
     </div>
   </div>

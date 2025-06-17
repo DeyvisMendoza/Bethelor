@@ -1,8 +1,16 @@
 ---
+import fondo2 from "../../assets/welcometwo/welcome-two.png"
+import { getImage } from "astro:assets";
 
+const optimizedFondo = await getImage({
+  src: fondo2,
+  width: 1000,
+  format: 'webp',
+  quality: 80
+});
 ---
 
-<div id="welcome-two-wrapper" class="main-content-wrapper">
+<div style={`background-image: url('${optimizedFondo.src}')`} id="welcome-two-wrapper" class="main-content-wrapper">
   <div class="welcome-two-header">
     <h2 class="welcome-two-title">Home Remodeling Services in Maryland</h2>
     <p>
@@ -75,7 +83,6 @@
   @import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
 
   .main-content-wrapper {
-    background-image: url("./public/welcometwo/welcome-two.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
