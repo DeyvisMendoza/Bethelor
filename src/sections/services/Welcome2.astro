@@ -1,6 +1,7 @@
 ---
 import fondo2 from "../../assets/welcometwo/welcome-two.png"
 import { getImage } from "astro:assets";
+import Header from "../../components/HeaderTwo/HeaderTwo";
 
 const optimizedFondo = await getImage({
   src: fondo2,
@@ -9,8 +10,8 @@ const optimizedFondo = await getImage({
   quality: 80
 });
 ---
-
 <div style={`background-image: url('${optimizedFondo.src}')`} id="welcome-two-wrapper" class="main-content-wrapper">
+  <Header client:load/>
   <div class="welcome-two-header">
     <h2 class="welcome-two-title">Home Remodeling Services in Maryland</h2>
     <p>
