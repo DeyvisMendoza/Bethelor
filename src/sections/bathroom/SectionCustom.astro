@@ -1,0 +1,527 @@
+---
+import { Image } from "astro:assets"
+import Img1 from "../../assets/section-custom/img1.png"
+import Img2 from "../../assets/section-custom/img2.png"
+---
+
+<section class="kitchen-remodeling-section-container">
+  <div class="kitchen-remodeling-content-wrapper">
+    <div class="kitchen-remodeling-text-column">
+      <h1 class="kitchen-remodeling-title">
+        Custom Bathroom Remodeling in <br /> Maryland
+      </h1>
+      <p class="kitchen-remodeling-paragraph">
+        Upgrade your home with a bathroom designed for comfort, beauty, and functionality. At Bethelor, we specialize in custom bathroom remodeling throughout Maryland — transforming outdated, inefficient bathrooms into elegant, modern spaces that elevate your daily routine and add value to your home.
+      </p>
+      <p class="kitchen-remodeling-paragraph">
+        Whether you need a full master bathroom renovation, a small guest bath upgrade, or a walk-in shower conversion, our team brings experience, craftsmanship, and smart design to every detail. From vanity installation and tilework to lighting, plumbing, and layout changes — we handle it all.
+      </p>
+      <p class="kitchen-remodeling-paragraph">
+        Borrar
+      </p>
+      <ul class="kitchen-remodeling-list">
+        <li>
+            Spa-like designs
+        </li>
+        <li>
+            Aging-in-place upgrades
+        </li>
+        <li>
+            Custom vanities & smart fixtures
+        </li>
+        <li>
+            Waterproof flooring & wall systems
+        </li>
+      </ul>
+
+      <p class="kitchen-remodeling-paragraph last-paragraph">
+        Proudly serving Baltimore, Rosedale, Towson, Glen Burnie, Bethesda, Gaithersburg, Germantown, and all of Montgomery County.
+      </p>
+
+      <a href="/request-quote" class="kitchen-quote-button">
+        Request your free quote <span class="arrow-right">→</span>
+      </a>
+    </div>
+
+    <div class="kitchen-remodeling-image-column">
+      <Image
+        src={Img1}
+        alt="Modern kitchen remodeling example"
+        class="kitchen-main-image"
+      />
+    </div>
+  </div>
+</section>
+
+<section class="section-color">
+  <div class="ticker-text-wrapper">
+    <div class="ticker-text-container">
+      {/* Duplicamos el contenido para un desplazamiento continuo sin saltos */}
+      <span class="ticker-item">
+        AS A TRUSTED BATHROOM REMODELING COMPANY IN MARYLAND, OUR TEAM KNOWS THAT EVERY PROJECT STARTS WITH A CLEAR PLAN, HIGH-QUALITY MATERIALS, AND A DESIGN BUILT AROUND YOUR NEEDS&nbsp;&nbsp;
+      </span>
+      <span class="ticker-item">
+        AS A TRUSTED BATHROOM REMODELING COMPANY IN MARYLAND, OUR TEAM KNOWS THAT EVERY PROJECT STARTS WITH A CLEAR PLAN, HIGH-QUALITY MATERIALS, AND A DESIGN BUILT AROUND YOUR NEEDS;&nbsp;
+      </span>
+      <span class="ticker-item">
+        AS A TRUSTED BATHROOM REMODELING COMPANY IN MARYLAND, OUR TEAM KNOWS THAT EVERY PROJECT STARTS WITH A CLEAR PLAN, HIGH-QUALITY MATERIALS, AND A DESIGN BUILT AROUND YOUR NEEDS&nbsp;&nbsp;
+      </span>
+    </div>
+  </div>
+
+  <div class="kitchen-remodeling-info-row">
+    <div class="kitchen-remodeling-info-image">
+      <Image
+        src={Img2}
+        alt="Kitchen design inspiration"
+      />
+    </div>
+    <div class="kitchen-remodeling-info-content">
+      <h2 class="kitchen-remodeling-info-title">
+        How We Approach Bathroom Remodeling
+      </h2>
+      <p class="kitchen-remodeling-info-paragraph">
+        A well-designed bathroom is more than just a space — it's a personal retreat. We begin by understanding your goals, style preferences, and functional needs.
+        <br /><br />
+        From layout planning and bathroom design solutions to plumbing upgrades, lighting, flooring, and tile work, every element is chosen and installed with care by our expert team.
+        <br /><br />
+        Whether you prefer sleek and modern or warm and classic, we deliver custom bathroom remodels with exceptional craftsmanship and attention to detail.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<style>
+
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+
+  .kitchen-remodeling-section-container {
+    background-color: #ffffff;
+    padding: 80px 0;
+    font-family: 'DM Sans', Arial, sans-serif; 
+    color: #333333;
+    box-sizing: border-box;
+  }
+
+  .kitchen-remodeling-content-wrapper {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 40px; 
+    gap: 80px; 
+    align-items: flex-end;
+    box-sizing: border-box;
+  }
+
+  .kitchen-remodeling-text-column {
+    flex: 1;
+    max-width: 50%; 
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start; 
+  }
+
+  .kitchen-remodeling-title {
+    font-size: 6em; 
+    margin-top: 0;
+    color: #000000;
+    display: block;
+    width: 700px;
+    margin-right: -400px;
+    z-index: 100;
+    margin-bottom: 50px;
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    word-break: break-word; 
+  }
+
+  .kitchen-remodeling-paragraph {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555555;
+    line-height: 1.6;
+  }
+
+  .kitchen-remodeling-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .kitchen-remodeling-list li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    color: #555555;
+    line-height: 1.5; 
+  }
+
+  .kitchen-remodeling-list li::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0.7em; 
+  }
+
+  .kitchen-remodeling-paragraph.last-paragraph {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .kitchen-quote-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    border: none; 
+    cursor: pointer;
+  }
+
+  .kitchen-quote-button:hover {
+    background-color: #333333;
+  }
+
+  .kitchen-quote-button .arrow-right {
+    margin-left: 10px;
+    font-size: 1.2em;
+  }
+
+  .kitchen-remodeling-image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .kitchen-main-image {
+    max-width: 80%; 
+    height: auto;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+  }
+
+  .section-color {
+    background-color: #f1f2eb;
+  }
+
+  .ticker-text-wrapper {
+    width: 100%;
+    background-color: #f1f2eb;
+    font-family: "Host Grotesk", sans-serif;
+    border-bottom: 1px solid #adadad;
+    color: #333333;
+    padding: 40px 0;
+    font-size: 30px;
+    font-weight: 400;
+    overflow: hidden; 
+    white-space: nowrap; 
+    box-sizing: border-box;
+  }
+
+  .ticker-text-container {
+    display: inline-block;
+    animation: scroll-left 100s linear infinite;
+  }
+
+  .ticker-item {
+    padding-right: 50px;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .ticker-item::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: #333333;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .kitchen-remodeling-info-row {
+    display: flex;
+    width: 100%;
+    background-color: #f1f2eb; 
+  }
+
+  .kitchen-remodeling-info-image {
+    flex: 1;
+    width: 100%; 
+    height: auto; 
+    max-width: 100%;
+    object-fit: cover; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .kitchen-remodeling-info-content {
+    flex: 1;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 100px;
+
+    h2 {
+      display: block;
+      max-width: 550px; 
+      font-family: "DM Sans", sans-serif;
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      color: #000000;
+      line-height: 1.2;
+      font-weight: 600;
+      margin-right: auto; 
+      margin-left: 0; 
+    }
+
+    p {
+      display: block;
+      max-width: 550px; 
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.5;
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #555555;
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .kitchen-remodeling-content-wrapper {
+      flex-direction: column;
+      align-items: center; 
+      gap: 50px; 
+      padding: 0 30px; 
+    }
+
+    .kitchen-remodeling-text-column {
+      max-width: 100%; 
+      text-align: center; 
+      padding: 0 15px; 
+      box-sizing: border-box;
+      align-items: center; 
+    }
+
+    .kitchen-remodeling-title {
+      font-size: 3.5em; 
+      width: auto; 
+      margin-right: 0; 
+      margin-left: auto;
+      margin-right: auto; 
+      margin-bottom: 30px; 
+      max-width: 90%; 
+      line-height: 1.1; 
+    }
+
+    .kitchen-remodeling-paragraph {
+      font-size: 15px; 
+      text-align: center; 
+      max-width: 90%; 
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .kitchen-remodeling-list {
+      text-align: left; 
+      display: block; 
+      margin-left: auto; 
+      margin-right: auto;
+      max-width: 90%; 
+    }
+    .kitchen-remodeling-list li {
+      padding-left: 25px; 
+      text-align: left; 
+      font-size: 15px; 
+    }
+    .kitchen-remodeling-list li::before {
+      left: 5px; 
+    }
+
+    .kitchen-quote-button {
+      margin: 0 auto; 
+      font-size: 14px;
+      padding: 15px 30px;
+    }
+
+    .kitchen-remodeling-image-column {
+      width: 100%; 
+      max-width: 600px; 
+      margin: 0 auto; 
+    }
+
+    .kitchen-main-image {
+      max-width: 100%; 
+    }
+
+    .ticker-text-wrapper {
+      padding: 30px 0; 
+      font-size: 24px; 
+    }
+
+    .kitchen-remodeling-info-row {
+      flex-direction: column; 
+    }
+
+    .kitchen-remodeling-info-content {
+      padding: 40px 30px; 
+      align-items: center; 
+
+      h2 {
+        font-size: 2.5em; 
+        max-width: 90%; 
+        text-align: center; 
+        margin-left: auto;
+        margin-right: auto;
+      }
+      p {
+        font-size: 15px; 
+        max-width: 90%; 
+        text-align: center; 
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .kitchen-remodeling-info-image {
+        max-width: 100%; 
+        margin: 0 auto; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    .kitchen-remodeling-section-container {
+      padding: 50px 0; 
+    }
+
+    .kitchen-remodeling-content-wrapper {
+      gap: 40px; 
+      padding: 0 15px; 
+    }
+
+    .kitchen-remodeling-text-column {
+      padding: 0 10px; 
+    }
+
+    .kitchen-remodeling-title {
+      font-size: 2.8em; 
+      margin-bottom: 25px; 
+    }
+
+    .kitchen-remodeling-paragraph,
+    .kitchen-remodeling-list li {
+      font-size: 14px; 
+      line-height: 1.5;
+    }
+    .kitchen-remodeling-paragraph.last-paragraph {
+        margin-bottom: 30px;
+    }
+
+    .kitchen-remodeling-list li::before {
+      left: 0px; 
+      top: 0.6em;
+    }
+
+    .kitchen-quote-button {
+      padding: 12px 25px;
+      font-size: 13px;
+    }
+
+    .ticker-text-wrapper {
+      padding: 25px 0;
+      font-size: 20px;
+    }
+
+    .kitchen-remodeling-info-content {
+      padding: 30px 20px; 
+      h2 {
+        font-size: 2em; 
+      }
+      p {
+        font-size: 14px; 
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .kitchen-remodeling-section-container {
+      padding: 40px 0;
+    }
+
+    .kitchen-remodeling-content-wrapper {
+      gap: 30px;
+      padding: 0 10px;
+    }
+
+    .kitchen-remodeling-text-column {
+      padding: 0 5px;
+    }
+
+    .kitchen-remodeling-title {
+      font-size: 2.2em; 
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .kitchen-remodeling-paragraph,
+    .kitchen-remodeling-list li {
+      font-size: 13px; 
+      line-height: 1.5;
+    }
+    .kitchen-remodeling-paragraph.last-paragraph {
+        margin-bottom: 20px;
+    }
+
+    .kitchen-remodeling-list li {
+      padding-left: 20px;
+    }
+    .kitchen-remodeling-list li::before {
+      left: 0px;
+      top: 0.6em;
+    }
+
+    .kitchen-quote-button {
+      padding: 10px 20px;
+      font-size: 12px;
+    }
+
+    .ticker-text-wrapper {
+      padding: 20px 0;
+      font-size: 18px;
+    }
+
+    .kitchen-remodeling-info-content {
+      padding: 20px 15px; 
+      h2 {
+        font-size: 1.8em; 
+      }
+      p {
+        font-size: 13px; 
+      }
+    }
+  }
+</style>
