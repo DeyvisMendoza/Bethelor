@@ -101,7 +101,7 @@ const Brands: React.FC = () => {
             variants={sectionVariants}
         >
             <motion.div className="brand-logo" variants={brandLogoVariants}>
-                <img src="/brands/brands0.png" alt="Bethelor Logo" />
+                <img src="src/assets/brands/brands0.png" alt="Bethelor Logo" />
             </motion.div>
 
             <motion.div
@@ -152,7 +152,7 @@ const Brands: React.FC = () => {
                     Brands We Trust for Remodeling in Maryland
                 </motion.h3>
                 <motion.div className="trusted-brands-logo" variants={trustedBrandsLogoVariants}>
-                    <img src="/brands/brands5.svg" alt="Trusted Brands Logos" />
+                    <img src="src/assets/brands/brands5.svg" alt="Trusted Brands Logos" />
                 </motion.div>
             </motion.div>
         </motion.section>
