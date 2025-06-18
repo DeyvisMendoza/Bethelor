@@ -3,7 +3,8 @@ import './BotonHeader.css'
 
 export const BotonHeader = () => {
   return (
-    <button className="btn-header">
+    <a href="/kitchen">
+    <button className="btn-header" >
     <span className="btn-header-text">Request your free quoter</span>
     <span className="btn-header-arrow">→</span>
 
@@ -12,5 +13,6 @@ export const BotonHeader = () => {
     <span className="btn-header-corner btn-header-bottom"></span>
     <span className="btn-header-corner btn-header-top"></span>
 </button>
+</a>
   )
 }

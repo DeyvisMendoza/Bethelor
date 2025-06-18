@@ -27,10 +27,12 @@ import { Image } from "astro:assets";
     {
       kitchenTypes.map((kitchen, index) => (
         <div class="kitchen-type-card">
-          <img
+          <Image
             src={kitchen.image}
             alt={kitchen.title}
             class="kitchen-type-image"
+            width={200}
+            height={200}
           />
           <h3 class="kitchen-type-title">{kitchen.title}</h3>
           <p class="kitchen-type-size">{kitchen.size}</p>

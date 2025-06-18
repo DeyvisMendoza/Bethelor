@@ -1,8 +1,8 @@
 ---
 import { testimonials } from "../../lib/dataTestimonials";
-
-import boton1 from "../../assets/project/boton-left.png";
-import boton2 from "../../assets/project/boton-rigth-white.png";
+import button_left from "../../assets/project/boton-left.png"
+import button_right from "../../assets/project/boton-rigth-white.png"
+import { Image } from 'astro:assets';
 ---
 
 <section class="testimonials-section">
@@ -19,7 +19,7 @@ import boton2 from "../../assets/project/boton-rigth-white.png";
                     return slides.map((t, idx) => (
                         <div class="testimonials-slider-img" data-index={idx}>
                             <div class="testimonial-image">
-                                <img src={t.img} alt={`Testimonial by ${t.name}`} />
+                                <Image src={t.img} alt={`Testimonial by ${t.name}`} />
                                 <h4 class="testimonial-name">{t.name}</h4>
                                 <p class="testimonial-location">{t.location}</p>
                             </div>
@@ -41,13 +41,13 @@ import boton2 from "../../assets/project/boton-rigth-white.png";
             }
         </div>
         <div class="testimonials-slider-controls">
-            <img
-                src="/project/boton-left.png"
+            <Image
+                src={button_left}
                 class="testimonials-slider-btn testimonials-left"
                 alt="Previous Testimonial"
             />
-            <img
-                src="/project/boton-rigth-white.png"
+            <Image
+                src={button_right}
                 class="testimonials-slider-btn testimonials-right"
                 alt="Next Testimonial"
             />

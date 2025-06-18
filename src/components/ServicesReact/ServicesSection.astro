@@ -1,6 +1,7 @@
 ---
 // src/components/Services.astro
 import { services } from "../../lib/dataServices"; // Ajusta la ruta si es necesario
+import { Image } from "astro:assets";
 ---
 
 <section class="services-section">
@@ -61,10 +62,13 @@ import { services } from "../../lib/dataServices"; // Ajusta la ruta si es neces
               </div>
             </div>
             <div class="accordion-content-img">
-              <img
+              <Image
                 src={service.image}
                 alt={service.title}
                 class="animated-img-hover-effect"
+                width={200}
+                height={100}
+                format="webp"
               />
             </div>
             <div class="accordion-content-icons">
@@ -91,7 +95,7 @@ import { services } from "../../lib/dataServices"; // Ajusta la ruta si es neces
                         gap: "10px",
                       }}
                     >
-                      <img src={icon.icon} alt="" />
+                      <Image src={icon.icon} width={200} height={100} format="webp" alt="" />
                       <h4>{icon.title}</h4>
                     </div>
                     <p>{icon.desc}</p>
