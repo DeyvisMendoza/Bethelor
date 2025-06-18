@@ -1,10 +1,12 @@
 ---
-
+import { Image } from "astro:assets"
+import WelcomeImg1 from "../../assets/welcome3/welcome01.png"
+import WelcomeImg2 from "../../assets/welcome3/welcome02.png"
 ---
 
 <div class="kitchen-welcome3">
-  <img class="welcome-img1" src="public/welcome3/welcome01.png" alt="" />
-  <img class="welcome-img2" src="public/welcome3/welcome02.png" alt="" />
+  <Image class="welcome-img1" src={WelcomeImg1} alt="" />
+  <Image class="welcome-img2" src={WelcomeImg2} alt="" />
 </div>
 
 <style>
