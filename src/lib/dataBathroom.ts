@@ -1,6 +1,6 @@
-import img1 from "../assets/kitchen-remodel/img1.png"
-import img2 from "../assets/kitchen-remodel/img2.png"
-import img3 from "../assets/kitchen-remodel/img3.png"
+import img1 from "../assets/bathroom-remodel/img1.png"
+import img2 from "../assets/bathroom-remodel/img2.png"
+import img3 from "../assets/bathroom-remodel/img3.png"
 export const kitchenTypes = [
     {
       image: img1,
