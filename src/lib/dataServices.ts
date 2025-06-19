@@ -39,7 +39,7 @@ export const services = [
       "We remodel bathrooms with modern tile, stylish vanities, updated showers, tubs, lighting, and more. Our focus is on comfort, functionality, and clean design — perfect for relaxing and starting your day right.",
     list: ["Serving all Maryland"],
     textobuton: "Explore Bathroom Remodeling", // Cambiado de 'video' a 'textobuton'
-    videoLink: "https://www.youtube.com/watch?v=B-HLtGTEyLk",
+    videoLink: "/bathroom",
     image: "/services/service2.png",
     icons: [
       {
