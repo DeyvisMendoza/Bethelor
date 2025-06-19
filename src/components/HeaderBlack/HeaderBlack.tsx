@@ -24,7 +24,6 @@ function Header() {
           </div>
         </div>
       </div>
-
       <div className= {`header-bottom-bar ${menuOpen ? "open" : ""}`}>
         <div className="header-bottom-content">
           <div className="logo">
@@ -40,9 +39,6 @@ function Header() {
               ☰
             </button>
           </div>
-
-          
-
           <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
             <ul>
               <li><a href="/">HOME</a></li>
@@ -56,7 +52,6 @@ function Header() {
               </div>
             </ul>
           </nav>
-
           <div className="container-request">
             <BotonHeader />
           </div>

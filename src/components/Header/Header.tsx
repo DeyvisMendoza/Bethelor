@@ -47,9 +47,7 @@ export const Header = () => {
       <div className="container">
         <div className="left-header">
          
-          <div className="menu-mobile-button" onClick={() => setMobileMenuOpen((prev) => !prev)}>
-            <img src="https://w7.pngwing.com/pngs/813/633/png-transparent-burger-line-list-menu-nav-navigation-option-mobile-basic-icon-thumbnail.png" alt="menu" width={32} height={32} />
-          </div>
+          
 
           <div className="hover-wrapper" ref={wrapperRef}>
             <div className="hover-container" ref={containerRef}>
@@ -83,6 +81,10 @@ export const Header = () => {
             <BotonHeader />
           </div>
         </div>
+
+        <div className="menu-mobile-button" onClick={() => setMobileMenuOpen((prev) => !prev)}>
+            <img src="https://w7.pngwing.com/pngs/813/633/png-transparent-burger-line-list-menu-nav-navigation-option-mobile-basic-icon-thumbnail.png" alt="menu" width={32} height={32} />
+          </div>
       </div>
 
       {/* Mobile menu */}
