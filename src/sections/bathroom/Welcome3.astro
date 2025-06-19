@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets"
+import WelcomeImg1 from "../../assets/bathroom/welcome01.png"
+import WelcomeImg2 from "../../assets/bathroom/welcome02.png"
+---
+
+<div class="kitchen-welcome3">
+  <Image class="welcome-img1" src={WelcomeImg1} alt="" />
+  <Image class="welcome-img2" src={WelcomeImg2} alt="" />
+</div>
+
+<style>
+  .kitchen-welcome3 {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+    padding: 30px 0;
+    max-width: 1400px; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+  }
+
+  .welcome-img1 {
+    width: 60%; 
+    height: 450px; 
+    object-fit: cover; 
+  }
+
+  .welcome-img2 {
+    width: 40%; 
+    height: 450px; 
+    object-fit: cover;
+  }
+
+  @media (max-width: 992px) {
+    .kitchen-welcome3 {
+      padding: 20px 15px; 
+      gap: 15px; 
+      flex-wrap: wrap; 
+    }
+
+    .welcome-img1,
+    .welcome-img2 {
+      height: 350px; 
+
+    }
+
+    .welcome-img1 {
+      width: 55%; 
+    }
+
+    .welcome-img2 {
+      width: 40%; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    .kitchen-welcome3 {
+      flex-direction: column; 
+      padding: 15px 10px; 
+      gap: 15px; 
+    }
+
+    .welcome-img1,
+    .welcome-img2 {
+      width: 100%; 
+      height: 280px;
+      max-width: 400px; 
+    }
+  }
+
+  @media (max-width: 480px) {
+    .kitchen-welcome3 {
+      padding: 10px 5px;
+    }
+
+    .welcome-img1,
+    .welcome-img2 {
+      height: 200px; 
+    }
+  }
+</style>
