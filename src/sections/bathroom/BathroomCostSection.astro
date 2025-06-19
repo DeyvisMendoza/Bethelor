@@ -1,5 +1,5 @@
 ---
-import { kitchenTypes } from "../../lib/dataKitchen";
+import { kitchenTypes } from "../../lib/dataBathroom";
 
 import { Image } from "astro:assets";
 ---
@@ -7,22 +7,15 @@ import { Image } from "astro:assets";
 <section class="kitchen-cost-section-container">
   <div class="cost-header">
     <h2 class="cost-title">
-      How Much Does a Kitchen <br /> Remodel Cost in Maryland?
+      How Much Does a Bathroom <br /> Remodel Cost in Maryland?
     </h2>
     <p class="cost-intro-paragraph">
-      See the average investment by kitchen size - and what's included in each
-      remodel. If you're planning to remodel your kitchen in Maryland, it's
-      important to understand the typical investment based on kitchen size.
-      Whether you're upgrading a compact space or designing a luxury cooking
-      area, this guide gives you a general price range for small, medium, and
-      large kitchens - and what's usually included in each.
+      See the average investment by bathroom size — and what’s included in each remodel. If you’re planning to remodel your bathroom in Maryland, it’s important to understand the typical investment based on bathroom size and features. Whether you’re updating a small powder room or doing a full master bath transformation, this guide gives you a general price range — and what’s usually included at each level.
     </p>
     <p class="cost-disclaimer-paragraph">
-      *Prices shown are estimates and may vary depending on materials, finishes,
-      structural changes, and overall project complexity.
+      *Prices shown are estimates and may vary depending on materials, finishes, plumbing work, structural changes, and overall project complexity.
     </p>
   </div>
-
   <div class="kitchen-types-grid">
     {
       kitchenTypes.map((kitchen, index) => (
@@ -37,6 +30,7 @@ import { Image } from "astro:assets";
           <h3 class="kitchen-type-title">{kitchen.title}</h3>
           <p class="kitchen-type-size">{kitchen.size}</p>
           <p class="kitchen-type-price">{kitchen.price}</p>
+          <p class="kitchen-type-subtitle">{kitchen.sub_title}</p>
           <ul class="kitchen-type-features">
             {kitchen.features.map((feature, featIndex) => (
               <li>{feature}</li>
@@ -118,6 +112,7 @@ import { Image } from "astro:assets";
   .kitchen-type-image {
     width: 100%;
     height: 400px; 
+    /* object-fit: cover;  */
 
     margin-bottom: 20px;
   }
@@ -162,6 +157,14 @@ import { Image } from "astro:assets";
     position: relative;
     padding-left: 20px; 
     color: #555555;
+  }
+
+  .kitchen-type-subtitle {
+    color: #555555;
+    padding: 0 20px; 
+    margin: 0 0 20px 0; 
+    text-align: left; 
+    font-family: "DM Sans", sans-serif;
   }
 
   .kitchen-type-features li::before {

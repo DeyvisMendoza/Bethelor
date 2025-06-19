@@ -1,23 +1,41 @@
 ---
-import fondo4 from "../../assets/welcome3/welcome4.png"
+import fondo4 from "../../assets/welcome3/welcome4.png";
 import { getImage } from "astro:assets";
+import Header from "../../components/HeaderTwo/HeaderTwo";
 
 const optimizedFondo = await getImage({
   src: fondo4,
   width: 1000,
-  format: 'webp',
-  quality: 80
+  format: "webp",
+  quality: 80,
 });
 ---
 
-<div style={`background-image: url('${optimizedFondo.src}')`} id="welcome-two-wrapper" class="main-content-wrapper">
+<!-- <div class="kitchen-welcome3-background">
+  <Header client:load />
+</div> -->
+<div
+  style={`background-image: url('${optimizedFondo.src}')`}
+  id="welcome-two-wrapper"
+  class="main-content-wrapper"
+>
+  <Header client:load />
   <div class="welcome-two-header">
     <h2 class="welcome-two-title">About Bethelor.</h2>
     <p>
-      At Bethelor, we provide expert home remodeling services across Maryland, including kitchens, bathrooms, painting, flooring, and more. Whether it's a single room or a full renovation, we deliver quality craftsmanship, on-time results, and spaces that feel like home.
+      At Bethelor, we provide expert home remodeling services across Maryland,
+      including kitchens, bathrooms, painting, flooring, and more. Whether it's
+      a single room or a full renovation, we deliver quality craftsmanship,
+      on-time results, and spaces that feel like home.
     </p>
   </div>
 </div>
+
+<style>
+  .kitchen-welcome3-background {
+    background-color: black;
+  }
+</style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -104,7 +122,7 @@ const optimizedFondo = await getImage({
     position: relative;
     z-index: 100;
     width: 2000px;
-    height: 220px;
+    height: 320px;
 
     margin-right: -40px;
     font-size: 6rem;
