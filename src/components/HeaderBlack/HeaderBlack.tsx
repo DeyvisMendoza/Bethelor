@@ -9,7 +9,7 @@ function Header() {
           <div className="contact-info">
             <div className="flex items-center space-x-2 gap-2 cursor-pointer">
               <img
-                src="public/header/location.png"
+                src="/header/location.png"
                 alt=""
                 className="invertible-img"
               />
@@ -17,7 +17,7 @@ function Header() {
             </div>
             <div className="flex items-center space-x-2 gap-2 cursor-pointer">
               <img
-                src="public/header/phone.png"
+                src="/header/phone.png"
                 alt=""
                 className="invertible-img"
               />
@@ -25,7 +25,7 @@ function Header() {
             </div>
             <div className="flex items-center space-x-2 gap-2 cursor-pointer">
               <img
-                src="public/header/send.png"
+                src="/header/send.png"
                 alt=""
                 className="invertible-img"
               />
