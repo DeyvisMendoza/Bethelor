@@ -378,4 +378,18 @@
     text-align: center;
     padding-left: 0;
   }
+
+  .accordion-content-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    flex:4;
+  }
+  .accordion-content-inner{
+    flex: 3;
+  }
 }
+

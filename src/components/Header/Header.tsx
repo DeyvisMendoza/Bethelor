@@ -58,8 +58,9 @@ export const Header = () => {
           </div>
 
           <div className="containerLogo">
-            <h1 className="name-logo">BETHELOR</h1>
-            <p className="texto-alternativo">Home Construction & Remodeling</p>
+            <a href="">
+              <img src="/footer/logo.png" alt="menu"/>
+            </a>
           </div>
         </div>
 
@@ -83,7 +84,7 @@ export const Header = () => {
         </div>
 
         <div className="menu-mobile-button" onClick={() => setMobileMenuOpen((prev) => !prev)}>
-            <img src="https://w7.pngwing.com/pngs/813/633/png-transparent-burger-line-list-menu-nav-navigation-option-mobile-basic-icon-thumbnail.png" alt="menu" width={32} height={32} />
+            <img src="/header/toogle.png" alt="menu" width={32} height={32} />
           </div>
       </div>
 

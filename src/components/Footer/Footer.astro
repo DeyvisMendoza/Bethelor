@@ -4,6 +4,7 @@ import facebookImg from '../../assets/footer/facebook.png';
 import twitterImg from '../../assets/footer/twitter.png';
 import pinterestImg from '../../assets/footer/pinterest.png';
 import telegramImg from '../../assets/footer/telegram.png';
+import logo from "../../assets/footer/logo.png"
 import { Image } from 'astro:assets';
 
 
@@ -18,8 +19,14 @@ const socialIcons = [
 <footer class="footer-bg footer-text footer-py footer-px">
   <div class="footer-container footer-grid footer-gap">
     <div class="footer-logo">
-      <h3 class="name-logo">BETHELOR</h3>
-      <p class="texto-alternativo">Home Construction & Remodeling</p>
+      <Image
+      src={logo}
+      alt="logo"
+      class="logo-footer"
+      data-animation-direction="left"
+      loading="lazy"
+      width={250}
+      />
       <div class="footer-contact-item">
         <span class="footer-contact-label">Address</span>
         <p class="footer-contact-info">59 Serpens Ct, Rosedale, MD 21237</p>
@@ -117,9 +124,12 @@ svg {
   height: auto;
   margin-right: 10px;
 }
-.footer-bg img:hover {
+
+.footer-socials img:hover {
   filter: invert(100%);
 }
+
+
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -232,6 +242,12 @@ svg {
 }
 .footer-bottom a:hover {
   color: #ffffff;
+}
+
+.logo-footer{
+  width: 250px !important;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 @media (max-width: 1024px) {
   .footer-bg {
