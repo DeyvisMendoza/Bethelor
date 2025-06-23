@@ -84,7 +84,12 @@ export const Header = () => {
         </div>
 
         <div className="menu-mobile-button" onClick={() => setMobileMenuOpen((prev) => !prev)}>
-            <img src="/header/toogle.png" alt="menu" width={32} height={32} />
+        <button className="menu-toggle"
+            aria-label="Toggle Menu">
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+            </button>
           </div>
       </div>
 

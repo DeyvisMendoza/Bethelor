@@ -33,7 +33,7 @@ import { Image } from "astro:assets";
           <p class="kitchen-type-subtitle">{kitchen.sub_title}</p>
           <ul class="kitchen-type-features">
             {kitchen.features.map((feature, featIndex) => (
-              <li>{feature}</li>
+              <li>• {feature}</li>
             ))}
           </ul>
           <p class="kitchen-type-description">{kitchen.description}</p>
@@ -140,7 +140,7 @@ import { Image } from "astro:assets";
   .kitchen-type-features {
     list-style: none; 
     padding: 0 20px; 
-    margin: 0 0 20px 0; 
+    margin: 20px 0 20px 0; 
     text-align: left; 
     width: 100%; /
     box-sizing: border-box;
@@ -154,15 +154,7 @@ import { Image } from "astro:assets";
     position: relative;
     padding-left: 20px; 
     color: #555555;
-  }
-
-  .kitchen-type-features li::before {
-    content: "•"; 
-    color: #000000; 
-    font-size: 1.2em;
-    position: absolute;
-    left: 0;
-    top: 0;
+    text-align: center;
   }
 
   .kitchen-type-description {

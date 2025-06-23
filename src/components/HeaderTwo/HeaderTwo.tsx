@@ -29,15 +29,15 @@ function Header() {
         <div className="header-bottom-content">
           <div className="logo">
             <div className="logo-text">
-              <h1>BETHELHOR</h1>
-              <p>Home Construction & Remodeling</p>
+            <a href="">
+              <img src="/footer/logo.png" alt="menu"/>
+            </a>
             </div>
-            <button
-            className="menu-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle Menu"
-            >
-              ☰
+            <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu">
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
             </button>
           </div>
 
