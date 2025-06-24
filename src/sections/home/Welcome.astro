@@ -47,18 +47,18 @@ const optimizedFondo3 = await getImage({
     </div>
 
     <div class="right-container flex-1 min-w-[400px] flex flex-col">
-      <div class="right-images flex-2 flex gap-[0.3125rem] h-full">
+      <div class="right-images flex-2 flex gap-[0.3125rem] h-full max-w-full overflow-hidden">
         <div
-          class="image"
+          class="image flex-1 aspect-[3/3] md:aspect-[2/3] bg-cover bg-center w-full"
           style={{ backgroundImage: `url(${optimizedFondo2.src})` }}
-        >
-        </div>
+        ></div>
         <div
-          class="image"
+          class="image flex-1 aspect-[3/3] md:aspect-[2/3] bg-cover bg-center w-full"
           style={{ backgroundImage: `url(${optimizedFondo3.src})` }}
-        >
-        </div>
+        ></div>
       </div>
+      
+      
       <div
         class="description flex-1 text-white flex justify-center items-center px-[3.125rem] text-start max-sm:text-center"
       >

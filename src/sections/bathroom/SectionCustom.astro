@@ -93,437 +93,434 @@ import Img2 from "../../assets/bathroom/img2.png"
 
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
 
-  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+.kitchen-remodeling-section-container {
+  background-color: #ffffff;
+  padding: 80px 0;
+  font-family: 'DM Sans', Arial, sans-serif; 
+  color: #333333;
+  box-sizing: border-box;
+}
 
-  .kitchen-remodeling-section-container {
-    background-color: #ffffff;
-    padding: 80px 0px;
-    font-family: 'DM Sans', Arial, sans-serif; 
-    color: #333333;
-    box-sizing: border-box;
+.kitchen-remodeling-content-wrapper {
+  display: flex;
+  margin: 0 auto;
+  padding: 0 150px; 
+  gap: 80px; 
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.kitchen-remodeling-text-column {
+  flex: 1;
+  max-width: 50%; 
+  display: flex; 
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.kitchen-remodeling-title {
+  font-size: 6em; 
+  margin-top: 0;
+  color: #000000;
+  display: block;
+  width: 700px;
+  margin-right: -400px;
+  z-index: 100;
+  margin-bottom: 50px;
+  font-family: "Host Grotesk", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  word-break: break-word; 
+}
+
+.kitchen-remodeling-paragraph {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555555;
+  line-height: 1.6;
+}
+
+.kitchen-remodeling-list {
+  list-style: none;
+  padding: 0;
+}
+
+.kitchen-remodeling-list li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  color: #555555;
+  line-height: 1.5; 
+}
+
+.kitchen-remodeling-list li::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #000000;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0.7em; 
+}
+
+.kitchen-remodeling-paragraph.last-paragraph {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.kitchen-quote-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  border: none; 
+  cursor: pointer;
+}
+
+.kitchen-quote-button:hover {
+  background-color: #333333;
+}
+
+.kitchen-quote-button .arrow-right {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+.kitchen-remodeling-image-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.kitchen-main-image {
+  max-width: 80%; 
+  height: auto;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; 
+}
+
+.section-color {
+  background-color: #f1f2eb;
+}
+
+.ticker-text-wrapper {
+  width: 100%;
+  background-color: #f1f2eb;
+  font-family: "Host Grotesk", sans-serif;
+  border-bottom: 1px solid #adadad;
+  color: #333333;
+  padding: 40px 0;
+  font-size: 30px;
+  font-weight: 400;
+  overflow: hidden; 
+  white-space: nowrap; 
+  box-sizing: border-box;
+}
+
+.ticker-text-container {
+  display: inline-block;
+  animation: scroll-left 100s linear infinite;
+}
+
+.ticker-item {
+  padding-right: 50px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.ticker-item::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #333333;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
   }
-
-  .kitchen-remodeling-content-wrapper {
-    display: flex;
-    margin: 0 auto;
-    padding: 0 40px; 
-    gap: 10px; 
-    align-items: flex-end;
-    box-sizing: border-box;
-    width: 1300px;
+  100% {
+    transform: translateX(-100%);
   }
+}
 
-  .kitchen-remodeling-text-column {
-    flex: 1;
-    max-width: 50%; 
-    display: flex; 
-    flex-direction: column;
-    align-items: flex-start; 
-  }
+.kitchen-remodeling-info-row {
+  display: flex;
+  width: 100%;
+  background-color: #f1f2eb; 
+}
 
-  .kitchen-remodeling-title {
-    font-size: 6em; 
-    margin-top: 0;
-    color: #000000;
+.kitchen-remodeling-info-image {
+  flex: 1;
+  width: 100%; 
+  height: auto; 
+  max-width: 100%;
+  object-fit: cover; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.kitchen-remodeling-info-content {
+  flex: 1;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
+
+  h2 {
     display: block;
-    width: 800px;
-    margin-right: -400px;
-    z-index: 1000;
-    margin-bottom: 50px;
-    font-family: "Host Grotesk", sans-serif;
-    font-weight: 600;
+    max-width: 550px; 
+    font-family: "DM Sans", sans-serif;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #000000;
     line-height: 1.2;
-    word-break: break-word; 
+    font-weight: 600;
+    margin-right: auto; 
+    margin-left: 0; 
   }
 
-  .kitchen-remodeling-paragraph {
+  p {
+    display: block;
+    max-width: 550px; 
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.5;
     font-size: 14px;
     margin-bottom: 20px;
     color: #555555;
-    line-height: 1.6;
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .kitchen-remodeling-content-wrapper {
+    flex-direction: column;
+    align-items: center; 
+    gap: 50px; 
+    padding: 0 30px; 
+  }
+
+  .kitchen-remodeling-text-column {
+    max-width: 100%; 
+    text-align: center; 
+    padding: 0 15px; 
+    box-sizing: border-box;
+    align-items: center; 
+  }
+
+  .kitchen-remodeling-title {
+    font-size: 3.5em; 
+    width: auto; 
+    margin-right: 0; 
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom: 30px; 
+    max-width: 90%; 
+    line-height: 1.1; 
+  }
+
+  .kitchen-remodeling-paragraph {
+    font-size: 15px; 
+    text-align: center; 
+    max-width: 90%; 
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .kitchen-remodeling-list {
-    list-style: none;
-    padding: 0;
+    text-align: left; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    max-width: 90%; 
   }
-
   .kitchen-remodeling-list li {
-    font-size: 14px;
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 20px;
-    color: #555555;
-    line-height: 1.5; 
+    padding-left: 25px; 
+    text-align: left; 
+    font-size: 15px; 
   }
-
   .kitchen-remodeling-list li::before {
-    content: "";
-    display: block;
-    width: 6px;
-    height: 6px;
-    background-color: #000000;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;
-    top: 0.7em; 
-  }
-
-  .kitchen-remodeling-paragraph.last-paragraph {
-    margin-top: 30px;
-    margin-bottom: 40px;
+    left: 5px; 
   }
 
   .kitchen-quote-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 12px;
-    transition: background-color 0.3s ease;
-    border: none; 
-    cursor: pointer;
-  }
-
-  .kitchen-quote-button:hover {
-    background-color: #333333;
-  }
-
-  .kitchen-quote-button .arrow-right {
-    margin-left: 10px;
-    font-size: 1.2em;
+    margin: 0 auto; 
+    font-size: 14px;
+    padding: 15px 30px;
   }
 
   .kitchen-remodeling-image-column {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto; 
   }
 
   .kitchen-main-image {
-    max-width: 80%; 
-    height: auto;
-    display: block;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 50px;
-  }
-
-  .section-color {
-    background-color: #f1f2eb;
+    max-width: 100%; 
   }
 
   .ticker-text-wrapper {
-    width: 100%;
-    background-color: #f1f2eb;
-    font-family: "Host Grotesk", sans-serif;
-    border-bottom: 1px solid #adadad;
-    color: #333333;
-    padding: 40px 0;
-    font-size: 30px;
-    font-weight: 400;
-    overflow: hidden; 
-    white-space: nowrap; 
-    box-sizing: border-box;
-  }
-
-  .ticker-text-container {
-    display: inline-block;
-    animation: scroll-left 100s linear infinite;
-  }
-
-  .ticker-item {
-    padding-right: 50px;
-    position: relative;
-    padding-left: 20px;
-  }
-
-  .ticker-item::before {
-    content: "";
-    display: inline-block;
-    width: 5px;
-    height: 5px;
-    background-color: #333333;
-    border-radius: 50%;
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+    padding: 30px 0; 
+    font-size: 24px; 
   }
 
   .kitchen-remodeling-info-row {
-    display: flex;
-    width: 100%;
-    background-color: #f1f2eb; 
-  }
-
-  .kitchen-remodeling-info-image {
-    flex: 1;
-    width: 100%; 
-    height: auto; 
-    max-width: 100%;
-    object-fit: cover; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    flex-direction: column; 
   }
 
   .kitchen-remodeling-info-content {
-    flex: 1;
-    color: #333333;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 100px;
+    padding: 40px 30px; 
+    align-items: center; 
 
     h2 {
-      display: block;
-      max-width: 550px; 
-      font-family: "DM Sans", sans-serif;
-      font-size: 3.5em;
-      margin-bottom: 20px;
-      color: #000000;
-      line-height: 1.2;
-      font-weight: 600;
-      margin-right: auto; 
-      margin-left: 0; 
+      font-size: 2.5em; 
+      max-width: 90%; 
+      text-align: center; 
+      margin-left: auto;
+      margin-right: auto;
     }
-
     p {
-      display: block;
-      max-width: 550px; 
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.5;
-      font-size: 14px;
-      margin-bottom: 20px;
-      color: #555555;
-      margin-right: auto;
-      margin-left: 0;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    .kitchen-remodeling-content-wrapper {
-      flex-direction: column;
-      align-items: center; 
-      gap: 50px; 
-      padding: 0 30px; 
-    }
-
-    .kitchen-remodeling-text-column {
-      max-width: 100%; 
-      text-align: center; 
-      padding: 0 15px; 
-      box-sizing: border-box;
-      align-items: center; 
-    }
-
-    .kitchen-remodeling-title {
-      font-size: 3.5em; 
-      width: auto; 
-      margin-right: 0; 
-      margin-left: auto;
-      margin-right: auto; 
-      margin-bottom: 30px; 
-      max-width: 90%; 
-      line-height: 1.1; 
-    }
-
-    .kitchen-remodeling-paragraph {
       font-size: 15px; 
-      text-align: center; 
       max-width: 90%; 
+      text-align: center; 
       margin-left: auto;
       margin-right: auto;
     }
-
-    .kitchen-remodeling-list {
-      text-align: left; 
-      display: block; 
-      margin-left: auto; 
-      margin-right: auto;
-      max-width: 90%; 
-    }
-    .kitchen-remodeling-list li {
-      padding-left: 25px; 
-      text-align: left; 
-      font-size: 15px; 
-    }
-    .kitchen-remodeling-list li::before {
-      left: 5px; 
-    }
-
-    .kitchen-quote-button {
-      margin: 0 auto; 
-      font-size: 14px;
-      padding: 15px 30px;
-    }
-
-    .kitchen-remodeling-image-column {
-      width: 100%; 
-      max-width: 600px; 
-      margin: 0 auto; 
-    }
-
-    .kitchen-main-image {
+  }
+  .kitchen-remodeling-info-image {
       max-width: 100%; 
-    }
+      margin: 0 auto; 
+  }
+}
 
-    .ticker-text-wrapper {
-      padding: 30px 0; 
-      font-size: 24px; 
-    }
-
-    .kitchen-remodeling-info-row {
-      flex-direction: column; 
-    }
-
-    .kitchen-remodeling-info-content {
-      padding: 40px 30px; 
-      align-items: center; 
-
-      h2 {
-        font-size: 2.5em; 
-        max-width: 90%; 
-        text-align: center; 
-        margin-left: auto;
-        margin-right: auto;
-      }
-      p {
-        font-size: 15px; 
-        max-width: 90%; 
-        text-align: center; 
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-    .kitchen-remodeling-info-image {
-        max-width: 100%; 
-        margin: 0 auto; 
-    }
+@media (max-width: 768px) {
+  .kitchen-remodeling-section-container {
+    padding: 50px 0; 
   }
 
-  @media (max-width: 768px) {
-    .kitchen-remodeling-section-container {
-      padding: 50px 0; 
-    }
+  .kitchen-remodeling-content-wrapper {
+    gap: 40px; 
+    padding: 0 15px; 
+  }
 
-    .kitchen-remodeling-content-wrapper {
-      gap: 40px; 
-      padding: 0 15px; 
-    }
+  .kitchen-remodeling-text-column {
+    padding: 0 10px; 
+  }
 
-    .kitchen-remodeling-text-column {
-      padding: 0 10px; 
-    }
+  .kitchen-remodeling-title {
+    font-size: 2.8em; 
+    margin-bottom: 25px; 
+  }
 
-    .kitchen-remodeling-title {
-      font-size: 2.8em; 
-      margin-bottom: 25px; 
-    }
+  .kitchen-remodeling-paragraph,
+  .kitchen-remodeling-list li {
+    font-size: 14px; 
+    line-height: 1.5;
+  }
+  .kitchen-remodeling-paragraph.last-paragraph {
+      margin-bottom: 30px;
+  }
 
-    .kitchen-remodeling-paragraph,
-    .kitchen-remodeling-list li {
+  .kitchen-remodeling-list li::before {
+    left: 0px; 
+    top: 0.6em;
+  }
+
+  .kitchen-quote-button {
+    padding: 12px 25px;
+    font-size: 13px;
+  }
+
+  .ticker-text-wrapper {
+    padding: 25px 0;
+    font-size: 20px;
+  }
+
+  .kitchen-remodeling-info-content {
+    padding: 30px 20px; 
+    h2 {
+      font-size: 2em; 
+    }
+    p {
       font-size: 14px; 
-      line-height: 1.5;
-    }
-    .kitchen-remodeling-paragraph.last-paragraph {
-        margin-bottom: 30px;
-    }
-
-    .kitchen-remodeling-list li::before {
-      left: 0px; 
-      top: 0.6em;
-    }
-
-    .kitchen-quote-button {
-      padding: 12px 25px;
-      font-size: 13px;
-    }
-
-    .ticker-text-wrapper {
-      padding: 25px 0;
-      font-size: 20px;
-    }
-
-    .kitchen-remodeling-info-content {
-      padding: 30px 20px; 
-      h2 {
-        font-size: 2em; 
-      }
-      p {
-        font-size: 14px; 
-      }
     }
   }
+}
 
-  @media (max-width: 480px) {
-    .kitchen-remodeling-section-container {
-      padding: 40px 0;
-    }
+@media (max-width: 480px) {
+  .kitchen-remodeling-section-container {
+    padding: 40px 0;
+  }
 
-    .kitchen-remodeling-content-wrapper {
-      gap: 30px;
-      padding: 0 10px;
-    }
+  .kitchen-remodeling-content-wrapper {
+    gap: 30px;
+    padding: 0 10px;
+  }
 
-    .kitchen-remodeling-text-column {
-      padding: 0 5px;
-    }
+  .kitchen-remodeling-text-column {
+    padding: 0 5px;
+  }
 
-    .kitchen-remodeling-title {
-      font-size: 2.2em; 
+  .kitchen-remodeling-title {
+    font-size: 2.2em; 
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .kitchen-remodeling-paragraph,
+  .kitchen-remodeling-list li {
+    font-size: 13px; 
+    line-height: 1.5;
+  }
+  .kitchen-remodeling-paragraph.last-paragraph {
       margin-bottom: 20px;
-      line-height: 1.1;
-    }
+  }
 
-    .kitchen-remodeling-paragraph,
-    .kitchen-remodeling-list li {
+  .kitchen-remodeling-list li {
+    padding-left: 20px;
+  }
+  .kitchen-remodeling-list li::before {
+    left: 0px;
+    top: 0.6em;
+  }
+
+  .kitchen-quote-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .ticker-text-wrapper {
+    padding: 20px 0;
+    font-size: 18px;
+  }
+
+  .kitchen-remodeling-info-content {
+    padding: 20px 15px; 
+    h2 {
+      font-size: 1.8em; 
+    }
+    p {
       font-size: 13px; 
-      line-height: 1.5;
-    }
-    .kitchen-remodeling-paragraph.last-paragraph {
-        margin-bottom: 20px;
-    }
-
-    .kitchen-remodeling-list li {
-      padding-left: 20px;
-    }
-    .kitchen-remodeling-list li::before {
-      left: 0px;
-      top: 0.6em;
-    }
-
-    .kitchen-quote-button {
-      padding: 10px 20px;
-      font-size: 12px;
-    }
-
-    .ticker-text-wrapper {
-      padding: 20px 0;
-      font-size: 18px;
-    }
-
-    .kitchen-remodeling-info-content {
-      padding: 20px 15px; 
-      h2 {
-        font-size: 1.8em; 
-      }
-      p {
-        font-size: 13px; 
-      }
     }
   }
+}
 </style>
