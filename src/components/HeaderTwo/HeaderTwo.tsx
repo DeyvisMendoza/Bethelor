@@ -1,11 +1,26 @@
 import "./HeaderTwo.css";
 import { BotonHeader } from "../BotonHeader/BotonHeader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
+
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+  
   return (
-    <header className="header-container">
+    <AnimatePresence>
+    <header className={`header-container ${menuOpen ? "open" : ""}`}>
       <div className="header-top-bar">
         <div className="header-top-content">
           <div className="contact-info">
@@ -40,29 +55,34 @@ function Header() {
               <div className="bar"></div>
             </button>
           </div>
-
-          
-
-          <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
-            <ul>
-              <li><a href="/">HOME</a></li>
-              <li><a href="/about">ABOUT US</a></li>
-              <li><a href="/services">SERVICES</a></li>
-              <li><a href="/projects">PROJECTS</a></li>
-              <li><a href="/blogs">BLOGS</a></li>
-              <li><a href="/contact">CONTACT</a></li>
-              <div className="container-request1">
-               <BotonHeader />
-              </div>
-            </ul>
-          </nav>
-
+            {menuOpen && (
+              <motion.nav
+                className={`main-nav ${menuOpen ? "open" : ""}`}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                <ul>
+                  <li><a href="/">HOME</a></li>
+                  <li><a href="/about">ABOUT US</a></li>
+                  <li><a href="/services">SERVICES</a></li>
+                  <li><a href="/projects">PROJECTS</a></li>
+                  <li><a href="/blogs">BLOGS</a></li>
+                  <li><a href="/contact">CONTACT</a></li>
+                  <div className="container-request1">
+                    <BotonHeader />
+                  </div>
+                </ul>
+              </motion.nav>
+            )}
           <div className="container-request">
             <BotonHeader />
           </div>
         </div>
       </div>
     </header>
+    </AnimatePresence>
   );
 }
 

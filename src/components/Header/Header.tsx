@@ -9,6 +9,18 @@ export const Header = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+  
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -104,10 +116,15 @@ export const Header = () => {
             transition={{ duration: 0.3, ease: "easeOut" }} 
           >
             <ul>
-              <li>Inicio</li>
-              <li>Servicios</li>
-              <li>Proyectos</li>
-              <li>Contacto</li>
+              <li>HOME</li>
+              <li>ABOUT US</li>
+              <li>SERVICES</li>
+              <li>PROJECTS</li>
+              <li>BLOGS</li>
+              <li>CONTACT</li>
+              <div className="container-request1">
+                <BotonHeader />
+              </div>
             </ul>
           </motion.nav>
         )}

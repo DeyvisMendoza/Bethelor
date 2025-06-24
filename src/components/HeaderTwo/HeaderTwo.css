@@ -164,9 +164,9 @@
     padding: 1rem;
     border-radius: 5px;
     width: 100%;
-    position: relative;
     z-index: 999;
-    min-height: 280px;
+    min-height: 680px;
+    background-color: black;
   }
 
   .main-nav ul {
@@ -231,7 +231,11 @@
 
   }
   .header-bottom-bar.open{
-    
+    background-color: black;
+  }
+
+  .header-container.open{
+    background-color: black;
   }
 
 }
@@ -252,6 +256,7 @@
   height: 30px;
   position: relative;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .bar {
