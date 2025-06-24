@@ -1,0 +1,44 @@
+---
+import Header from "../../components/HeaderTwo/HeaderTwo";
+import Footer from "../../components/Footer/Footer.astro";
+import ProjectDetail from "../../components/ProjectDetails/ProjectDetail.astro";
+import { projectSections } from "../../lib/dataProjects";
+import "../../styles/global.css";
+
+const { id } = Astro.params;
+const project = projectSections.find((p) => p.id === parseInt(id));
+
+if (!project) {
+  throw new Error(`No se encontró el proyecto con ID ${id}`);
+}
+
+export async function getStaticPaths() {
+  return projectSections.map((p) => ({
+    params: { id: p.id.toString() },
+  }));
+}
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bethelor</title>
+  </head>
+
+  <body class="bg-white text-gray-900">
+    <div class="header-background">
+      <Header client:load />
+    </div>
+
+    <ProjectDetail project={project} />
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .header-background {
+    background-color: black;
+  }
+</style>

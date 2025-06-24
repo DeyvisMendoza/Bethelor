@@ -165,7 +165,7 @@
     border-radius: 5px;
     width: 100%;
     z-index: 999;
-    min-height: 680px;
+    min-height: 800px;
     background-color: black;
   }
 
@@ -200,6 +200,14 @@
     font-size: 1.1rem;
   }
 
+  .header-bottom-bar.open{
+    background-color: black;
+  }
+
+  .header-container.open{
+    background-color: black;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -229,13 +237,6 @@
       }
     }
 
-  }
-  .header-bottom-bar.open{
-    background-color: black;
-  }
-
-  .header-container.open{
-    background-color: black;
   }
 
 }

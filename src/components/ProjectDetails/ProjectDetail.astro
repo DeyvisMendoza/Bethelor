@@ -1,0 +1,364 @@
+---
+const { project } = Astro.props;
+import { BotonHeader } from "../BotonHeader/BotonHeaderBlack";
+import facebookImg from "../../assets/footer/facebook.png";
+import twitterImg from "../../assets/footer/twitter.png";
+import pinterestImg from "../../assets/footer/pinterest.png";
+import telegramImg from "../../assets/footer/telegram.png";
+import { Image } from "astro:assets";
+
+const socialIcons = [
+  { href: "#facebook", src: facebookImg, alt: "Facebook" },
+  { href: "#twitter", src: twitterImg, alt: "Twitter" },
+  { href: "#pinterest", src: pinterestImg, alt: "Pinterest" },
+  { href: "#telegram", src: telegramImg, alt: "Telegram" },
+];
+
+const id = Astro.params.id ?? "1";
+const currentId = parseInt(id);
+
+
+const minId = 1;
+const maxId = 10;
+
+const prevId = currentId > minId ? currentId - 1 : minId;
+const nextId = currentId < maxId ? currentId + 1 : maxId;
+
+---
+
+<section class="project-detail">
+  <div class="project-header">
+    <div class="project-title">
+      <h1>{project.title}</h1>
+    </div>
+    <div class="project-description">
+      <p>
+        {project.description}
+      </p>
+    </div>
+  </div>
+
+  <div class="project-image">
+    <img src={project.image.src} alt={project.title} />
+  </div>
+
+  <div class="overview-content">
+    <div class="left-column">
+      <h2>Project Overview: {project.project_overview}</h2>
+      <p>
+        {project.overview_1}
+      </p>
+      <p>
+        {project.overview_2}
+      </p>
+      <p>
+        {project.overview_3}
+      </p>
+      <div class="container-request">
+        <BotonHeader client:load />
+      </div>
+    </div>
+
+    <div class="right-column">
+      <h3>Detail</h3>
+      <ul class="project-details">
+        <li><strong>Tags:</strong> {project.tags}</li>
+        <li><strong>Lead Designer:</strong> {project.lead_designer}</li>
+        <li><strong>Location:</strong> {project.location}</li>
+        <li><strong>Budget:</strong> {project.budget}</li>
+        <li><strong>Total Size:</strong> {project.total_size}</li>
+        <li><strong>Status:</strong> {project.status}</li>
+        <li>
+          <strong>Features:</strong>
+          {project.features}
+        </li>
+      </ul>
+      <div class="social-share">
+        <span>Share:</span>
+        <div class="footer-socials">
+          {
+            socialIcons.map((icon) => (
+              <a href={icon.href} class="footer-social-link">
+                <Image src={icon.src} alt={icon.alt} />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="image-arrows">
+    <a href={`/project/${prevId}`} class="arrow left">←</a>
+    <a href={`/project/${nextId}`} class="arrow right">→</a>
+  </div>
+  
+  <div class="project-nav">
+    <a href={`/project/${prevId}`} class="nav-link">← PREVIOUS PROJECT</a>
+    <a href={`/project/${nextId}`} class="nav-link">NEXT PROJECT →</a>
+  </div>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap");
+  .project-detail {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .project-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .project-title h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0;
+    max-width: 600px;
+  }
+
+  .project-description {
+    max-width: 500px;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 80px;
+  }
+
+  .project-image {
+    margin-top: 3rem;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .overview-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    border-bottom: 1px solid black;
+    padding-bottom: 2rem;
+    padding-top: 4rem;
+  }
+
+  .left-column {
+    flex: 2;
+    min-width: 300px;
+  }
+
+  .left-column h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .left-column p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .container-request {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 283px;
+    height: 50px;
+
+    a {
+      color: #fff;
+      font-size: 16px;
+      font-family: "DM Sans", sans-serif;
+    }
+  }
+
+  .right-column {
+    flex: 1;
+    min-width: 280px;
+    border-left: 1px solid black;
+    padding-left: 50px;
+  }
+
+  .right-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-details {
+    list-style: none;
+    padding: 0;
+    color: #555;
+  }
+
+  .project-details li {
+    margin-bottom: 0.6rem;
+  }
+
+  .social-share {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .social-share .icons a {
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+    color: #555;
+    text-decoration: none;
+  }
+
+  .social-share .icons a:hover {
+    color: black;
+  }
+
+  .project-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+
+  .nav-link {
+    color: black;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  .footer-socials {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 15px;
+  }
+
+  .footer-socials img:hover {
+    filter: invert(100%);
+  }
+
+  .project-image {
+    position: relative;
+    margin-top: 3rem;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .image-arrows {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 4rem;
+    pointer-events: none;
+  }
+
+  .arrow {
+    background-color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .project-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .project-description {
+      margin-top: 1rem;
+    }
+
+    .overview-content {
+      flex-direction: column;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .right-column {
+      border-left: none;
+      padding-left: 0;
+      padding-top: 2rem;
+      border-top: 1px solid #ccc;
+    }
+
+    .project-nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .project-title h1 {
+      font-size: 2.5rem;
+    }
+
+    .left-column h2 {
+      font-size: 1.6rem;
+    }
+
+    .container-request {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .footer-socials {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social-share {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .image-arrows {
+      padding: 0 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .project-title h1 {
+      font-size: 2rem;
+    }
+
+    .left-column h2 {
+      font-size: 1.4rem;
+    }
+
+    .arrow {
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
+
+    .container-request {
+      height: auto;
+    }
+
+    .project-details li {
+      font-size: 0.95rem;
+    }
+  }
+</style>
