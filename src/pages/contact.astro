@@ -1,0 +1,75 @@
+---
+import Footer from "../components/Footer/Footer.astro";
+import Welcome2 from "../sections/contact/Welcome2.astro";
+import Form from "../components/FormReact/FormReact2";
+import "../styles/global.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <title>Bethelor</title>
+  <body class="bg-white text-gray-900">
+    <Welcome2 />
+    <Form client:load/>
+    <Footer />
+  </body>
+
+  <div id="cursor-dot"></div>
+  <script is:inline>
+    if (typeof window !== "undefined") {
+      const dot = document.getElementById("cursor-dot");
+
+      let mouseX = 0;
+      let mouseY = 0;
+
+      let dotX = 0;
+      let dotY = 0;
+
+      const speed = 0.1;
+
+      window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animateCursor() {
+        dotX += (mouseX - dotX) * speed;
+        dotY += (mouseY - dotY) * speed;
+
+        dot.style.left = `${dotX}px`;
+        dot.style.top = `${dotY}px`;
+
+        const el = document.elementFromPoint(mouseX, mouseY);
+
+        if (el && getComputedStyle(el).cursor === "pointer") {
+          dot.style.width = "80px";
+          dot.style.height = "80px";
+          dot.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+        } else {
+          dot.style.width = "10px";
+          dot.style.height = "10px";
+          dot.style.backgroundColor = "black";
+        }
+
+        requestAnimationFrame(animateCursor);
+      }
+
+      animateCursor();
+    }
+  </script>
+
+  <script type="module" is:inline>
+    import LocomotiveScroll from "locomotive-scroll";
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
+        multiplier: 0.6,
+      });
+    });
+  </script>
+</html>

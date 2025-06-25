@@ -37,7 +37,8 @@ export default function ProjectsSections() {
       <div className="grid">
         <AnimatePresence>
           {filtered.map((project, index) => (
-            <motion.div
+            <motion.a
+              href={`/project/${project.id}`}
               className="card"
               key={project.title + index}
               initial={{ opacity: 0, y: 20 }}
@@ -53,7 +54,7 @@ export default function ProjectsSections() {
               )}
               <p className="category">{project.sub_title}</p>
               <p className="title">{project.title}</p>
-            </motion.div>
+            </motion.a>
           ))}
         </AnimatePresence>
       </div>
