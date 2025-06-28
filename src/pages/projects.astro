@@ -1,18 +1,7 @@
 ---
 import Footer from "../components/Footer/Footer.astro";
-import Layout from "../layouts/Layout.astro";
-import Process from "../sections/home/Process.astro";
-import Projects from "../sections/home/Projects.astro";
-import Testimonials from "../sections/home/Testimonials.astro";
-import FAQSection from "../sections/bathroom/FAQSection";
-import BathroomCostSection from "../sections/bathroom/BathroomCostSection.astro";
-import SectionCustom from "../sections/bathroom/SectionCustom.astro";
-import SectionOptions from "../sections/bathroom/SectionOptions.astro";
-import Welcome3 from "../sections/bathroom/Welcome3.astro";
-import HomeServices from "../sections/services/HomeServices.astro";
-import SectionBlack from "../sections/services/SectionBlack.astro";
-import Welcome2 from "../sections/services/Welcome2.astro";
-import Header from "../components/HeaderBlack/HeaderBlack";
+import Welcome2 from "../sections/projects/Welcome2.astro";
+import Sections from "../sections/projects/Sections.astro";
 import "../styles/global.css";
 ---
 
@@ -20,18 +9,11 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bethelor</title></head
-  >
-
+  </head>
+  <title>Bethelor</title>
   <body class="bg-white text-gray-900">
-    <Welcome3 />
-    <SectionCustom />
-    <SectionOptions />
-    <BathroomCostSection />
-    <Process />
-    <FAQSection client:load />
-    <Projects />
-    <Testimonials />
+    <Welcome2 />
+    <Sections/>
     <Footer />
   </body>
 

@@ -1,11 +1,45 @@
 import "./HeaderTwo.css";
 import { BotonHeader } from "../BotonHeader/BotonHeader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
+
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" && window.innerWidth < 1024
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < 1024;
+      setIsMobile(mobile);
+      if (!mobile) {
+        setMenuOpen(false); // 🔁 restablece el menú si es desktop
+      }
+    };
+
+    handleResize(); // para inicializar
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+ 
   return (
-    <header className="header-container">
+    <header className={`header-container ${menuOpen ? "open" : ""}`}>
       <div className="header-top-bar">
         <div className="header-top-content">
           <div className="contact-info">
@@ -40,11 +74,16 @@ function Header() {
               <div className="bar"></div>
             </button>
           </div>
-
+        
           
-
-          <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
-            <ul>
+          {isMobile ? (
+            <motion.nav
+              className={`main-nav ${menuOpen ? "open" : ""}`}
+              initial={{ opacity: 0, y: -20 }}
+              animate={menuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <ul>
               <li><a href="/">HOME</a></li>
               <li><a href="/about">ABOUT US</a></li>
               <li><a href="/services">SERVICES</a></li>
@@ -52,10 +91,25 @@ function Header() {
               <li><a href="/blogs">BLOGS</a></li>
               <li><a href="/contact">CONTACT</a></li>
               <div className="container-request1">
-               <BotonHeader />
+                <BotonHeader />
               </div>
             </ul>
-          </nav>
+            </motion.nav>
+          ) : (
+            <nav className="main-nav">
+              <ul>
+              <li><a href="/">HOME</a></li>
+              <li><a href="/about">ABOUT US</a></li>
+              <li><a href="/services">SERVICES</a></li>
+              <li><a href="/projects">PROJECTS</a></li>
+              <li><a href="/blogs">BLOGS</a></li>
+              <li><a href="/contact">CONTACT</a></li>
+              <div className="container-request1">
+                <BotonHeader />
+              </div>
+            </ul>
+            </nav>
+          )}
 
           <div className="container-request">
             <BotonHeader />

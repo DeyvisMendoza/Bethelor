@@ -1,9 +1,20 @@
 import "./HeaderBlack.css";
 import { BotonHeader } from "../BotonHeader/BotonHeader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
   return (
     <header className="header-container">
       <div className="header-top-bar">
@@ -19,7 +30,7 @@ function Header() {
             </div>
             <div className="flex items-center gap-2 cursor-pointer">
               <img src="/header/send.png" alt="Email" className="invertible-img" />
-              <p>Contact@bethelor.com</p>
+              <p>Contact@bethelor.com123123</p>
             </div>
           </div>
         </div>
@@ -39,7 +50,17 @@ function Header() {
               <div className="bar"></div>
             </button>
           </div>
-          <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
+
+          <motion.nav
+            className={`main-nav ${menuOpen ? "open" : ""}`}
+            initial={false}
+            animate={
+              menuOpen
+                ? { opacity: 1, y: 0, pointerEvents: "auto" }
+                : { opacity: 0, y: -20, pointerEvents: "none" }
+            }
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
             <ul>
               <li><a href="/">HOME</a></li>
               <li><a href="/about">ABOUT US</a></li>
@@ -48,10 +69,11 @@ function Header() {
               <li><a href="/blogs">BLOGS</a></li>
               <li><a href="/contact">CONTACT</a></li>
               <div className="container-request1">
-               <BotonHeader />
+                <BotonHeader />
               </div>
             </ul>
-          </nav>
+          </motion.nav>
+          
           <div className="container-request">
             <BotonHeader />
           </div>

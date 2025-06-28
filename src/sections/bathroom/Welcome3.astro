@@ -2,7 +2,12 @@
 import { Image } from "astro:assets"
 import WelcomeImg1 from "../../assets/bathroom/welcome01.png"
 import WelcomeImg2 from "../../assets/bathroom/welcome02.png"
+import Header from "../../components/HeaderTwo/HeaderTwo";
 ---
+
+<div class="kitchen-welcome3-background">
+  <Header client:load />
+</div>
 
 <div class="kitchen-welcome3">
   <Image class="welcome-img1" src={WelcomeImg1} alt="" />
@@ -10,6 +15,10 @@ import WelcomeImg2 from "../../assets/bathroom/welcome02.png"
 </div>
 
 <style>
+  .kitchen-welcome3-background {
+    background-color: black;
+  }
+  
   .kitchen-welcome3 {
     display: flex;
     flex-direction: row; 

@@ -1,29 +1,33 @@
 ---
 import { BotonChoose } from "../../components/BotonChoose/BotonChoose";
-import Choose1 from "../../assets/choose/choose1.png"
-import Choose2 from "../../assets/choose/choose2.png"
-import boton from "../../assets/choose/boton.png"
+import Choose1 from "../../assets/choose/choose1.png";
+import Choose2 from "../../assets/choose/choose2.png";
+import boton from "../../assets/choose/boton.png";
 import { getImage } from "astro:assets";
 import { Image } from "astro:assets";
 
 const optimizedFondo = await getImage({
   src: Choose1,
   width: 1000,
-  format: 'webp',
-  quality: 80
+  format: "webp",
+  quality: 80,
 });
 
 const optimizedFondo2 = await getImage({
   src: Choose2,
   width: 1000,
-  format: 'webp',
-  quality: 80
+  format: "webp",
+  quality: 80,
 });
 ---
 
 <section class="choose-section" id="choose-section-id">
   <div class="choose-image-text-container">
-    <div class="choose-image-overlay" style={`--desktop-bg: url('${optimizedFondo.src}'); --mobile-bg: url('${optimizedFondo2.src}')`}></div>
+    <div
+      class="choose-image-overlay"
+      style={`--desktop-bg: url('${optimizedFondo.src}'); --mobile-bg: url('${optimizedFondo2.src}')`}
+    >
+    </div>
     <div class="choose-text-container">
       <h1>Why Choose Bethelor?</h1>
     </div>
@@ -73,6 +77,10 @@ const optimizedFondo2 = await getImage({
   <div class="f-box">
     <h3>Thinking About Remodeling Your Home?</h3>
     <Image class="imgchoose" src={boton} alt="Get a Free Estimate" />
+    <button class="btn-custom"
+      ><span class="custom-btn-text">Request your free quote</span>
+      <span class="custom-arrow">→</span></button
+    >
   </div>
 </section>
 
@@ -129,7 +137,7 @@ const optimizedFondo2 = await getImage({
 
     animateOnScroll(
       sectionRef.querySelector(".choose-image-overlay"),
-      "animate-visible-scale", 
+      "animate-visible-scale",
       0.2
     );
 
@@ -141,22 +149,20 @@ const optimizedFondo2 = await getImage({
 
     const contentWrapper = sectionRef.querySelector(".choose-content-wrapper");
     if (contentWrapper) {
-      animateOnScroll(contentWrapper, "animate-fade-up", 0.6); 
+      animateOnScroll(contentWrapper, "animate-fade-up", 0.6);
 
       const descriptionP = contentWrapper.querySelector(
         ".choose-description p"
       );
-      animateOnScroll(descriptionP, "animate-slide-left", 0.8); 
+      animateOnScroll(descriptionP, "animate-slide-left", 0.8);
 
       const listItems = contentWrapper.querySelectorAll(".choose-list ul li");
       listItems.forEach((li, index) => {
-
         animateOnScroll(li, "animate-slide-left", 0.8 + index * 0.1);
       });
 
       const statItems = contentWrapper.querySelectorAll(".choose-stat");
       statItems.forEach((stat, index) => {
-  
         animateOnScroll(stat, "animate-fade-scale", 0.8 + index * 0.15);
       });
     }
@@ -164,11 +170,10 @@ const optimizedFondo2 = await getImage({
     const fbox = sectionRef.querySelector(".f-box");
     if (fbox) {
       animateOnScroll(fbox, "animate-fade-up", 1.0);
-   
+
       animateOnScroll(fbox.querySelector("h3"), "animate-fade-up", 1.2);
     }
 
-   
     const imgChoose = sectionRef.querySelector(".imgchoose");
     if (imgChoose) {
       if (!(imgChoose as HTMLElement).hasAttribute("data-listeners-added")) {
@@ -651,9 +656,40 @@ const optimizedFondo2 = await getImage({
       max-width: 59%;
     }
 
-    .f-box img{
+    .f-box img {
       width: 80%;
     }
-  }
 
+    .imgchoose {
+      display: none;
+    }
+
+    .btn-custom {
+      position: relative;
+      color: #000000;
+      border: none;
+      width: 100%;
+      height: 45px;
+      font-size: 16px;
+      padding-left: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      font-family: sans-serif;
+      overflow: visible;
+      transition: all 0.3s ease;
+      margin-top: 40px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 600;
+      background-color: white;
+    }
+
+    .custom-arrow {
+      display: inline-block;
+      font-size: 25px;
+      transition: all 0.3s ease;
+      margin-bottom: 5px;
+    }
+  }
 </style>

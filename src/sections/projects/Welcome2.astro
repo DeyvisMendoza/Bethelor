@@ -1,5 +1,5 @@
 ---
-import fondo2 from "../../assets/welcometwo/welcome-two.png"
+import fondo2 from "../../assets/project/fondo.png"
 import { getImage } from "astro:assets";
 import Header from "../../components/HeaderTwo/HeaderTwo";
 import "locomotive-scroll/dist/locomotive-scroll.css";
@@ -14,13 +14,9 @@ const optimizedFondo = await getImage({
 <div style={`background-image: url('${optimizedFondo.src}')`} id="welcome-two-wrapper" class="main-content-wrapper">
   <Header client:load/>
   <div class="welcome-two-header">
-    <h2 class="welcome-two-title">Home Remodeling Services in Maryland</h2>
+    <h2 class="welcome-two-title">Work <br>Projects</h2>
     <p class="fade-in" >
-      At Bethelor, we specialize in home remodeling services across Maryland —
-      including kitchen renovations, bathroom makeovers, interior & exterior
-      painting, flooring, and more. Whether you're updating one room or planning
-      a full home renovation, our team delivers expert craftsmanship, reliable
-      timelines, and personalized results that feel like home.
+        At Bethelor, we specialize in home remodeling services across Maryland — including kitchen renovations, bathroom makeovers, interior & exterior painting, flooring, and more. Whether you’re updating one room or planning a full home renovation, our team delivers expert craftsmanship, reliable timelines, and personalized results that feel like home.
     </p>
   </div>
 </div>
