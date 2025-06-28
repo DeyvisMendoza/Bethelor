@@ -376,7 +376,7 @@ const optimizedFondo2 = await getImage({
     align-items: center;
     flex-direction: column;
     max-width: 200px;
-    height: 250px;
+    height: 150px;
   }
 
   .f-box h3 {
@@ -390,6 +390,10 @@ const optimizedFondo2 = await getImage({
   .f-box img {
     width: 95%;
     cursor: pointer;
+  }
+
+  .btn-custom{
+    display: none;
   }
 
   @media (max-width: 1023px) {
@@ -650,6 +654,9 @@ const optimizedFondo2 = await getImage({
     .choose-image-overlay {
       background-image: var(--mobile-bg);
     }
+    .f-box {
+      height: 250px;
+    }
 
     .f-box h3 {
       font-size: 24px;
@@ -665,6 +672,7 @@ const optimizedFondo2 = await getImage({
     }
 
     .btn-custom {
+      display: block;
       position: relative;
       color: #000000;
       border: none;
