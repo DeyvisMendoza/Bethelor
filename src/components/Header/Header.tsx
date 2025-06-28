@@ -116,12 +116,12 @@ export const Header = () => {
             transition={{ duration: 0.3, ease: "easeOut" }} 
           >
             <ul>
-              <li>HOME</li>
-              <li>ABOUT US</li>
-              <li>SERVICES</li>
-              <li>PROJECTS</li>
-              <li>BLOGS</li>
-              <li>CONTACT</li>
+              <li><a href="/">HOME</a></li>
+              <li><a href="/about">ABOUT US</a></li>
+              <li><a href="/services">SERVICES</a></li>
+              <li><a href="/projects">PROJECTS</a></li>
+              <li><a href="/blog">BLOGS</a></li>
+              <li><a href="/contact">CONTACT</a></li>
               <div className="container-request1">
                 <BotonHeader />
               </div>

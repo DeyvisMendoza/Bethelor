@@ -120,7 +120,7 @@
 .button-item {
   text-align: center;
   background-color: #000;
-  border-top: 1px solid #7E7F83;
+  border: 1px solid #7E7F83;
   transition: background-color 0.3s ease;
   padding: 1.5625rem;
   /* Initial state for animation */
