@@ -587,7 +587,7 @@
     }
 
     .form-button-container {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .forminput-corner-top, .forminput-corner-bottom,
@@ -618,7 +618,11 @@
     }
 
     .form-header {
-        padding: 15px 15px 10px 15px;
+        padding: 15px 15px 50px 15px;
+    }
+
+    .form-communications-list {
+        gap: 40px;
     }
 
     .form-header h2 {
@@ -626,7 +630,7 @@
     }
 
     .form-header p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .form-communications-container {
@@ -635,15 +639,15 @@
     }
 
     .form-input-container h3, .form-extra h3 {
-        font-size: 16px;
-        margin-bottom: 15px;
+        font-size: 25px;
+        margin-bottom: 35px;
     }
 
     .form-communication-info span {
-        font-size: 12px;
+        font-size: 18px;
     }
     .form-communication-info p {
-        font-size: 10px;
+        font-size: 16px;
     }
 
     .forminput-container {
@@ -664,5 +668,8 @@
     }
     .main-text {
         font-size: 11px;
+    }
+    .form-extra{
+        padding-top: 50px;
     }
 }

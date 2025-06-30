@@ -353,6 +353,7 @@
   .accordion-item.active .accordion-content-inner h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    text-align: left;
   }
 
   .accordion-item.active .accordion-header h4,
@@ -360,6 +361,7 @@
   .accordion-item.active .accordion-header ul {
     text-align: start;
     padding-left: 0;
+    list-style: none;
   }
 
   .accordion-item.active .accordion-content-inner img {

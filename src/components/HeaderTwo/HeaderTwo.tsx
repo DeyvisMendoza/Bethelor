@@ -63,7 +63,7 @@ function Header() {
         <div className="header-bottom-content">
           <div className="logo">
             <div className="logo-text">
-            <a href="">
+            <a href="/">
               <img src="/footer/logo.png" alt="menu"/>
             </a>
             </div>

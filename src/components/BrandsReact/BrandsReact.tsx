@@ -120,13 +120,13 @@ const Brands: React.FC = () => {
                             src={item.imgSrc}
                             alt={item.title}
                             animate={hoveredItemId === item.id ? "hovered" : "initial"}
-                            variants={imageAndTitleVariants}
+    
                         />
                         <motion.div className="brand-description">
                             <motion.h3
                                 className="brand-title"
                                 animate={hoveredItemId === item.id ? "hovered" : "initial"}
-                                variants={titleHoverMoveVariants}
+                            
                                 layout 
                             >
                                 {item.title}

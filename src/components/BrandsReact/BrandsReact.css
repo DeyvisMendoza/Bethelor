@@ -202,13 +202,17 @@
   }
 
   .brand-item {
-    width: 90%;
+    width: 100%;
     height: auto;
     padding: 15px;
     border-left: none;
     border-bottom: 1px solid #a5a5a5;
     gap: 10px;
     align-items: flex-start;
+  }
+
+  .brand-description{
+    padding-top: 20px;
   }
 
   .brand-item:first-child {
@@ -225,11 +229,11 @@
   }
 
   .brand-item h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .brand-item p {
-    font-size: 10px;
+    font-size: 15px;
     width: 100%;
   }
 
