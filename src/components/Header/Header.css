@@ -126,7 +126,7 @@
   .menu-mobile-button {
     display: block;
     cursor: pointer;
-    margin-right: 9px;
+    margin-left: -20px;
   }
 
   .hover-wrapper{
