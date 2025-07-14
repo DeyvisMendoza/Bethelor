@@ -3,6 +3,16 @@ import { motion, useInView } from "framer-motion";
 import "../../components/BrandsReact/BrandsReact.css"
 
 export const AboutLogos = () => {
+  const logos = [
+    "/brands/carrusel1.png",
+    "/brands/carrusel2.png",
+    "/brands/carrusel3.png",
+    "/brands/carrusel4.png",
+    "/brands/carrusel5.png",
+    "/brands/carrusel6.png",
+  ];
+
+const allLogos = [...logos, ...logos, ...logos];
   const trustedBrandsLogoVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -36,6 +46,7 @@ export const AboutLogos = () => {
   };
 
   return (
+    <>
     <motion.div className="trusted-brands" variants={trustedBrandsVariants}>
       <motion.h3
         className="trusted-brands-title"
@@ -50,5 +61,18 @@ export const AboutLogos = () => {
         <img src="/brands/brands5.svg" alt="Trusted Brands Logos" />
       </motion.div>
     </motion.div>
+    <div className="trusted-brands1">
+    <h3 className="trusted-brands-title">
+                Brands We Trust for Remodeling in Maryland
+            </h3>
+        <div className="carousel-container">
+            <div className="carousel-track">
+                {allLogos.map((src, i) => (
+                <img key={i} src={src} alt={`logo-${i}`} />
+                ))}
+            </div>
+        </div>
+    </div>
+    </>
   );
 };

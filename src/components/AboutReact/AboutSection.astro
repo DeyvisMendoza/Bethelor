@@ -20,6 +20,7 @@ import { Image } from "astro:assets"
         <span>+12</span>
       </div>
       <div class="cicle-black">
+        <span>+</span>
         <p>Done Projects</p>
         <span>2023</span>
       </div>
@@ -678,20 +679,21 @@ import { Image } from "astro:assets"
     }
 
     .container-cicles {
-      width: 150px;
+      width: 250px;
       height: 100px;
+      padding-bottom: 50px;
     }
 
     .cicle-white,
     .cicle-black {
-      width: 90px; 
-      height: 90px;
-      padding-bottom: 15px; 
+      width: 150px; 
+      height: 150px;
+      padding-bottom: 40px; 
     }
 
     .cicle-white p,
     .cicle-black p {
-      font-size: 0.65rem; 
+      font-size: 1rem; 
     }
 
     .cicle-white span,
@@ -700,7 +702,7 @@ import { Image } from "astro:assets"
     }
 
     .container-cicles:not(.swap) .cicle-white {
-      left: -5px;
+      left: -35px;
     }
 
     .container-cicles:not(.swap) .cicle-black {
@@ -712,7 +714,7 @@ import { Image } from "astro:assets"
     }
 
     .container-cicles.swap .cicle-black {
-      left: -5px;
+      left: -35px;
     }
 
     .container-text h3 {

@@ -1,10 +1,22 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import "./BrandsReact.css";
 
 import {brandItemsData} from "../../lib/dataBrands"
 
 const Brands: React.FC = () => {
+    const logos = [
+        "/brands/carrusel1.png",
+        "/brands/carrusel2.png",
+        "/brands/carrusel3.png",
+        "/brands/carrusel4.png",
+        "/brands/carrusel5.png",
+        "/brands/carrusel6.png",
+      ];
+    
+    const allLogos = [...logos, ...logos, ...logos];
+    
+      
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
@@ -120,13 +132,13 @@ const Brands: React.FC = () => {
                             src={item.imgSrc}
                             alt={item.title}
                             animate={hoveredItemId === item.id ? "hovered" : "initial"}
-                            variants={imageAndTitleVariants}
+    
                         />
                         <motion.div className="brand-description">
                             <motion.h3
                                 className="brand-title"
                                 animate={hoveredItemId === item.id ? "hovered" : "initial"}
-                                variants={titleHoverMoveVariants}
+                            
                                 layout 
                             >
                                 {item.title}
@@ -155,6 +167,18 @@ const Brands: React.FC = () => {
                     <img src="/brands/brands5.svg" alt="Trusted Brands Logos" />
                 </motion.div>
             </motion.div>
+            <div className="trusted-brands1">
+            <h3 className="trusted-brands-title">
+                        Brands We Trust for Remodeling in Maryland
+                    </h3>
+                <div className="carousel-container">
+                    <div className="carousel-track">
+                        {allLogos.map((src, i) => (
+                        <img key={i} src={src} alt={`logo-${i}`} />
+                        ))}
+                    </div>
+                </div>
+            </div>
         </motion.section>
     );
 };
